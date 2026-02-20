@@ -1,0 +1,184 @@
+/* Стили для страниц ошибок */
+.error-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  padding: 2rem;
+  gap: 4rem;
+}
+
+.error-content {
+  flex: 1;
+  max-width: 600px;
+  text-align: center;
+}
+
+.error-code {
+  font-size: 8rem;
+  font-weight: 900;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  line-height: 1;
+  opacity: 0.8;
+}
+
+.error-title {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--text);
+}
+
+.error-description {
+  font-size: 1.2rem;
+  color: var(--gray);
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+}
+
+.error-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.error-search,
+.error-contact,
+.error-tips {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius);
+  backdrop-filter: blur(10px);
+}
+
+.error-search h3,
+.error-contact h3,
+.error-tips h3 {
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.search-box {
+  display: flex;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--border);
+  border-radius: var(--radius) 0 0 var(--radius);
+  font-size: 1rem;
+}
+
+.search-box button {
+  padding: 0.75rem 1.5rem;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  cursor: pointer;
+}
+
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-link:hover {
+  text-decoration: underline;
+}
+
+.error-tips ul {
+  text-align: left;
+  padding-left: 1.5rem;
+}
+
+.error-tips li {
+  margin-bottom: 0.5rem;
+  color: var(--gray);
+}
+
+.error-illustration {
+  flex: 1;
+  max-width: 400px;
+  text-align: center;
+}
+
+.error-illustration img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+  .error-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+  
+  .error-code {
+    font-size: 6rem;
+  }
+  
+  .error-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .error-code {
+    font-size: 4rem;
+  }
+  
+  .error-title {
+    font-size: 1.75rem;
+  }
+  
+  .error-description {
+    font-size: 1rem;
+  }
+  
+  .error-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .error-actions .btn {
+    width: 100%;
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .error-container {
+    padding: 1rem;
+  }
+  
+  .error-code {
+    font-size: 3rem;
+  }
+  
+  .search-box {
+    flex-direction: column;
+  }
+  
+  .search-box input,
+  .search-box button {
+    border-radius: var(--radius);
+    width: 100%;
+  }
+  
+  .search-box button {
+    margin-top: 0.5rem;
+  }
+}
