@@ -1,0 +1,1132 @@
+/* styles/victories.css – v3 (префикс victory-) */
+
+/* ---------- Общая раскладка ---------- */
+.victory-page{
+  padding:20px;
+  max-width:1200px;
+  margin:0 auto;
+  font-family:'Inter',sans-serif;
+  color:#0f172a;
+}
+.victory-toolbar{
+  display:flex;
+  gap:20px;
+  align-items:center;
+  
+  margin-bottom:25px;
+}
+.victory-spheres-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-grow: 1;
+  padding-bottom: 5px;
+}
+.victory-list{margin-top:10px;}
+.victory-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+  gap:20px;
+}
+/* ---------- Сферы-фильтры ---------- */
+.victory-spheres{
+  display:flex;
+  gap:15px;
+  flex-wrap:wrap;
+}
+.victory-sphere{
+  display:flex;
+  cursor:pointer;
+  user-select:none;
+}
+.victory-sphere-content {
+  --border-color:#64748b;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-left: 6px solid var(--border-color);
+  border-top: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-weight: 500;
+  transition: background .2s, transform .2s;
+}
+.victory-sphere-indicator{width:12px;height:12px;border-radius:50%;}
+.victory-sphere:hover .victory-sphere-content{transform:translateY(-2px);}
+/* ---------- Кнопки добавления ---------- */
+.victory-add-btn,
+.victory-add-sphere-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 6px;
+  border-radius: 50%;
+  transition: transform .2s, color .2s;
+  color: #0f172a;
+  flex-shrink: 0;
+
+}
+.victory-add-btn:hover,
+.victory-add-sphere-btn:hover {
+  transform:scale(1.15);color:#64748b;
+}
+.victory-add-icon,
+.victory-add-sphere-icon {
+  width:28px;height:28px;
+}
+.victory-sphere-add {
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  margin-left: 8px;
+  border-radius: 50%;
+  transition: all 0.2s;
+  color: #0f172a;
+  opacity: 0;
+  width: 24px;
+  height: 24px;
+}
+.victory-sphere:hover .victory-sphere-add {
+  opacity:1;
+}
+.victory-sphere-add:hover {
+  transform:scale(1.1);color:#64748b;
+}
+/* ---------- Карточка победы (адаптированная под стиль задач) ---------- */
+.victory-card {
+  --border-color: #64748b; /* Это будет переопределено inline-стилем */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  border-radius: 8px;
+  background: #fff;
+  border-left: 6px solid var(--border-color);
+  border-top: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 4px 8px rgba(0,0,0,.06);
+  transition: transform .2s;
+  min-height: 120px;
+  margin-bottom: 12px;
+}
+
+.victory-card:hover {
+  transform: translateY(-2px);
+}
+
+.victory-card .task-meta {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.victory-card .victory-icon {
+  width: 24px;
+  height: 24px;
+  color: var(--border-color); /* Используем цвет границы */
+
+}
+
+.victory-card .victory-icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  fill: currentColor; /* Для SVG иконки */
+
+}
+
+.victory-card .task-date {
+  font-size: 12px;
+  color: #666;
+  margin-left: 8px;
+}
+
+.victory-card .task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.victory-card .task-title {
+  font-weight: 500;
+  font-size: 16px;
+  margin: 0;
+  flex-grow: 1;
+  padding-right: 10px;
+  line-height: 1.45;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* Удаляем старые стили для task-actions и кнопок */
+
+/* Новые стили для контейнера действий */
+.victory-card .task-actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 100%;
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  bottom: 16px;
+}
+
+/* Общие стили для кнопок */
+.victory-card .victory-edit, 
+.victory-card .victory-delete {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  width: 32px;
+  height: 32px;
+  opacity: 0.8;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+/* Позиционируем кнопки внутри контейнера */
+.victory-card .victory-edit {
+  align-self: flex-start;
+  margin-top: -50px;
+  color: #000000;
+
+}
+
+.victory-card .victory-delete {
+  margin-top: 13px;
+  margin-right: 6px;
+  align-self: flex-end;
+  color: #ff2828;
+}
+
+/* Ховер-эффекты */
+.victory-card .victory-edit:hover, 
+.victory-card .victory-delete:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* Обновляем стили для заголовка задачи */
+.victory-card .task-header {
+  position: relative;
+  padding-right: 70px; /* Оставляем место для кнопок */
+  min-height: 20px; /* Минимальная высота для кнопок */
+  margin-right: -10px;
+}
+
+.victory-card .task-title {
+  margin-right: 10px;
+}
+/* Иконки внутри кнопок */
+.victory-card .victory-edit svg, 
+.victory-card .victory-delete svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+.victory-card .task-desc {
+  margin-top: 6px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  width: 100%;
+    padding: 12px;
+    border: 1px solid rgba(0, 57, 76, 0.1);
+    border-radius: 12px;
+    font-family: inherit;
+    background-color: rgba(242, 247, 251, 0.5);
+    transition: all 0.3s ease;
+    line-height: 1.5;
+    color: #00394C;
+    font-size: 12px;
+}
+
+/* ---------- Пустой список ---------- */
+.victory-empty{padding:80px 20px;text-align:center;color:#64748b;font-size:18px;}
+/* ---------- Модалка ---------- */
+.victory-modal{
+
+  color:#00394c;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.55);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:1000;
+}
+.victory-modal-box{
+  
+  border: 2px solid #00394c; 
+  background:#F5FBFF;
+  border-radius:10px;
+  padding:24px;
+  width:100%;
+  max-width:500px;
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+.victory-input{
+  color: #386675;
+  width: 100%;
+  min-height: 60px;
+      resize:vertical;
+  padding:12px;
+  border:1px solid #e2e8f0;
+  border-radius:6px;
+  font-size:16px;
+}
+.victory-select{
+  color:#00394c;
+  padding:10px;
+  border:1px solid #e2e8f0;
+  border-radius:6px;
+  font-size:16px;
+}
+.victory-modal-actions{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+}
+
+  .btn-save1, .btn-cancel1{
+  align-content: space-between;
+  border:none;
+  border-radius:6px;
+  padding:8px 16px;
+  font-size:15px;
+  cursor:pointer;
+}
+
+.btn-cancel1{background:#e2e8f0;}
+.btn-save1{background:#00394c;color:#fff;}
+.btn-cancel1:hover{background:#cbd5e1;}
+.btn-save1:hover{background:#024c64;}
+
+/* Подсветка выбранной сферы */
+.victory-sphere.active .victory-sphere-content {
+  -webkit-box-shadow: 0px -1px 10px 3px var(--border-color);
+  -moz-box-shadow: 0px -1px 10px 3px var(--border-color);
+  box-shadow: 0px -1px 10px 3px var(--border-color);
+}
+
+/* Стили для меню сфер */
+.victory-sphere-menu {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  margin-left: 8px;
+  opacity: 0;
+  transition: opacity 0.2s;
+  color: var(--border-color);
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.victory-sphere:hover .victory-sphere-menu {
+  opacity: 1;
+}
+
+.victory-context-menu {
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  padding: 8px 0;
+  min-width: 150px;
+  z-index: 1000;
+}
+
+.victory-context-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.victory-context-menu li {
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.victory-context-menu li:hover {
+  background-color: #f5f5f5;
+}
+
+/* Стили для формы редактирования сферы */
+.victory-modal .form-group {
+  margin-bottom: 15px;
+}
+
+.victory-modal .form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.victory-modal .form-group input[type="text"],
+.victory-modal .form-group input[type="color"] {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+.victory-modal .form-group input[type="text"] {
+  width: 100%;
+}
+
+.victory-modal .form-group input[type="color"] {
+  width: 275px;
+}
+
+.victory-modal .form-group input[type="color"] {
+  height: 40px;
+  padding: 2px;
+}
+
+/* Улучшенные стили для модальных окон побед */
+.victory-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 57, 76, 0.85);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  padding: 20px;
+  animation: victoryModalFadeIn 0.3s ease-out;
+}
+
+@keyframes victoryModalFadeIn {
+  from {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+  }
+  to {
+    opacity: 1;
+    backdrop-filter: blur(4px);
+  }
+}
+
+.victory-modal-box {
+  background: linear-gradient(135deg, #F5FBFF 0%, #E8F4FF 100%);
+  border: 2px solid #00394C;
+  border-radius: 16px;
+  padding: 0;
+  width: 100%;
+  max-width: 480px;
+  max-height: 90vh;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 57, 76, 0.3);
+  animation: victoryModalSlideIn 0.3s ease-out;
+}
+
+@keyframes victoryModalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.victory-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 24px 16px;
+  border-bottom: 1px solid rgba(0, 57, 76, 0.1);
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.victory-modal-header h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #00394C;
+}
+
+.victory-modal-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+  color: #64748b;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.victory-modal-close:hover {
+  background: rgba(0, 57, 76, 0.1);
+  color: #00394C;
+  transform: rotate(90deg);
+}
+
+.victory-modal-body {
+  padding: 24px;
+  overflow-y: auto;
+  max-height: calc(90vh - 140px);
+}
+
+.victory-modal-category {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  background: rgba(0, 57, 76, 0.05);
+  border-radius: 8px;
+  margin-bottom: 20px;
+  color: #386675;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.victory-modal-category svg {
+  color: #00394C;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #00394C;
+  font-size: 14px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid rgba(0, 57, 76, 0.2);
+  border-radius: 12px;
+  font-family: inherit;
+  background-color: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+  font-size: 15px;
+  color: #00394C;
+  resize: vertical;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #00394C;
+  background-color: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(0, 57, 76, 0.1);
+}
+
+.form-input::placeholder {
+  color: #94a3b8;
+}
+
+.form-hint {
+  font-size: 12px;
+  color: #64748b;
+  margin-top: 4px;
+}
+
+.color-group {
+  margin-top: 24px;
+}
+
+.color-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.color-input-wrapper input[type="color"] {
+  width: 275px;
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 0;
+  background: none;
+}
+
+.color-input-wrapper input[type="color"]::-webkit-color-swatch {
+  border: 2px solid #FFFFFF;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.color-input-wrapper input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.color-preview {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 57, 76, 0.2);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #386675;
+  transition: all 0.2s ease;
+}
+
+.color-preview:hover {
+  background: #FFFFFF;
+  border-color: #00394C;
+}
+
+.victory-modal-footer {
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-top: 1px solid rgba(0, 57, 76, 0.1);
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 100px;
+}
+
+.btn-secondary {
+  background: rgba(0, 57, 76, 0.1);
+  color: #00394C;
+}
+
+.btn-secondary:hover {
+  background: rgba(0, 57, 76, 0.2);
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #00394C 0%, #002233 100%);
+  color: #FFFFFF;
+  box-shadow: 0 2px 8px rgba(0, 57, 76, 0.3);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #024c64 0%, #00394C 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 57, 76, 0.4);
+}
+
+/* Анимация закрытия модального окна */
+.victory-modal.closing {
+  animation: victoryModalFadeOut 0.2s ease-in forwards;
+}
+
+.victory-modal-box.closing {
+  animation: victoryModalSlideOut 0.2s ease-in forwards;
+}
+
+@keyframes victoryModalFadeOut {
+  to {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+  }
+}
+
+@keyframes victoryModalSlideOut {
+  to {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 600px) {
+  .victory-modal {
+    padding: 10px;
+  }
+  
+  .victory-modal-box {
+    max-width: 100%;
+    max-height: 95vh;
+  }
+  
+  .victory-modal-header,
+  .victory-modal-body,
+  .victory-modal-footer {
+    padding: 20px 16px;
+  }
+  
+  .victory-modal-footer {
+    flex-direction: column;
+  }
+  
+  .btn {
+    width: 100%;
+  }
+}
+
+
+/* Стили для контекстного меню сфер */
+.victory-context-menu {
+  background: linear-gradient(135deg, #FFFFFF 0%, #F8FAFC 100%);
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  padding: 8px;
+  min-width: 160px;
+  z-index: 10001;
+  animation: contextMenuFadeIn 0.2s ease-out;
+}
+
+@keyframes contextMenuFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.victory-context-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.victory-context-menu li {
+  padding: 10px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #334155;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.victory-context-menu li:hover {
+  background: rgba(0, 57, 76, 0.1);
+  color: #00394C;
+}
+
+/* Стили для модального окна подтверждения удаления */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 57, 76, 0.85);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  padding: 20px;
+}
+
+.confirm-modal {
+  background: linear-gradient(135deg, #F5FBFF 0%, #E8F4FF 100%);
+  border: 2px solid #00394C;
+  border-radius: 16px;
+  padding: 24px;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 57, 76, 0.3);
+}
+
+.confirm-modal h3 {
+  margin: 0 0 16px 0;
+  color: #00394C;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.confirm-modal p {
+  margin: 0 0 24px 0;
+  color: #386675;
+  line-height: 1.5;
+}
+
+.modal-actions1 {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.btn-danger {
+  background: linear-gradient(135deg, #DC2626 0%, #B91C1C 100%);
+  color: #FFFFFF;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 100px;
+}
+
+.btn-danger:hover {
+  background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+}
+
+/* Mobile modal adjustments: victories */
+@media (max-width: 600px) {
+  .victory-modal,
+  .modal-overlay {
+    padding: 0;
+    align-items: flex-end;
+  }
+.victory-spheres{
+  flex-wrap: nowrap;
+  margin-top:8%;
+}
+
+/* НОВЫЕ СТИЛИ ДЛЯ КНОПКИ ДОБАВЛЕНИЯ СТАТУСА */
+  .victory-add-sphere-btn {
+    position:fixed;
+    top: 73px;
+    left: 5%;
+    width: 90%;
+    height: 48px;
+    background: linear-gradient(135deg, #00394c, #005b78);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    box-shadow: 0 2px 8px rgba(0, 57, 76, 0.2);
+    overflow: hidden;
+    z-index: 100;
+    }
+
+  .victory-add-sphere-btn:hover {
+  background: linear-gradient(135deg, #024c64, #00759a);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 57, 76, 0.3);
+  }
+
+  .victory-add-sphere-btn::before {
+    content: "Добавить сферу ";
+    margin-right: 8px;
+  }
+
+  .victory-add-sphere-btn:active {
+    transform: translateY(0);
+  }
+
+  .victory-add-sphere-btn:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    pointer-events: none;
+  }
+
+  /* Скрываем иконку крестика */
+  .victory-add-sphere-btn i,
+  .victory-add-sphere-btn svg {
+    display: none;
+  }
+
+
+
+.victory-modal-box,
+  .confirm-modal {
+    width: 100%;
+    max-width: none;
+    max-height: 90vh;
+    border-radius: 20px 20px 0 0;
+    padding: 24px 18px calc(28px + env(safe-area-inset-bottom));
+  }
+
+  .victory-modal-footer,
+  .modal-actions1 {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .victory-modal-footer button,
+  .modal-actions1 button {
+    width: 100%;
+  }
+}
+/* styles/victories.css – v3 (префикс victory-) */
+
+/* ---------- Общая раскладка ---------- */
+.victory-page{
+  padding:20px;
+  max-width:1200px;
+  margin:0 auto;
+  font-family:'Inter',sans-serif;
+  color:#0f172a;
+  height: auto !important; /* Добавляем явное указание */
+  min-height: 0 !important;
+}
+.victory-toolbar{
+  display:flex;
+  gap:20px;
+  align-items:center;
+  margin-bottom:25px;
+  height: auto !important;
+  min-height: 0 !important;
+}
+.victory-spheres-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-grow: 1;
+  padding-bottom: 5px;
+  height: auto !important;
+  min-height: 0 !important;
+}
+.victory-list{
+  margin-top:10px;
+  height: auto !important;
+  min-height: 0 !important;
+}
+.victory-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+  gap:20px;
+  height: auto !important;
+  min-height: 0 !important;
+  align-items: start; /* Важно: выравнивание по верху */
+}
+
+/* ---------- Карточка победы (адаптивная высота) ---------- */
+.victory-card {
+  --border-color: #64748b;
+  position: relative;
+  min-height: 0 !important;
+  height: auto !important;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  border-radius: 8px;
+  background: #fff;
+  border-left: 6px solid var(--border-color);
+  border-top: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 4px 8px rgba(0,0,0,.06);
+  transition: transform .2s;
+  margin-bottom: 12px;
+}
+
+.victory-card:hover {
+  transform: translateY(-2px);
+}
+
+.victory-card .task-meta {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  flex-shrink: 0; /* Запрещаем сжатие */
+}
+
+.victory-card .victory-icon {
+  width: 24px;
+  height: 24px;
+  color: var(--border-color);
+  flex-shrink: 0;
+}
+
+.victory-card .victory-icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  fill: currentColor;
+}
+
+.victory-card .task-date {
+  font-size: 12px;
+  color: #666;
+  margin-left: 8px;
+  flex-shrink: 0;
+}
+
+.victory-card .task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+  position: relative;
+  padding-right: 70px;
+  min-height: 32px; /* Минимальная высота для кнопок */
+  flex-shrink: 0;
+}
+
+.victory-card .task-title {
+  font-weight: 500;
+  font-size: 16px;
+  margin: 0;
+  flex-grow: 1;
+  padding-right: 10px;
+  line-height: 1.45;
+  white-space: pre-wrap;
+  word-break: break-word;
+  min-height: 1.45em; /* Минимальная высота для одной строки */
+}
+
+/* Контейнер действий - абсолютное позиционирование */
+.victory-card .task-actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  min-height: 60px; /* Минимальная высота для двух кнопок */
+}
+
+/* Общие стили для кнопок */
+.victory-card .victory-edit, 
+.victory-card .victory-delete {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  width: 32px;
+  height: 32px;
+  opacity: 0.8;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+/* Позиционируем кнопки внутри контейнера */
+.victory-card .victory-edit {
+  margin-top: 0;
+  color: #000000;
+}
+
+.victory-card .victory-delete {
+  margin-top: auto; /* Прижимаем к низу контейнера */
+  margin-bottom: 0;
+  color: #ff2828;
+}
+
+.victory-card .task-desc {
+  margin-top: 6px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid rgba(0, 57, 76, 0.1);
+  border-radius: 12px;
+  font-family: inherit;
+  background-color: rgba(242, 247, 251, 0.5);
+  transition: all 0.3s ease;
+  line-height: 1.5;
+  color: #00394C;
+  font-size: 12px;
+  flex-grow: 1; /* Занимает доступное пространство */
+  min-height: 60px; /* Минимальная высота для текстового поля */
+}
+
+/* Убедимся, что все контейнеры имеют auto height */
+.victory-spheres,
+.victory-sphere,
+.victory-sphere-content,
+.victory-modal,
+.victory-modal-box,
+.victory-context-menu {
+  height: auto !important;
+  min-height: 0 !important;
+}
+
+/* Мобильная адаптация */
+@media (max-width: 768px) {
+  .victory-page {
+    padding: 16px;
+    margin-top: 25px;
+    margin-bottom: 125px;
+    overflow-y: auto;
+
+  }
+
+  .victory-toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .victory-spheres-container {
+    width: 100%;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+
+  .victory-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .victory-card {
+    min-height: auto;
+    height: auto !important;
+  }
+  
+  /* Улучшаем отображение кнопок на мобильных */
+  .victory-card .task-actions {
+    min-height: 56px;
+  }
+  
+  .victory-card .victory-edit, 
+  .victory-card .victory-delete {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* Гарантируем, что все элементы имеют правильную высоту */
+.victory-page * {
+  box-sizing: border-box;
+}
+
+/* Улучшаем внешний вид длинных карточек */
+.victory-card {
+  break-inside: avoid; /* Предотвращаем разрыв карточек при многоколоночной верстке */
+}

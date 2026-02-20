@@ -1,0 +1,1022 @@
+.company-info-page {
+    padding: 20px 16px;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #757575;
+}
+
+.company-info-card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border: 1px solid #eee;
+    font-size: 12px;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.company-info-card h2,
+.info-section h3 {
+    color: #00394C;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.info-section {
+    margin-top: 13px;
+    padding-bottom: 13px;
+    border-bottom: 1px solid #eee;
+    animation: fadeIn 0.4s ease-out;
+}
+
+.info-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.contact-item svg,
+.document-btn svg {
+    margin-right: 10px;
+    color: #15c4c4;
+    width: 18px;
+    height: 18px;
+}
+
+.requisites-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.requisite-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.requisite-label {
+    font-weight: 500;
+    color: #757575;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.requisite-value {
+    color: #00394C;
+    font-size: 12px;
+    padding: 4px 6px;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+}
+
+.documents-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.document-btn {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: #f1f5f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    color: #00394C;
+    font-size: 12px;
+    transition: all 0.2s;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.document-btn:hover {
+    background-color: #e8f0fe;
+    border-color: #0e9e9e;
+    color: #15c4c4;
+}
+
+.instruction {
+    margin: 30px 0;
+}
+
+/* Видеоплеер - основные стили */
+.player-container {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    aspect-ratio: 16 / 9;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 57, 76, 0.15);
+    margin: 0 auto;
+    background: #00394C;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.player-container:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(0, 57, 76, 0.2);
+}
+
+.player-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    background: #000;
+}
+
+.player-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        rgba(0, 57, 76, 0.8) 0%,
+        rgba(21, 196, 196, 0.4) 100%
+    );
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 40px;
+    transition: opacity 0.3s ease;
+}
+
+.player-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.video-content h3 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.video-content p {
+    font-size: 1.3rem;
+    opacity: 0.9;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.play-button {
+    background: linear-gradient(135deg, #15c4c4, #0e9e9e);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(21, 196, 196, 0.3);
+}
+
+.play-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(21, 196, 196, 0.4);
+    background: linear-gradient(135deg, #0e9e9e, #15c4c4);
+}
+
+.play-button svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Видео контролы */
+.video-controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    opacity: 0;
+    transition: all 0.3s ease;
+    transform: translateY(100%);
+}
+
+.player-container:hover .video-controls,
+.video-controls.visible,
+.player-container.touch-controls .video-controls,
+.player-container.controls-visible .video-controls {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.control-btn {
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    color: #00394C;
+}
+
+.control-btn:hover {
+    background: white;
+    transform: scale(1.05);
+}
+
+.progress-container {
+    flex: 1;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+    cursor: pointer;
+    position: relative;
+    touch-action: none;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 100%;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #15c4c4, #0e9e9e);
+    border-radius: 3px;
+    width: 0%;
+    transition: width 0.1s ease;
+}
+
+.time-display {
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 500;
+    min-width: 80px;
+    text-align: center;
+}
+
+/* Ползунок громкости */
+.volume-controls {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    position: relative;
+}
+
+.volume-slider-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 0;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.volume-slider-container.visible,
+.volume-controls:hover .volume-slider-container {
+    width: 40px;
+    opacity: 1;
+}
+
+.volume-slider {
+    width: 100%;
+    margin-left: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Стилизация ползунков */
+input[type="range"] {
+    -webkit-appearance: none;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+    outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid #15c4c4;
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid #15c4c4;
+}
+
+/* Полноэкранные стили */
+.player-container:fullscreen,
+.player-container:-webkit-full-screen,
+.player-container:-ms-fullscreen {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+    max-width: none;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.video-content {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Дополнительные стили для улучшенного видеоплеера */
+.loading-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.spinner {
+    width: 30px;
+    height: 30px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top: 3px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.error-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+}
+
+.error-message button {
+    background: white;
+    color: #d32f2f;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.video-fallback {
+    text-align: center;
+    padding: 20px;
+    background: #f5f5f5;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/* Улучшенный прогресс-бар с бегунком */
+.progress-thumb {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-radius: 50%;
+    border: 2px solid #15c4c4;
+    opacity: 0;
+    transition: opacity 0.2s;
+    pointer-events: none;
+}
+
+.progress-container:hover .progress-thumb,
+.progress-bar.seeking .progress-thumb {
+    opacity: 1;
+}
+
+/* АДАПТИВНОСТЬ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ */
+@media (max-width: 768px) {
+    .company-info-card {
+        padding: 20px;
+        border-radius: 8px;
+    }
+
+    .requisites-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .contact-item {
+        align-items: flex-start;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    /* Видеоплеер для мобильных */
+    .player-container {
+        height: 350px;
+        border-radius: 12px;
+        max-width: 100%;
+    }
+    
+    .video-content h3 {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+    
+    .video-content p {
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+    }
+    
+    .play-button {
+        padding: 12px 24px;
+        font-size: 1rem;
+        min-height: 44px;
+    }
+    
+    .player-overlay {
+        padding: 20px;
+    }
+    
+    .video-controls {
+        padding: 15px;
+        gap: 10px;
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .control-btn .btn-text {
+        display: none;
+    }
+    
+    .control-btn {
+        padding: 10px;
+        min-width: 44px;
+        min-height: 44px;
+    }
+    
+    .time-display {
+        font-size: 0.8rem;
+        min-width: 60px;
+    }
+    
+    .progress-container {
+        height: 8px;
+        margin: 0 10px;
+    }
+    
+    input[type="range"] {
+        height: 6px;
+    }
+    
+    input[type="range"]::-webkit-slider-thumb {
+        width: 20px;
+        height: 20px;
+    }
+    
+    input[type="range"]::-moz-range-thumb {
+        width: 20px;
+        height: 20px;
+    }
+    .instruction {
+        padding-bottom:20%;
+    }
+    
+    /* Стили для мобильных в портретной ориентации */
+    .player-container.mobile-portrait {
+        aspect-ratio: 9/16;
+        max-width: 400px;
+        height: auto;
+    }
+    
+    .player-container.mobile-portrait video {
+        object-fit: cover;
+    }
+    
+    /* Стили для горизонтального видео на мобильных */
+    .player-container.mobile-landscape {
+        aspect-ratio: 16/9;
+        height: 80vh;
+        max-width: none;
+        border-radius: 0;
+    }
+    
+    .player-container.mobile-landscape video {
+        object-fit: contain;
+    }
+}
+
+@media (max-width: 480px) {
+    .player-container {
+        height: 280px;
+        border-radius: 8px;
+    }
+    
+    .video-content h3 {
+        font-size: 1.5rem;
+    }
+    
+    .video-content p {
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+    
+    .player-overlay {
+        padding: 15px;
+    }
+    
+    .play-button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .video-controls {
+        padding: 10px;
+        gap: 8px;
+    }
+    
+    .control-btn {
+        padding: 8px;
+        min-width: 40px;
+        min-height: 40px;
+    }
+    
+    .time-display {
+        font-size: 0.7rem;
+        min-width: 50px;
+    }
+    
+    /* Горизонтальная ориентация */
+    @media (orientation: landscape) and (max-height: 500px) {
+        .player-container {
+            height: 250px;
+        }
+        
+        .video-content h3 {
+            font-size: 1.3rem;
+        }
+        
+        .video-content p {
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+        
+        .video-controls {
+            padding: 8px;
+        }
+    }
+}
+
+/* Поддержка устройств с вырезом (notch) */
+@supports(padding: max(0px)) {
+    .company-info-page {
+        padding-left: max(16px, env(safe-area-inset-left));
+        padding-right: max(16px, env(safe-area-inset-right));
+    }
+    
+    .player-container:fullscreen {
+        padding: env(safe-area-inset-top) env(safe-area-inset-right) 
+                 env(safe-area-inset-bottom) env(safe-area-inset-left);
+    }
+}
+
+/* Улучшения для касаний */
+@media (hover: none) and (pointer: coarse) {
+    .player-container:hover {
+        transform: none;
+        box-shadow: 0 8px 32px rgba(0, 57, 76, 0.15);
+    }
+    
+    .play-button:hover,
+    .control-btn:hover {
+        transform: none;
+    }
+    
+    .control-btn:hover {
+        background: rgba(255, 255, 255, 0.9);
+    }
+    
+    .video-controls {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+    }
+    
+    .progress-thumb {
+        width: 16px;
+        height: 16px;
+    }
+    
+    .control-btn {
+        min-width: 44px;
+        min-height: 44px;
+    }
+    
+    /* Активные состояния для касаний */
+    .play-button:active {
+        transform: scale(0.95);
+    }
+    
+    .control-btn:active {
+        transform: scale(0.95);
+        background: rgba(255, 255, 255, 1);
+    }
+}
+
+/* Поддержка высокого DPI */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .player-container {
+        border-radius: 32px;
+    }
+}
+
+/* Темная тема */
+@media (prefers-color-scheme: dark) {
+    .player-container {
+        background: #1a1a1a;
+    }
+    
+    .control-btn {
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+    }
+    
+    .control-btn:hover {
+        background: rgba(255, 255, 255, 0.2);
+    }
+}
+
+/* Адаптация для ультра-широких экранов */
+@media (min-width: 1920px) {
+    .player-container {
+        max-width: 1200px;
+        height: 600px;
+    }
+}
+
+/* Печать */
+@media print {
+    .player-container {
+        display: none;
+    }
+    
+    .video-fallback {
+        display: block !important;
+    }
+}
+/* ========== АДАПТИВНЫЕ СТИЛИ ДЛЯ ИКОНОК ========== */
+
+/* Базовые стили для всех иконок */
+.contact-item svg,
+.document-btn svg,
+.play-button svg,
+.control-btn .icon {
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+/* Иконки контактов и документов */
+.contact-item svg {
+    margin-right: 10px;
+    color: #15c4c4;
+    width: 18px;
+    height: 18px;
+}
+
+.document-btn svg {
+    margin-right: 10px;
+    color: #15c4c4;
+    width: 18px;
+    height: 18px;
+}
+
+/* Иконка кнопки воспроизведения */
+.play-button svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Иконки контролов видеоплеера */
+.control-btn .icon {
+    font-size: 16px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 20px;
+}
+
+/* Специфичные стили для разных иконок */
+.play-icon, .pause-icon {
+    font-size: 14px;
+}
+
+.volume-on, .volume-off {
+    font-size: 16px;
+}
+
+/* ========== АДАПТИВНОСТЬ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ ========== */
+
+@media (max-width: 768px) {
+    /* Увеличиваем иконки для мобильных */
+    .contact-item svg {
+        width: 22px;
+        height: 22px;
+        margin-right: 12px;
+    }
+    
+    .document-btn svg {
+        width: 20px;
+        height: 20px;
+        margin-right: 12px;
+    }
+    
+    .play-button svg {
+        width: 24px;
+        height: 24px;
+    }
+    
+    /* Увеличиваем область касания для кнопок с иконками */
+    .contact-item {
+        padding: 8px 0;
+        min-height: 44px; /* Минимальная высота для касания */
+    }
+    
+    .document-btn {
+        min-height: 44px;
+        padding: 12px 16px;
+    }
+    
+    .play-button {
+        min-height: 50px;
+        padding: 15px 25px;
+    }
+    
+    /* Адаптация иконок контролов видеоплеера */
+    .control-btn .icon {
+        font-size: 18px;
+        min-width: 24px;
+        min-height: 24px;
+    }
+    
+    .play-icon, .pause-icon {
+        font-size: 16px;
+    }
+    
+    .volume-on, .volume-off {
+        font-size: 18px;
+    }
+    
+    /* Скрываем текст кнопок на мобильных, оставляем только иконки */
+    .control-btn .btn-text {
+        display: none;
+    }
+    
+    .control-btn {
+        padding: 12px;
+        min-width: 44px;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Еще больше увеличиваем иконки на маленьких экранах */
+    .contact-item svg {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .document-btn svg {
+        width: 22px;
+        height: 22px;
+    }
+    
+    .play-button svg {
+        width: 26px;
+        height: 26px;
+    }
+    
+    .control-btn .icon {
+        font-size: 20px;
+        min-width: 28px;
+        min-height: 28px;
+    }
+    
+    /* Упрощаем документы на очень маленьких экранах */
+    .document-btn {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+    
+    .document-btn svg {
+        margin-right: 8px;
+    }
+}
+
+/* ========== СПЕЦИАЛЬНЫЕ СТИЛИ ДЛЯ ЛАНДШАФТНОЙ ОРИЕНТАЦИИ ========== */
+@media (max-width: 768px) and (orientation: landscape) {
+    .player-container.mobile-landscape .control-btn .icon {
+        font-size: 16px;
+        min-width: 22px;
+        min-height: 22px;
+    }
+    
+    .player-container.mobile-landscape .control-btn {
+        padding: 8px;
+        min-width: 40px;
+        min-height: 40px;
+    }
+}
+
+/* ========== УЛУЧШЕНИЯ ДЛЯ ТЕМНОЙ ТЕМЫ ========== */
+@media (prefers-color-scheme: dark) {
+    .contact-item svg,
+    .document-btn svg {
+        color: #15c4c4;
+        opacity: 0.9;
+    }
+    
+    .control-btn .icon {
+        filter: brightness(0.9);
+    }
+}
+
+/* ========== АНИМАЦИИ И ИНТЕРАКТИВНОСТЬ ========== */
+.contact-item:hover svg,
+.document-btn:hover svg {
+    transform: scale(1.1);
+    color: #0e9e9e;
+}
+
+.play-button:hover svg {
+    transform: scale(1.1);
+}
+
+.control-btn:hover .icon {
+    transform: scale(1.1);
+}
+
+/* Плавные переходы для всех иконок */
+.contact-item svg,
+.document-btn svg,
+.play-button svg,
+.control-btn .icon {
+    transition: all 0.2s ease;
+}
+
+/* ========== ДОСТУПНОСТЬ ========== */
+/* Увеличиваем контраст для доступности */
+@media (prefers-contrast: high) {
+    .contact-item svg,
+    .document-btn svg {
+        color: #0a7a7a;
+    }
+}
+
+/* Уменьшаем анимации для пользователей, предпочитающих уменьшенное движение */
+@media (prefers-reduced-motion: reduce) {
+    .contact-item svg,
+    .document-btn svg,
+    .play-button svg,
+    .control-btn .icon {
+        transition: none;
+        transform: none;
+    }
+}
+
+/* ========== ОПТИМИЗАЦИЯ ДЛЯ ВЫСОКОГО DPI ========== */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .contact-item svg,
+    .document-btn svg,
+    .play-button svg {
+        filter: none; /* Отключаем фильтры для четкого отображения на ретине */
+    }
+}
+
+/* ========== УЛУЧШЕНИЯ ДЛЯ ТАЧ-УСТРОЙСТВ ========== */
+@media (hover: none) and (pointer: coarse) {
+    .contact-item:active svg,
+    .document-btn:active svg,
+    .play-button:active svg,
+    .control-btn:active .icon {
+        transform: scale(0.95);
+    }
+    
+    .contact-item:hover svg,
+    .document-btn:hover svg,
+    .play-button:hover svg,
+    .control-btn:hover .icon {
+        transform: none;
+    }
+}
+
+/* ========== SVG ИКОНКИ - ОПТИМИЗАЦИЯ ========== */
+/* Обеспечиваем правильное отображение SVG иконок */
+.contact-item svg,
+.document-btn svg {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* Специфичные настройки для разных SVG иконок */
+.contact-item svg[viewBox="0 0 24 24"] {
+    stroke-width: 1.5;
+}
+
+.document-btn svg[viewBox="0 0 24 24"] {
+    stroke-width: 1.5;
+}
+
+/* ========== ЗАГРУЗКА И СОСТОЯНИЯ ========== */
+/* Состояние загрузки для иконок */
+.contact-item.loading svg,
+.document-btn.loading svg {
+    opacity: 0.6;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 0.3; }
+}
+
+/* Состояние отключения */
+.contact-item:disabled svg,
+.document-btn:disabled svg,
+.play-button:disabled svg,
+.control-btn:disabled .icon {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* ========== ПЕЧАТЬ ========== */
+@media print {
+    .contact-item svg,
+    .document-btn svg {
+        color: #000 !important;
+        stroke: #000 !important;
+    }
+    
+    .play-button svg,
+    .control-btn .icon {
+        display: none;
+    }
+}

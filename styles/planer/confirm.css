@@ -1,0 +1,210 @@
+/* Стили для модальных окон подтверждения */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: var(--light);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    max-width: 400px;
+    width: 80%;
+    box-shadow: var(--shadow-lg);
+    font-size: 14px;
+}
+
+.modal-content h3 {
+    margin-top: 0;
+    color: var(--primary);
+}
+
+.modal-actions1 {
+    display: flex;
+    justify-content: space-between ;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+}
+.modal-actions2 {
+    display: flex;
+    justify-content: ce ;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+}
+
+.btn-secondary {
+    background-color: var(--light-gray);
+    color: var(--dark);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-secondary:hover {
+    background-color: #d1d7e0;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    font-size: 14px;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-danger:hover {
+    background-color: #bb2d3b;
+}
+
+.confirm-modal .modal-content {
+    border-top: 4px solid #dc3545;
+}
+
+.alert-modal .modal-content {
+    border-top: 4px solid var(--primary);
+}
+
+/* Стили для модальных окон подтверждения */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: var(--light);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    max-width: 400px;
+    width: 80%;
+    box-shadow: var(--shadow-lg);
+    font-size: 14px;
+}
+
+.modal-content h3 {
+    margin-top: 0;
+    color: var(--primary);
+}
+
+.modal-actions1 {
+    display: flex;
+    justify-content: space-between ;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+}
+.modal-actions2 {
+    display: flex;
+    justify-content: ce ;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+}
+
+.btn-secondary {
+    background-color: var(--light-gray);
+    color: var(--dark);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-secondary:hover {
+    background-color: #d1d7e0;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    font-size: 14px;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-danger:hover {
+    background-color: #bb2d3b;
+}
+
+.confirm-modal .modal-content {
+    border-top: 4px solid #dc3545;
+}
+
+.alert-modal .modal-content {
+    border-top: 4px solid var(--primary);
+}@media (max-width: 768px) {
+    .modal-overlay {
+        align-items: flex-end;
+        padding: 16px;
+    }
+
+    .modal-content {
+        width: 100%;
+        max-width: none;
+        border-radius: 16px 16px 0 0;
+    }
+
+    .modal-actions1,
+    .modal-actions2 {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+/* Mobile modal adjustments: confirm */
+@media (max-width: 600px) {
+  .modal-content {
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+}

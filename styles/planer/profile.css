@@ -1,0 +1,390 @@
+:root {
+  /* базовые цвета приложения */
+  --c-accent: #15c4c4;
+  --c-accent-dark: #0e9e9e;
+  --c-bg-light: #ffffff;
+  --c-bg-dark: #1e293b;
+  --c-card-light: #f8fafc;
+  --c-card-dark: #334155;
+  --c-text-primary: #00394c;
+  --c-text-light: #e2e8f0;
+  --c-text-muted: #7a838b;
+  --c-border: #e2e8f0;
+  --c-border-dark: #334155;
+  --radius-s: 6px;
+  --radius-m: 12px;
+  --radius-l: 20px;
+  --shadow-card: 0 6px 16px rgba(0, 0, 0, .08);
+  --shadow-button: 0 2px 8px rgba(0, 0, 0, .1);
+  --shadow-button-hover: 0 4px 12px rgba(0, 0, 0, .15);
+}
+
+/* --- Общая раскладка --- */
+.profile-settings-container {
+  max-width: 900px;
+  margin-left: 400px;
+  padding: 24px;
+}
+
+.profile-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--c-text-primary);
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.profile-content {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 40px;
+}
+
+@media (max-width: 768px) {
+  .profile-content {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+/* --- Левая колонка --- */
+.profile-left {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.profile-photo-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: var(--radius-m);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.profile-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-color: #f1f5f9;
+}
+
+.photo-upload {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  background-color: var(--c-accent);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow-button);
+}
+
+.photo-upload:hover {
+  background-color: var(--c-accent-dark);
+  transform: scale(1.05);
+  box-shadow: var(--shadow-button-hover);
+}
+
+.photo-upload input {
+  display: none;
+}
+
+.photo-hint {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background:rgba(0, 0, 0, 0.3);
+  color: white;
+  padding: 8px;
+  font-size: 12px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.profile-photo-container:hover .photo-hint {
+  opacity: 1;
+}
+
+.profile-status-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  border-radius: var(--radius-m);
+  background-color: var(--c-card-light);
+  box-shadow: var(--shadow-card);
+}
+
+.profile-status {
+  flex-grow: 1;
+  font-size: 14px;
+  color: var(--c-text-muted);
+  padding: 6px;
+  border-radius: var(--radius-s);
+  border: 1px dashed transparent;
+  outline: none;
+  min-height: 20px;
+  word-break: break-word;
+}
+
+.profile-status.editing {
+  border-color: var(--c-accent);
+  background-color: white;
+}
+
+.edit-status-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.edit-status-btn:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* --- Правая колонка --- */
+.profile-details {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+  border-radius: var(--radius-m);
+  background-color: var(--c-card-light);
+  box-shadow: var(--shadow-card);
+}
+
+.details-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.details-header h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--c-text-primary);
+}
+
+.edit-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+
+.edit-button:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.detail-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0px 0 12px 12px;
+}
+
+.detail-row:last-child {
+  border-bottom: none;
+}
+
+.detail-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c-accent);
+  flex-shrink: 0;
+}
+
+.detail-info {
+  flex-grow: 1;
+  min-width: 0;
+}
+
+.detail-label {
+  font-size: 12px;
+  color: var(--c-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.detail-value {
+  font-weight: 500;
+  color: var(--c-text-primary);
+  font-size: 15px;
+  word-break: break-word;
+}
+
+.detail-input {
+  display: none;
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-s);
+  font-size: 15px;
+  background-color: white;
+}
+
+.detail-input:focus {
+  outline: none;
+  border-color: var(--c-accent);
+  box-shadow: 0 0 0 2px rgba(21, 196, 196, 0.2);
+}
+
+.edit-mode .detail-value {
+  display: none;
+}
+
+.edit-mode .detail-input {
+  display: block;
+}
+
+/* --- Кнопки действий --- */
+.profile-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 265px;
+  margin-top: 24px;
+}
+
+.save-button,
+.cancel-button {
+  padding: 10px 20px;
+  border-radius: var(--radius-m);
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.save-button {
+  background-color: var(--c-accent);
+  color: white;
+  border: none;
+  box-shadow: var(--shadow-button);
+}
+
+.save-button:hover {
+  background-color: var(--c-accent-dark);
+  box-shadow: var(--shadow-button-hover);
+  transform: translateY(-1px);
+}
+
+.cancel-button {
+  background-color: transparent;
+  color: var(--c-text-muted);
+  border: 1px solid var(--c-border);
+}
+
+.cancel-button:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  border-color: var(--c-accent);
+  color: var(--c-accent);
+}
+
+/* --- Toast --- */
+.toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background-color: var(--c-accent);
+  color: white;
+  padding: 12px 24px;
+  border-radius: var(--radius-m);
+  font-size: 14px;
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  pointer-events: none;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.toast.error {
+  background-color: #ff4d4f;
+}
+
+/* -------------------------------------------------
+      Адаптация под глобальный UI приложения
+--------------------------------------------------*/
+
+/* 1. Прячем правое меню, пока открыт профиль */
+
+/* Добавьте это в profile.css */
+body.profile-open .page-container {
+  margin-left: 0 !important;
+}
+
+/* Добавьте это правило для корректировки контента */
+body.profile-open .content {
+  margin-left: 0;
+  width: 100%;
+}
+
+.detail-input {
+  /* Общие стили для всех input и select */
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-s);
+  font-size: 15px;
+  background-color: white;
+}
+
+select.detail-input {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px;
+  padding-right: 30px;
+}@media (max-width: 768px) {
+  .profile-settings-container {
+    margin: 0;
+    padding: 16px;
+  }
+
+  .profile-title {
+    text-align: left;
+  }
+
+  .detail-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding-left: 0;
+  }
+
+  .profile-status-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .details-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}

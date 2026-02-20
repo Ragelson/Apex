@@ -1,0 +1,1200 @@
+/* ============ МОДАЛЬНОЕ ОКНО - ОСНОВНЫЕ СТИЛИ ============ */
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+    overflow-y: auto;
+    animation: fadeIn 0.3s ease;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.task-modal-content {
+    width: 100%;
+    max-width: 900px;
+    margin: 40px auto;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    animation: slideUp 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    max-height: 90vh;
+    overflow: hidden;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* ============ ЗАГОЛОВОК МОДАЛЬНОГО ОКНА ============ */
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 24px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.modal-title-section {
+    flex: 1;
+}
+
+.task-title-input {
+    width: 100%;
+    font-size: 24px;
+    font-weight: 600;
+    border: none;
+    background: none;
+    padding: 0;
+    color: #1a202c;
+    font-family: inherit;
+    transition: all 0.2s ease;
+}
+
+.task-title-input:focus {
+    outline: none;
+    color: #1a73e8;
+}
+
+.task-title-input::placeholder {
+    color: rgba(0, 0, 0, 0.3);
+}
+
+.modal-close-btn {
+    width: 36px;
+    height: 36px;
+    border: none;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(0, 0, 0, 0.7);
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.modal-close-btn:hover {
+    background: rgba(0, 0, 0, 0.1);
+    color: #000;
+}
+
+/* ============ ВКЛАДКИ НАВИГАЦИИ ============ */
+
+.modal-tabs {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 0;
+    padding: 0 24px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    background: rgba(0, 0, 0, 0.02);
+}
+
+.modal-tab-btn {
+    padding: 14px 20px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: 500;
+    font-size: 14px;
+    position: relative;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.modal-tab-btn:hover {
+    color: #1a73e8;
+    background: rgba(26, 115, 232, 0.05);
+}
+
+.modal-tab-btn.active {
+    color: #1a73e8;
+}
+
+.modal-tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #1a73e8;
+}
+
+/* ============ ОСНОВНОЙ КОНТЕНТ ВКЛАДОК ============ */
+
+.modal-tabs-content {
+    flex: 1;
+    overflow-y: auto;
+    position: relative;
+}
+
+.modal-tab-content {
+    display: none;
+    animation: fadeIn 0.2s ease;
+}
+
+.modal-tab-content.active {
+    display: block;
+}
+
+.modal-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.modal-section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.modal-section.full-height {
+    flex: 1;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-section.full-height .section-header {
+    flex-shrink: 0;
+}
+
+.modal-section.full-height .section-title {
+    flex-shrink: 0;
+}
+
+.modal-section.full-height .subtasks-list {
+    flex: 1;
+    min-height: 100px;
+    overflow-y: auto;
+    margin: 12px 0;
+    padding-right: 4px;
+}
+
+.modal-section.full-height .subtasks-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.modal-section.full-height .subtasks-list::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.modal-section.full-height .subtasks-list::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+}
+
+/* ============ ЗАГОЛОВКИ СЕКЦИЙ ============ */
+
+.section-title {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a202c;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.checklist-progress {
+    background: rgba(26, 115, 232, 0.1);
+    color: #1a73e8;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 12px;
+    white-space: nowrap;
+}
+
+/* ============ ТЕКСТОВЫЕ ОБЛАСТИ И ПОЛЯ ============ */
+
+.task-description {
+    width: 100%;
+    min-height: 120px;
+    padding: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14px;
+    color: #1a202c;
+    background: rgba(0, 0, 0, 0.02);
+    resize: vertical;
+    transition: all 0.2s ease;
+}
+
+.task-description:focus {
+    outline: none;
+    border-color: #1a73e8;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.1);
+}
+
+.task-description::placeholder {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+/* ============ ИНФОРМАЦИОННАЯ СЕТКА ============ */
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 12px;
+    background: rgba(26, 115, 232, 0.05);
+    border-radius: 8px;
+    border: 1px solid rgba(26, 115, 232, 0.1);
+}
+
+.info-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.6);
+    text-transform: uppercase;
+}
+
+.info-value {
+    font-size: 14px;
+    color: #1a202c;
+    font-weight: 500;
+}
+
+/* ============ СРОКИ ============ */
+
+.dates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.date-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.date-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1a202c;
+}
+
+.date-inputs-row {
+    display: flex;
+    gap: 8px;
+}
+
+.date-input,
+.time-input {
+    flex: 1;
+    padding: 10px 12px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    background: rgba(0, 0, 0, 0.02);
+    color: #1a202c;
+    transition: all 0.2s ease;
+}
+
+.date-input:focus,
+.time-input:focus {
+    outline: none;
+    border-color: #1a73e8;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.1);
+}
+
+/* ============ ВЫДЕЛЕНИЕ И СЕЛЕКТЫ ============ */
+
+.select-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+}
+
+.select-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.select-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1a202c;
+}
+
+.form-select {
+    padding: 10px 12px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    background: white;
+    color: #1a202c;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.form-select:focus {
+    outline: none;
+    border-color: #1a73e8;
+    box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.1);
+}
+
+/* ============ ЧЕК-ЛИСТЫ ============ */
+
+.subtasks-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 12px 0;
+    height: auto;
+    max-height:30vh;
+}
+
+.subtask-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.02);
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    transition: all 0.2s ease;
+}
+
+.subtask-item:hover {
+    background: rgba(0, 0, 0, 0.04);
+    border-color: rgba(0, 0, 0, 0.12);
+}
+
+.subtask-checkbox {
+    width: 18px;
+    height: 18px;
+    accent-color: #1a73e8;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.subtask-text {
+    flex: 1;
+    padding: 0;
+    border: none;
+    background: none;
+    font-size: 14px;
+    color: #1a202c;
+    font-family: inherit;
+    cursor: text;
+    transition: all 0.2s ease;
+}
+
+.subtask-text:focus {
+    outline: none;
+}
+
+.subtask-text:disabled {
+    opacity: 0.6;
+}
+
+.subtask-actions {
+    display: flex;
+    gap: 6px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.subtask-item:hover .subtask-actions {
+    opacity: 1;
+}
+
+.delete-subtask {
+    width: 28px;
+    height: 28px;
+    border: none;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 6px;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.5);
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.delete-subtask:hover {
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+}
+
+.btn-add-subtask {
+    padding: 12px 16px;
+    border: 2px dashed rgba(26, 115, 232, 0.3);
+    background: rgba(26, 115, 232, 0.05);
+    color: #1a73e8;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+}
+
+.btn-add-subtask:hover {
+    border-color: #1a73e8;
+    background: rgba(26, 115, 232, 0.1);
+}
+
+/* ============ КОММЕНТАРИИ ============ */
+
+.task-comments-container {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px;
+    margin-bottom: -12px;
+    background: rgba(0, 0, 0, 0.02);
+    border-radius: 8px;
+    min-height: 150px;
+}
+
+.task-comments-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.task-comments-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.task-comments-container::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+}
+
+.task-comments-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.task-comment-item {
+    padding: 12px;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    animation: slideUp 0.2s ease;
+}
+
+.task-comment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+}
+
+.comment-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1a73e8, #1565c0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: 11px;
+    flex-shrink: 0;
+}
+
+.task-comment-author {
+    font-weight: 600;
+    color: #1a202c;
+    font-size: 13px;
+}
+
+.task-comment-time {
+    font-size: 11px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.task-comment-content {
+    font-size: 13px;
+    color: #424242;
+    line-height: 1.5;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    padding: 8px 0;
+}
+
+.comment-input-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 12px;
+    padding: 8px;
+    transition: all 0.2s ease;
+}
+
+.comment-input-box:focus-within {
+    border-color: #1a73e8;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.1);
+}
+
+.task-comment-input {
+    flex: 1;
+    min-height: 40px;
+    max-height: 120px;
+    padding: 8px 12px;
+    align-items: center;
+    border: none;
+    background: none;
+    font-family: inherit;
+    font-size: 14px;
+    color: #1a202c;
+    resize: none;
+    transition: all 0.2s ease;
+    outline: none;
+}
+
+.task-comment-input::-webkit-scrollbar {
+    width: 6px;
+}
+
+.task-comment-input::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.task-comment-input::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+}
+
+.btn-send-comment {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    background: #00394C;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.btn-send-comment:hover {
+    background: #1557b0;
+    transform: scale(1.05);
+}
+
+.btn-send-comment:active {
+    transform: scale(0.95);
+}
+
+/* ============ ПОДВАЛ И ДЕЙСТВИЯ ============ */
+
+.modal-footer {
+    padding: 20px 24px;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    background: rgba(0, 0, 0, 0.02);
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.footer-actions {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-success {
+    padding: 11px 24px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    white-space: nowrap;
+}
+
+.btn-primary {
+    background: #1a73e8;
+    color: white;
+    box-shadow: 0 2px 8px rgba(26, 115, 232, 0.3);
+}
+
+.btn-primary:hover {
+    background: #1565c0;
+    box-shadow: 0 4px 12px rgba(26, 115, 232, 0.4);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: rgba(0, 0, 0, 0.05);
+    color: #1a202c;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.btn-secondary:hover {
+    background: rgba(0, 0, 0, 0.08);
+    border-color: rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.btn-success {
+    background: #4caf50;
+    color: white;
+    border: 1px solid rgba(0,0,0,0.06);
+    box-shadow: 0 2px 8px rgba(76, 175, 80, 0.18);
+    transition: all 0.18s ease;
+}
+
+.btn-success:hover {
+    background: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(76, 175, 80, 0.22);
+}
+
+.btn-success:active {
+    transform: translateY(0);
+}
+
+.btn-success:focus {
+    outline: none;
+    box-shadow: 0 0 0 6px rgba(76, 175, 80, 0.12);
+}
+
+.btn-save {
+    flex: 1;
+}
+
+/* ============ ОБРАБОТКА ОШИБОК ============ */
+
+.error-message {
+    padding: 12px 16px;
+    background: rgba(239, 68, 68, 0.1);
+    color: #dc2626;
+    border-radius: 8px;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* ============ МОДАЛЬНОЕ ОКНО ДОБАВЛЕНИЯ ПОДЗАДАЧИ ============ */
+
+#subtaskModal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
+    z-index: 1100;
+    padding: 20px;
+    box-sizing: border-box;
+    animation: fadeIn 0.3s ease;
+}
+
+.subtask-modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 400px;
+    animation: slideUp 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.subtask-modal-content h3 {
+    margin: 0 0 16px 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #1a202c;
+}
+
+#subtaskInput {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    color: #1a202c;
+    background: rgba(0, 0, 0, 0.02);
+    margin-bottom: 16px;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+#subtaskInput:focus {
+    outline: none;
+    border-color: #1a73e8;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.1);
+}
+
+.subtask-modal-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+}
+
+.subtask-modal-actions .btn-primary,
+.subtask-modal-actions .btn-secondary {
+    flex: 1;
+}
+
+/* ============ АДАПТИВНОСТЬ ============ */
+
+@media (max-width: 768px) {
+    .modal {
+        padding: 12px;
+    }
+
+    .task-modal-content {
+        max-width: 100%;
+        margin: 20px auto;
+        max-height: 95vh;
+        border-radius: 12px;
+    }
+
+    .modal-header {
+        padding: 16px;
+    }
+
+    .task-title-input {
+        font-size: 18px;
+    }
+
+    .modal-body {
+        padding: 16px;
+        gap: 16px;
+    }
+
+    .modal-footer {
+        padding: 16px;
+    }
+
+    .footer-actions {
+        flex-direction: column;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+    }
+
+    .dates-grid,
+    .select-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-tabs {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .modal-tab-btn {
+        padding: 12px 16px;
+        font-size: 13px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .date-inputs-row {
+        flex-direction: column;
+    }
+
+    .subtasks-list {
+        gap: 6px;
+    }
+
+    .subtask-item {
+        padding: 10px;
+    }
+
+    .comment-input-box {
+        padding: 8px;
+        gap: 8px;
+    }
+
+    .btn-send-comment {
+        width: 38px;
+        height: 38px;
+    }
+
+    .task-comment-input {
+        min-height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .task-modal-content {
+        max-height: 96vh;
+    }
+
+    .modal-header {
+        padding: 12px;
+        gap: 12px;
+    }
+
+    .task-title-input {
+        font-size: 16px;
+    }
+
+    .modal-close-btn {
+        width: 32px;
+        height: 32px;
+    }
+
+    .modal-body {
+        padding: 12px;
+        gap: 12px;
+    }
+
+    .section-title {
+        font-size: 13px;
+    }
+
+    .modal-section {
+        gap: 10px;
+    }
+
+    .task-description {
+        min-height: 100px;
+    }
+
+    .modal-tabs {
+        padding: 0 12px;
+    }
+
+    .modal-tab-btn {
+        padding: 10px 12px;
+        font-size: 12px;
+    }
+
+    .task-comment-item {
+        padding: 10px;
+    }
+
+    .comment-input-box {
+        border-radius: 10px;
+        padding: 6px;
+        gap: 6px;
+    }
+
+    .btn-send-comment {
+        width: 36px;
+        height: 36px;
+    }
+
+    .task-comment-input {
+        min-height: 36px;
+        max-height: 100px;
+        font-size: 13px;
+    }
+
+    .modal-footer {
+        padding: 12px;
+        gap: 8px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+}
+
+/* ============ КАСТОМНЫЕ ДИАЛОГОВЫЕ ОКНА ============ */
+
+.custom-dialog {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-dialog.active {
+    display: flex;
+}
+
+.dialog-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    animation: fadeIn 0.2s ease;
+}
+
+.dialog-content {
+    position: relative;
+    width: 90%;
+    max-width: 450px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    animation: slideUp 0.3s ease;
+    overflow: hidden;
+    z-index: 2001;
+}
+
+.dialog-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.dialog-title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #1a202c;
+}
+
+.dialog-close-btn {
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(0, 0, 0, 0.5);
+    transition: all 0.2s ease;
+}
+
+.dialog-close-btn:hover {
+    background: rgba(0, 0, 0, 0.1);
+    color: #000;
+}
+
+.dialog-body {
+    padding: 24px;
+}
+
+.dialog-message {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #424242;
+}
+
+.dialog-label {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1a202c;
+}
+
+.dialog-textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14px;
+    color: #1a202c;
+    background: rgba(0, 0, 0, 0.02);
+    resize: vertical;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+.dialog-textarea:focus {
+    outline: none;
+    border-color: #1a73e8;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.1);
+}
+
+.dialog-footer {
+    display: flex;
+    gap: 12px;
+    padding: 20px 24px;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    background: rgba(0, 0, 0, 0.02);
+}
+
+.dialog-btn {
+    flex: 1;
+    padding: 10px 16px;
+    font-size: 14px;
+}
+
+.btn-danger {
+    background: #dc2626;
+    color: white;
+    border: none;
+}
+
+.btn-danger:hover {
+    background: #b91c1c;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+}
+
+/* ============ ИКОНКИ ДЛЯ КОММЕНТАРИЕВ ============ */
+
+.task-comment-actions {
+    display: flex;
+    gap: 8px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    margin-left: auto;
+}
+
+.task-comment-item:hover .task-comment-actions {
+    opacity: 1;
+}
+
+.task-comment-action-btn {
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(0, 0, 0, 0.5);
+    transition: all 0.2s ease;
+}
+
+.task-comment-action-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+.task-comment-action-btn.edit-btn:hover {
+    background: rgba(26, 115, 232, 0.1);
+    color: #1a73e8;
+}
+
+.task-comment-action-btn.delete-btn:hover {
+    background: rgba(239, 68, 68, 0.1);
+    color: #dc2626;
+}
+
+/* Адаптив для мобильных */
+@media (max-width: 768px) {
+    .task-comment-actions {
+        opacity: 1;
+    }
+    
+    .dialog-content {
+        width: 95%;
+        margin: 0 auto;
+    }
+    
+    .dialog-header {
+        padding: 16px 20px;
+    }
+    
+    .dialog-body {
+        padding: 20px;
+    }
+    
+    .dialog-footer {
+        padding: 16px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .dialog-title {
+        font-size: 16px;
+    }
+    
+    .dialog-message {
+        font-size: 14px;
+    }
+    
+    .dialog-textarea {
+        min-height: 100px;
+    }
+}
