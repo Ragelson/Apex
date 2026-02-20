@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Подбор психолога | Скоро запуск</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      color: #00394C;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: linear-gradient(135deg, #e6f7ff 0%, #f0f9ff 100%);
+    }
+
+    /* Видеофон */
+    .video-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+      overflow: hidden;
+    }
+
+    .video-background {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: cover;
+      opacity: 0.7;
+    }
+
+    .video-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      background-color: rgba(255, 255, 255, 0.6);
+    }
+
+    /* Скрытие на мобильных устройствах */
+    @media (max-width: 768px) {
+      .video-container {
+        display: none;
+      }
+
+      .video-overlay {
+        display: none;
+      }
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem 0;
+    }
+
+    .logo {
+      width: 100%;
+      max-width: 290px;
+      height: auto;
+      margin-bottom: 1.5rem;
+    }
+
+    .coming-soon-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #00394C;
+      line-height: 1.2;
+    }
+
+    .coming-soon-subtitle {
+      font-size: 1.3rem;
+      margin-bottom: 1.5rem;
+      color: #00394C;
+      max-width: 600px;
+      line-height: 1.5;
+    }
+
+    .features {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .feature {
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 12px;
+      padding: 1.5rem;
+      width: 180px;
+      box-shadow: 0 4px 12px rgba(0, 57, 76, 0.1);
+    }
+
+    .feature-icon {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .feature-title {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .countdown-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 12px;
+      padding: 1rem;
+      min-width: 80px;
+      box-shadow: 0 4px 12px rgba(0, 57, 76, 0.1);
+    }
+
+    .countdown-value {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #00394C;
+    }
+
+    .countdown-label {
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .email-form {
+      width: 100%;
+      max-width: 500px;
+      margin-bottom: 2rem;
+    }
+
+    .email-input {
+      width: 100%;
+      padding: 0.8rem;
+      border: 2px solid #00394C;
+      border-radius: 12px;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      font-family: 'Inter', sans-serif;
+      box-sizing: border-box;
+      transition: all 0.3s ease;
+    }
+
+    .email-input:focus {
+      outline: none;
+      border-color: #0077B6;
+      box-shadow: 0 0 0 3px rgba(0, 119, 182, 0.2);
+    }
+
+    .submit-btn {
+      width: 100%;
+      background-color: #0077B6;
+      color: white;
+      border: none;
+      padding: 0.8rem;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 119, 182, 0.3);
+      background-color: #005A87;
+    }
+
+    .contact-title {
+      font-size: 1.3rem;
+      margin-bottom: 1.2rem;
+      color: #00394C;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .social-link img {
+      width: 40px;
+      height: 40px;
+      transition: transform 0.3s ease;
+    }
+
+    .social-link:hover img {
+      transform: translateY(-5px);
+    }
+
+    /* Мобильная адаптация */
+    @media (max-width: 768px) {
+      .container {
+        padding: 1.5rem 0;
+      }
+
+      .logo {
+        max-width: 220px;
+        margin-bottom: 1rem;
+      }
+
+      .coming-soon-title {
+        font-size: 1.8rem;
+        margin-bottom: 0.8rem;
+      }
+
+      .coming-soon-subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 1.2rem;
+      }
+
+      .features {
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .feature {
+        width: 140px;
+        padding: 1rem;
+      }
+
+      .feature-icon {
+        font-size: 2rem;
+      }
+
+      .countdown {
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .countdown-item {
+        min-width: 60px;
+        padding: 0.8rem;
+      }
+
+      .countdown-value {
+        font-size: 1.5rem;
+      }
+
+      .countdown-label {
+        font-size: 0.7rem;
+      }
+
+      .email-form {
+        margin-bottom: 1.5rem;
+      }
+
+      .email-input,
+      .submit-btn {
+        padding: 0.7rem;
+      }
+
+      .contact-title {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+      }
+
+      .social-link img {
+        width: 35px;
+        height: 35px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .coming-soon-title {
+        font-size: 1.5rem;
+      }
+
+      .features {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .feature {
+        width: 100%;
+        max-width: 250px;
+      }
+
+      .countdown-value {
+        font-size: 1.2rem;
+      }
+
+      .social-links {
+        gap: 0.8rem;
+      }
+
+      .social-link img {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  </style>
+    <!-- Основная favicon -->
+    <link rel="icon" href="assets/planer/Vinc-mini-light.png?v=4" type="image/png">
+    <!-- Для Apple устройств -->
+    <link rel="apple-touch-icon" href="assets/planer/Vinc-mini-light.png?v=4">
+    <!-- Для некоторых браузеров -->
+    <link rel="shortcut icon" href="assets/planer/Vinc-mini-light.png?v=4">
+
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+      m[i].l = 1 * new Date();
+      for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+      k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+    })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=104332712', 'ym');
+
+    ym(104332712, 'init', { ssr: true, webvisor: true, clickmap: true, ecommerce: "dataLayer", accurateTrackBounce: true, trackLinks: true });
+  </script>
+  <noscript>
+    <div><img src="https://mc.yandex.ru/watch/104332712" style="position:absolute; left:-9999px;" alt="" /></div>
+  </noscript>
+  <!-- /Yandex.Metrika counter -->
+</head>
+
+<body>
+  <div class="video-container">
+    <video id="video-bg-1" class="video-background" autoplay muted loop>
+      <source src="assets/video-background.mp4" type="video/mp4">
+    </video>
+    <div class="video-overlay"></div>
+  </div>
+
+  <div class="container">
+    <a href="landing.html" class="logo-link" style="display: contents;">
+      <img class="logo" src="assets/landing/Vinc-main-light.png" alt="Vinc Logo">
+    </a>
+
+    <h1 class="coming-soon-title">Скоро мы запустим этот раздел</h1>
+
+    <p class="coming-soon-subtitle">Где вы сможете найти подходящего специалиста для решения ваших вопросов.
+      <br>Оставьте email, и мы сообщим Вам о запуске!</p>
+
+    <div class="features">
+      <div class="feature">
+        <div class="feature-icon">👥</div>
+        <div class="feature-title">Подбор специалиста</div>
+        <div class="feature-desc">По вашим запросам и предпочтениям</div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🔒</div>
+        <div class="feature-title">Конфиденциально</div>
+        <div class="feature-desc">Ваши данные в безопасности</div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">💬</div>
+        <div class="feature-title">Простое общение</div>
+        <div class="feature-desc">Удобный способ связи с психологом</div>
+      </div>
+    </div>
+
+
+
+    <div class="email-form">
+      <input type="email" class="email-input" placeholder="Ваш email для уведомления о запуске">
+      <button type="submit" class="submit-btn">Уведомить меня о запуске</button>
+    </div>
+
+    <h2 class="contact-title">Свяжитесь с нами</h2>
+
+    <div class="social-links">
+      <a href="https://vk.com/vincere.psychology" class="social-link"><img src="assets/landing/vk-icon.svg"
+          alt="Вконтакте"></a>
+      <a href="https://t.me/+36yqFws00fAyYWIy" class="social-link"><img src="assets/landing/telegram-icon.svg"
+          alt="Telegram"></a>
+      <a href="Vincteam@mail.ru" class="social-link"><img src="assets/landing/email-icon.svg" alt="E-mail"></a>
+      <a href="https://www.youtube.com/channel/UCC_A_tpczf9aT3HHFYgLtYA" class="social-link"><img
+          src="assets/landing/youtube-icon.svg" alt="YouTube"></a>
+      <a href="https://www.instagram.com/vincere.psy?igsh=MWppZjJjZTc3dXo2cg%3D%3D&utm_source=qr"
+        class="social-link"><img src="assets/landing/instagram-icon.svg" alt="Instagram"></a>
+    </div>
+  </div>
+
+  <script>
+    // Обратный отсчет до 25 мая 2025 года
+    function updateCountdown() {
+      const targetDate = new Date('October 15, 2025 00:00:00').getTime();
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      if (distance < 0) {
+        document.getElementById('days').innerText = '00';
+        document.getElementById('hours').innerText = '00';
+        document.getElementById('minutes').innerText = '00';
+        document.getElementById('seconds').innerText = '00';
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById('days').innerText = days.toString().padStart(2, '0');
+      document.getElementById('hours').innerText = hours.toString().padStart(2, '0');
+      document.getElementById('minutes').innerText = minutes.toString().padStart(2, '0');
+      document.getElementById('seconds').innerText = seconds.toString().padStart(2, '0');
+    }
+
+    // Обновляем счетчик каждую секунду
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // Обработка формы подписки
+    document.querySelector('.submit-btn').addEventListener('click', function () {
+      const email = document.querySelector('.email-input').value;
+      if (email && email.includes('@')) {
+        alert('Спасибо за интерес к нашему сервису! Мы сообщим вам о запуске подбора психологов.');
+        document.querySelector('.email-input').value = '';
+      } else {
+        alert('Пожалуйста, введите корректный email адрес.');
+      }
+    });
+
+    // Обработка нажатия Enter в поле email
+    document.querySelector('.email-input').addEventListener('keypress', function (e) {
+      if (e.key === 'Enter') {
+        document.querySelector('.submit-btn').click();
+      }
+    });
+  </script>
+</body>
+<script src="scripts/landing/videobackground.js?v=20250930"></script>
+
+</html>

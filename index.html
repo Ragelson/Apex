@@ -1,0 +1,1059 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/planer/subscribe.css?v=20260219">
+    <link rel="stylesheet" href="styles/chat-poput.css?v=20260219">
+    <link rel="stylesheet" href="styles/planer/auth.css?v=20260219">
+    <link rel="stylesheet" href="styles/planer/base.css?v=20260219">
+    <link rel="stylesheet" href="styles/planer/calendar.css?v=20260219">
+    <link rel="stylesheet" href="styles/planer/confirm.css?v=20260219">
+    <link rel="stylesheet" href="styles/planer/tasks.css?v=20260219">
+    <link rel="stylesheet" href="styles/planer/right-menu.css?v=20260219">
+    <link rel="stylesheet" href="styles/planer/taskModal.css?v=20260219">
+    <link rel="stylesheet" href="styles/planer/toolbar.css?v=20260219">
+    <link rel="stylesheet" href="styles/planer/profile.css?v=20260219">
+    <link rel="stylesheet" href="styles/planer/victories.css?v=20260219">
+    <link rel="stylesheet" href="styles/planer/notes.css?v=20260219">
+    <link rel="stylesheet" href="styles/planer/chat.css?v=20260219">
+    <link rel="stylesheet" href="styles/planer/info.css?v=20260219">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Основная favicon -->
+    <link rel="icon" href="assets/planer/Vinc-mini-light.png?v=4" type="image/png">
+    <!-- Для Apple устройств -->
+    <link rel="apple-touch-icon" href="assets/planer/Vinc-mini-light.png?v=4">
+    <!-- Для некоторых браузеров -->
+    <link rel="shortcut icon" href="assets/planer/Vinc-mini-light.png?v=4">
+    <title>Планер Vinc</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+
+    <title>Планер Vinc</title>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+            m[i].l = 1 * new Date();
+            for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=104332712', 'ym');
+
+        ym(104332712, 'init', { ssr: true, webvisor: true, clickmap: true, ecommerce: "dataLayer", accurateTrackBounce: true, trackLinks: true });
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/104332712" style="position:absolute; left:-9999px;" alt="" /></div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Боковой тул-бар -->
+        <nav class="toolbar" id="primary-navigation">
+            <div class="toolbar-section desktop-only">
+                <!-- Логотип вверху тул-бара -->
+                <a href="landing.html" class="logo-link" id="home-link">
+                    <img class="logo" src="assets/planer/Vinс-tool.png" alt="Vinc Logo">
+                    <img class="logo-dark" src="assets/planer/Vinc-mini-dark.png" alt="Vinc Logo Dark">
+                </a>
+
+                <!-- Верхние иконки -->
+                <div class="toolbar-icon toolbar-icon--spheres active" title="Сферы">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path
+                            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                        </path>
+                    </svg>
+                </div>
+                <div class="toolbar-icon toolbar-icon--calendar" title="Календарь">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                </div>
+                <div class="toolbar-icon toolbar-icon--victories" title="Мои победы">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+                        <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+                        <path d="M4 22h16"></path>
+                        <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path>
+                        <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
+                        <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path>
+                    </svg>
+                </div>
+                <div class="toolbar-icon toolbar-icon--notes" title="Заметки">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>
+                </div>
+                <div class="toolbar-icon toolbar-icon--chat" title="Чат">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                </div>
+
+            </div>
+
+
+            <div class="toolbar-section desktop-only">
+                <!-- Нижние иконки -->
+                <div class="toolbar-icon toolbar-icon--choose" title="Выбрать психолога">
+                    <a href="chooser.html" style="display: flex; justify-content: center; align-items: center;">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="8.5" cy="7" r="4"></circle>
+                            <line x1="20" y1="8" x2="20" y2="14"></line>
+                            <line x1="23" y1="11" x2="17" y2="11"></line>
+                        </svg>
+                    </a>
+                </div>
+                <div class="toolbar-icon toolbar-icon--settings settings-btn" title="Настройки профиля">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path
+                            d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                        </path>
+                    </svg>
+                </div>
+                <div class="toolbar-icon toolbar-icon--info" title="Информация">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="16" x2="12" y2="12"></line>
+                        <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="toolbar-section toolbar-section--mobile mobile-only">
+                <div class="toolbar-icon toolbar-icon--victories" title="Мои победы">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+                        <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+                        <path d="M4 22h16"></path>
+                        <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path>
+                        <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
+                        <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path>
+                    </svg>
+                </div>
+                <div class="toolbar-icon toolbar-icon--notes" title="Заметки">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>
+                </div>
+                <!--<div class="toolbar-icon toolbar-icon--chat" title="Чат">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>
+                </div>
+            -->
+                <div class="toolbar-icon toolbar-icon--spheres active highlighted" title="Сферы">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path
+                            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                        </path>
+                    </svg>
+                </div>
+
+                <!-- <div class="toolbar-icon toolbar-icon--info" title="Информация">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="16" x2="12" y2="12"></line>
+                        <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                    </svg>
+                </div>-->
+                <div class="toolbar-icon toolbar-icon--choose" title="Выбрать психолога">
+                    <a href="chooser.html" class="mobile-toolbar-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="8.5" cy="7" r="4"></circle>
+                            <line x1="20" y1="8" x2="20" y2="14"></line>
+                            <line x1="23" y1="11" x2="17" y2="11"></line>
+                        </svg>
+                    </a>
+                </div>
+                <div class="toolbar-icon toolbar-icon--calendar" title="Календарь">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                </div>
+            </div>
+        </nav>
+
+        <div class="mobile-menu-overlay" aria-hidden="true"></div>
+        <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+            <div class="mobile-drawer-content"></div>
+        </div>
+
+        <!-- Основная часть с хедером и контентом -->
+        <div class="content-area">
+            <header>
+                <div class="header-section">
+                    <button class="mobile-menu-toggle" type="button" aria-label="Toggle navigation"
+                        aria-controls="mobile-drawer" aria-expanded="false">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+
+                    <a href="landing.html" class="header-logo-link" aria-label="Vincere">
+                        <img class="header-logo header-logo-light" src="assets/planer/Vinc-main-light.png"
+                            alt="Vinc Logo">
+                    </a>
+
+                    <!-- Иконка информации ПЕРЕМЕЩЕНА СЮДА -->
+                    <div class="mobile-info-icon mobile-only" title="Информация">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="16" x2="12" y2="12"></line>
+                            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                        </svg>
+                    </div>
+
+                    <div class="header-title-container">
+                        <div class="header-title">Загрузка...</div>
+                        <div class="breadcrumbs">
+                            <div class="breadcrumb-separator">›</div>
+                            <div class="breadcrumb-item"></div>
+                        </div>
+                    </div>
+                    <div class="search-notification-group">
+                        <!--<div class="search-container">
+                            <input type="text" class="search-input" placeholder="Поиск...">
+                            <button class="search-button" style="margin-right:40px ;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                </svg>
+                            </button>
+                        </div>-->
+                        <div class="header-actions">
+                            <div class="auth-dropdown">
+                                <button class="auth-btn">
+                                    <div class="profile-avatar">Г</div>
+                                </button>
+                                <div class="auth-dropdown-content">
+                                    <div class="auth-dropdown-header">
+                                        <div class="dropdown-avatar">Г</div>
+                                        <div class="dropdown-user-info">
+                                            <div class="dropdown-username">Гость</div>
+                                            <div class="dropdown-email">Не авторизован</div>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="auth-dropdown-item profile-settings-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <circle cx="12" cy="12" r="3"></circle>
+                                            <path
+                                                d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                                            </path>
+                                        </svg>
+                                        <span>Настройки профиля</span>
+                                    </a>
+                                    <!-- Кнопка выхода из профиля -->
+                                    <a href="#" class="auth-dropdown-item logout-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                                            <polyline points="16 17 21 12 16 7"></polyline>
+                                            <line x1="21" y1="12" x2="9" y2="12"></line>
+                                        </svg>
+                                        <span>Выйти</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <nav class="mobile-breadcrumbs"></nav>
+            <main>
+                <div class="page-container">
+                    <!-- Правое меню -->
+                    <aside class="right-menu">
+                        <div class="menu-section">
+                            <div class="categories-container">
+                                <!-- Сферы будут добавляться через JS -->
+                            </div>
+                        </div>
+
+                    </aside>
+
+                    <!-- Основное содержимое -->
+                    <div class="content">
+                        <div class="home-content" id="home-content">
+                            <img class="main-logo main-logo-light" src="assets/planer/Vinc-main-light.png"
+                                alt="Vinc Logo">
+                            <p class="main-slogan">планер твоих побед</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Модальное окно добавления задачи -->
+    <div id="taskModal" class="modal">
+        <div class="task-modal-content">
+            <!-- Заголовок -->
+            <div class="modal-header">
+                <div class="modal-title-section">
+                    <input type="text" id="taskTitleInput" class="task-title-input" placeholder="Название задачи">
+                </div>
+                <button id="closeModalBtn" class="modal-close-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Вкладки навигации -->
+            <div class="modal-tabs">
+                <button class="modal-tab-btn active" data-tab="main">Основное</button>
+                <button class="modal-tab-btn" data-tab="checklists">Чек-листы</button>
+                <button class="modal-tab-btn disabled" data-tab="updates" disabled aria-disabled="true" title="Временно недоступно">Временно недоступно</button>
+            </div>
+
+            <!-- Основное содержимое -->
+            <div class="modal-tabs-content">
+                <!-- Вкладка Основное -->
+                <div class="modal-tab-content active" id="tab-main">
+                    <div class="modal-body">
+                        <!-- Основная информация -->
+                        <div class="modal-section">
+                            <h3 class="section-title">Описание</h3>
+                            <textarea id="taskDescription" class="task-description"
+                                placeholder="Добавить описание задачи..."></textarea>
+                        </div>
+
+                        <!-- Информация о задаче -->
+                        <div class="modal-section">
+                            <h3 class="section-title">Информация</h3>
+                            <div class="info-grid">
+                                <div class="info-item">
+                                    <span class="info-label">Сфера</span>
+                                    <span id="taskSphere" class="info-value">Без категории</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Создана</span>
+                                    <span id="taskCreationDate" class="info-value">—</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Сроки -->
+                        <div class="modal-section">
+                            <h3 class="section-title">Сроки</h3>
+                            <div class="dates-grid">
+                                <div class="date-group">
+                                    <label class="date-label">Начало</label>
+                                    <div class="date-inputs-row">
+                                        <input type="date" id="taskStartDate" class="date-input">
+                                        <input type="time" id="taskStartTime" class="time-input">
+                                    </div>
+                                </div>
+                                <div class="date-group">
+                                    <label class="date-label">Завершение</label>
+                                    <div class="date-inputs-row">
+                                        <input type="date" id="taskDueDate" class="date-input">
+                                        <input type="time" id="taskDueTime" class="time-input">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Вкладка Чек-листы -->
+                <div class="modal-tab-content" id="tab-checklists">
+                    <div class="modal-body">
+                        <div class="modal-section">
+                            <div class="section-header">
+                                <h3 class="section-title">Чек-лист</h3>
+                                <span class="checklist-progress" id="completedSubtasksCount">0/0</span>
+                            </div>
+
+                            <div id="subtasksList" class="subtasks-list">
+                                <!-- Подзадачи будут добавляться здесь -->
+                            </div>
+
+                            <button id="addSubtaskBtn" class="btn-add-subtask">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                </svg>
+                                Добавить подзадачу
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Вкладка Обновления -->
+                <div class="modal-tab-content" id="tab-updates">
+                    <div class="modal-body">
+                        <div class="modal-section full-height">
+                            <h3 class="section-title">История и комментарии</h3>
+                            <div class="task-comments-container">
+                                <div id="taskCommentsList" class="task-comments-list">
+                                 <!--  Комментарии будут добавляться здесь  -->
+                                </div>
+                            </div>
+                            <div class="comment-input-box">
+                                <textarea id="taskCommentInput" class="task-comment-input" 
+                                    placeholder="Добавить комментарий..."></textarea>
+                                <button id="sendCommentBtn" class="btn-send-comment">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Подвал с действиями -->
+            <div class="modal-footer">
+                <div class="footer-actions">
+                    <button id="completeTaskBtn" class="btn-secondary">
+                        <span id="completeTaskBtnText">✓ Отметить как выполненную</span>
+                    </button>
+                    <button id="saveTaskBtn" class="btn-primary btn-save">Сохранить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно подзадачи -->
+    <div id="subtaskModal" class="modal">
+        <div class="subtask-modal-content">
+            <h3>Добавить подзадачу</h3>
+            <input type="text" id="subtaskInput" placeholder="Текст подзадачи">
+            <div class="subtask-modal-actions">
+                <button id="saveSubtaskBtn" class="btn-primary">Добавить</button>
+                <button id="cancelSubtaskBtn" class="btn-secondary">Отмена</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно загрузки изображения -->
+    <div id="imageUploadModal" class="modal">
+        <div class="upload-modal-content">
+            <h3>Прикрепить изображение</h3>
+            <div class="upload-area" id="uploadArea">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7"></path>
+                    <line x1="16" y1="5" x2="22" y2="5"></line>
+                    <line x1="19" y1="2" x2="19" y2="8"></line>
+                    <circle cx="9" cy="9" r="2"></circle>
+                    <path d="M21 15l-3.086-3.086a2 2 0 0 0-2.828 0L6 21"></path>
+                </svg>
+                <p>Перетащите изображение сюда или кликните для выбора</p>
+                <input type="file" id="imageInput" accept="image/*" style="display: none;">
+            </div>
+            <div class="preview-container" id="imagePreviewContainer" style="display: none;">
+                <img id="imagePreview" src="#" alt="Предпросмотр" class="image-preview">
+                <button id="removeImageBtn" class="btn-icon remove-image-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="upload-modal-actions">
+                <button id="cancelUploadBtn" class="btn-secondary">Отмена</button>
+                <button id="confirmUploadBtn" class="btn-primary">Прикрепить</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно добавления задачи для календаря -->
+    <div id="calendarTaskModal" class="modal">
+        <div class="task-modal-content">
+            <!-- Заголовок -->
+            <div class="modal-header">
+                <div class="modal-title-section">
+                    <input type="text" id="calendarTaskTitle" class="task-title-input" placeholder="Название задачи">
+                </div>
+                <button id="closeCalendarTaskBtn" class="modal-close-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Основной контент -->
+            <div class="modal-body">
+                <!-- Описание -->
+                <div class="modal-section">
+                    <h3 class="section-title">Описание</h3>
+                    <textarea id="calendarTaskDescription" class="task-description"
+                        placeholder="Описание задачи (опционально)"></textarea>
+                </div>
+
+                <!-- Сроки -->
+                <div class="modal-section">
+                    <h3 class="section-title">Сроки</h3>
+                    <div class="dates-grid">
+                        <div class="date-group">
+                            <label class="date-label">Начало</label>
+                            <div class="date-inputs-row">
+                                <input type="date" id="calendarStartDate" class="date-input">
+                                <input type="time" id="calendarStartTime" class="time-input">
+                            </div>
+                        </div>
+                        <div class="date-group">
+                            <label class="date-label">Завершение</label>
+                            <div class="date-inputs-row">
+                                <input type="date" id="calendarDueDate" class="date-input">
+                                <input type="time" id="calendarDueTime" class="time-input">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Категория и статус -->
+                <div class="modal-section">
+                    <h3 class="section-title">Классификация</h3>
+                    <div class="select-grid">
+                        <div class="select-item">
+                            <label class="select-label">Сфера</label>
+                            <select id="calendarTaskSphere" class="form-select">
+                                <option value="all">Выберите сферу...</option>
+                                <!-- Опции будут добавлены динамически -->
+                            </select>
+                        </div>
+                        <div class="select-item">
+                            <label class="select-label">Статус</label>
+                            <select id="calendarTaskStatus" class="form-select">
+                                <option value="">Выберите статус...</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="calendarError" class="error-message" style="display: none;"></div>
+            </div>
+
+            <!-- Подвал с действиями -->
+            <div class="modal-footer">
+                <div class="footer-actions">
+                    <button id="saveCalendarTaskBtn" class="btn-primary btn-save">Создать задачу</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Диалоговое окно подтверждения -->
+    <div id="confirmDialog" class="custom-dialog confirm-dialog">
+        <div class="dialog-backdrop"></div>
+        <div class="dialog-content">
+            <div class="dialog-header">
+                <h2 id="confirmDialogTitle" class="dialog-title">Подтверждение</h2>
+                <button class="dialog-close-btn" onclick="TaskModalManager.closeConfirmDialog()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="dialog-body">
+                <p id="confirmDialogMessage" class="dialog-message">Вы уверены?</p>
+            </div>
+            <div class="dialog-footer">
+                <button id="confirmDialogCancelBtn" class="btn-secondary dialog-btn">Отмена</button>
+                <button id="confirmDialogConfirmBtn" class="btn-danger dialog-btn">Удалить</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Диалоговое окно редактирования -->
+    <div id="editDialog" class="custom-dialog edit-dialog">
+        <div class="dialog-backdrop"></div>
+        <div class="dialog-content">
+            <div class="dialog-header">
+                <h2 id="editDialogTitle" class="dialog-title">Редактировать</h2>
+                <button class="dialog-close-btn" onclick="TaskModalManager.closeEditDialog()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="dialog-body">
+                <label id="editDialogLabel" class="dialog-label">Отредактируйте текст:</label>
+                <textarea id="editDialogInput" class="dialog-textarea" placeholder="Введите текст…"></textarea>
+            </div>
+            <div class="dialog-footer">
+                <button id="editDialogCancelBtn" class="btn-secondary dialog-btn">Отмена</button>
+                <button id="editDialogSaveBtn" class="btn-primary dialog-btn">Сохранить</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Кнопка Telegram -->
+    <a href="https://t.me/VincereSupportBot" class="telegram-btn" target="_blank" aria-label="Telegram поддержки">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 
+    12-12-5.373-12-12-12zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508
+    l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054
+    5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658
+    -.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.941z" />
+        </svg>
+    </a>
+
+    <!-- Addons -->
+    <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/stompjs@2.3.3/lib/stomp.min.js"></script>
+
+    <script src="scripts/paymentService.js?v=20250926" defer></script>
+
+    <!-- DTO -->
+    <script src="scripts/planer/DTO/Sphere.js?v=20260219" defer></script>
+    <script src="scripts/planer/DTO/Status.js?v=20260219" defer></script>
+    <script src="scripts/planer/DTO/Task.js?v=20260219" defer></script>
+    <script src="scripts/planer/DTO/SubTask.js?v=20260219" defer></script>
+    <script src="scripts/planer/DTO/Note.js?v=20260219" defer></script>
+    <script src="scripts/planer/DTO/VictoryCategory.js?v=20260219" defer></script>
+    <script src="scripts/planer/DTO/Victory.js?v=20260219" defer></script>
+    <script src="scripts/planer/DTO/User.js?v=20260219" defer></script>
+    <script src="scripts/planer/DTO/Chat.js?v=20260219" defer></script>
+    <script src="scripts/planer/DTO/Message.js?v=20260219" defer></script>
+    <script src="scripts/planer/DTO/TaskComment.js?v=20260219" defer></script>
+
+    <!-- Main Scripts -->
+    <script src="scripts/utils.js?v=20250919" defer></script>
+    <script src="scripts/planer/chat-poput.js?v=20260219" defer></script>
+    <script src="scripts/planer/taskModal.js?v=20260219" defer></script>
+    <script src="scripts/planer/todayTasks.js?v=20260219" defer></script>
+    <script src="scripts/planer/calendarModal.js?v=20260219" defer></script>
+    <script src="scripts/planer/sphere.js?v=20260219" defer></script>
+    <script src="scripts/planer/taskboard.js?v=20260219" defer></script>
+    <script src="scripts/planer/calendar.js?v=20260219" defer></script>
+    <script src="scripts/planer/victories.js?v=20260219" defer></script>
+    <script src="scripts/planer/notes.js?v=20260219" defer></script>
+    <script src="scripts/planer/chats.js?v=20260219" defer></script>
+    <script src="scripts/planer/profile.js?v=20260219" defer></script>
+    <script src="scripts/planer/info.js?v=20260219" defer></script>
+    <script src="scripts/planer/home.js?v=20260219" defer></script>
+  <script src="scripts/apiService.js?v=20260219"></script>
+
+    <script>
+
+
+        // Общий обработчик для всех иконок тулбара
+        const toolbarIcons = document.querySelectorAll('.toolbar-icon');
+        toolbarIcons.forEach(icon => {
+            icon.addEventListener('click', function (e) {
+                // Синхронизируем состояние со всеми копиями иконок
+                const title = this.getAttribute('title');
+                toolbarIcons.forEach(el => el.classList.remove('active', 'highlighted'));
+                if (title) {
+                    document.querySelectorAll(`.toolbar-icon[title="${title}"]`).forEach(el => el.classList.add('active', 'highlighted'));
+                } else {
+                    this.classList.add('active', 'highlighted');
+                }
+                switch (title) {
+                    case 'Сферы': {
+                        const sid = (Sphere.current && Sphere.current.id)
+                            || (Sphere.all && Sphere.all[0] && Sphere.all[0].id)
+                            || null;
+                        setHash("sphere", sid);
+                        break;
+                    }
+                    case 'Календарь':
+                        setHash("calendar");
+                        break;
+                    case 'Мои победы':
+                        setHash("victories");
+                        break;
+                    case 'Заметки':
+                        setHash("notes");
+                        break;
+                    case 'Чат':
+                        setHash("chats");
+                        break;
+                    case 'Информация':
+                        setHash("info");
+                        break;
+                }
+
+                const chatList = document.querySelector('.chat-list-container');
+                if (chatList) {
+                    chatList.style.display = 'none';
+                }
+            });
+        });
+        window.addEventListener('hashchange', renderRoute);
+
+        //Инициализация менеджеров
+        document.addEventListener('DOMContentLoaded', async function () {
+            try {
+                await User.fetchUserData();
+            }
+            catch (error) {
+                window.location.href = "/landing.html";
+            }
+            const subStatus = await PaymentService.getSubscriptionStatus();
+            if (!subStatus || !subStatus.active) {
+                window.location.href = "/landing.html#pricingCards";
+            }
+            updateAuthUI({
+                username: User.instance.fullName,
+                email: User.instance.email
+            })
+            const profileSettingsBtn = document.querySelector('.logout-btn');
+            profileSettingsBtn.addEventListener('click', async function (e) {
+                e.preventDefault();
+                try {
+                    await apiPost('/v1/auth/logout', {});
+                    User.instance = null;
+                    window.location.reload();
+                } catch (error) {
+                    alert('Ошибка при выходе: ' + error.message);
+                }
+            });
+            await preloadAllDataFast({ concurrency: 6 });
+            window.dayCycleManager = new DayCycleManager();
+            await sphereManager.init();
+            TaskModalManager.init();
+            window.notesManager = new window.NotesManager();
+            await window.notesManager.init();
+            window.victoriesManager = new window.VictoriesManager();
+            await window.victoriesManager.init();
+            window.chatManager = new ChatManager();
+            await window.chatManager.initChats();
+            renderRoute();
+        });
+
+        function updateAuthUI({ username, email }) {
+            const avatar = username[0].toUpperCase();
+            document.querySelector('.profile-avatar').textContent = avatar;
+            document.querySelector('.dropdown-avatar').textContent = avatar;
+            document.querySelector('.dropdown-username').textContent = username;
+            document.querySelector('.dropdown-email').textContent = email;
+        }
+
+        function renderRoute() {
+            const [category, id] = parseHash();
+            const hasVisited = localStorage.getItem("hasVisited");
+            if (!hasVisited || hasVisited != "true") {
+                loadInfoPage();
+                const instructionContainer = document.querySelector('.instruction');
+                if (instructionContainer) {
+                    instructionContainer.scrollIntoView({ behavior: 'auto', block: 'center' });
+                }
+                localStorage.setItem("hasVisited", "true");
+                return;
+            }
+
+            // 1) Подсветка активной иконки
+            document.querySelectorAll('.toolbar-icon').forEach(el => el.classList.remove('active', 'highlighted'));
+            const titleMap = {
+                'calendar': 'Календарь',
+                'victories': 'Мои победы',
+                'notes': 'Заметки',
+                'chats': 'Чат',
+                'sphere': 'Сферы',
+                'info': 'Информация',
+                null: 'Сферы'
+            };
+            const activeTitle = titleMap[category] || 'Сферы';
+            document.querySelectorAll(`.toolbar-icon[title="${activeTitle}"]`).forEach(el => el.classList.add('active', 'highlighted'));
+
+            // Подсветка мобильной иконки информации при активной странице информации
+            if (category === 'info') {
+                const mobileInfoIcon = document.querySelector('.mobile-info-icon');
+                if (mobileInfoIcon) {
+                    mobileInfoIcon.style.borderColor = '#2FD1C5';
+                    mobileInfoIcon.style.backgroundColor = '#e6f2ff';
+                }
+            } else {
+                const mobileInfoIcon = document.querySelector('.mobile-info-icon');
+                if (mobileInfoIcon) {
+                    mobileInfoIcon.style.borderColor = '#00394C';
+                    mobileInfoIcon.style.backgroundColor = '#ffffff';
+                }
+            }
+
+            // 2) Если уходим с чатов — корректно демонтируем их
+            if (category !== 'chats' && document.querySelector('.chat-container')) {
+                try { window.chatManager.resetChatState(); } catch (e) { console.warn('chat reset failed', e); }
+            }
+
+            // 3) Монтируем целевой экран
+            switch (category) {
+                case 'calendar':
+                    window.calendarManager = new CalendarManager();
+                    break;
+                case 'victories':
+                    window.victoriesManager.renderPage(id);
+                    break;
+                case 'notes':
+                    window.notesManager.show();
+                    break;
+                case 'chats':
+                    window.chatManager.loadChatPage();
+                    break;
+                case 'info':
+                    loadInfoPage();
+                    break;
+                case 'sphere':
+                default:
+                    const newSphere = (id && Sphere.getById(id)) || Sphere.all[0];
+                    sphereManager.setCurrentSphere(newSphere);
+                    break;
+            }
+        }
+
+
+        // Утилита: ограничение параллелизма
+        async function withConcurrencyLimit(items, limit, worker) {
+            const queue = [...items];
+            const running = new Set();
+
+            async function runNext() {
+                if (queue.length === 0) return;
+                const item = queue.shift();
+                const p = (async () => worker(item))().finally(() => running.delete(p));
+                running.add(p);
+                if (running.size >= limit) {
+                    await Promise.race(running);
+                }
+                return runNext();
+            }
+
+            // запустим до limit параллельных "потоков"
+            const starters = Array.from({ length: Math.min(limit, items.length) }, () => runNext());
+            await Promise.all([...starters, ...running]);
+        }
+
+        async function preloadAllDataFast({ force = false, concurrency = 4 } = {}) {
+            await Sphere.fetchAll();
+            const spheres = Array.isArray(Sphere.all) ? Sphere.all : [];
+
+            // 2) Статусы по всем сферам
+            await withConcurrencyLimit(
+                spheres.filter(s => force || Status.getBySphereId(s.id).length === 0),
+                concurrency,
+                (s) => Status.fetchAll(s.id)
+            );
+
+            // 3) Задачи по всем сферам
+            await withConcurrencyLimit(
+                spheres.filter(s => force || Task.getBySphereId(s.id).length === 0),
+                concurrency,
+                (s) => Task.fetchAllBySphereId(s.id)
+            );
+
+            // 4) Подзадачи по всем задачам всех сфер
+            const allTasks = spheres.flatMap(s => Task.getBySphereId(s.id));
+            await withConcurrencyLimit(
+                allTasks.filter(t => force || SubTask.getByTaskId(t.id).length === 0),
+                concurrency,
+                (t) => SubTask.fetchAllByTaskId(t.id)
+            );
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            function updateTelegramBtnVisibility() {
+                const btn = document.querySelector('.telegram-btn');
+                const hash = window.location.hash.replace('#', '');
+                if (!btn) return;
+                if (hash.startsWith('chat') || hash.startsWith('calendar')) {
+                    btn.style.display = 'none';
+                } else {
+                    btn.style.display = '';
+                }
+            }
+            window.addEventListener('hashchange', updateTelegramBtnVisibility);
+            updateTelegramBtnVisibility();
+
+            const menuToggle = document.querySelector('.mobile-menu-toggle');
+            const mobileDrawer = document.querySelector('.mobile-drawer');
+            const overlay = document.querySelector('.mobile-menu-overlay');
+
+            if (menuToggle && mobileDrawer && overlay) {
+                const closeMenu = () => {
+                    document.body.classList.remove('menu-open');
+                    menuToggle.classList.remove('is-active');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                    overlay.setAttribute('aria-hidden', 'true');
+                    mobileDrawer.setAttribute('aria-hidden', 'true');
+                };
+
+                const openMenu = () => {
+                    document.body.classList.add('menu-open');
+                    menuToggle.classList.add('is-active');
+                    menuToggle.setAttribute('aria-expanded', 'true');
+                    overlay.setAttribute('aria-hidden', 'false');
+                    mobileDrawer.setAttribute('aria-hidden', 'false');
+                };
+
+                menuToggle.addEventListener('click', () => {
+                    if (document.body.classList.contains('menu-open')) {
+                        closeMenu();
+                    } else {
+                        openMenu();
+                    }
+                });
+
+                overlay.addEventListener('click', closeMenu);
+
+                mobileDrawer.addEventListener('click', (event) => {
+                    const interactiveElement = event.target.closest('a, button');
+                    const insideDrawerContent = event.target.closest('.mobile-drawer-content');
+                    if (interactiveElement && !insideDrawerContent) {
+                        closeMenu();
+                    }
+                });
+
+                window.addEventListener('resize', () => {
+                    if (window.innerWidth > 768) {
+                        closeMenu();
+                    }
+                });
+
+                document.addEventListener('keydown', (event) => {
+                    if (event.key === 'Escape' && document.body.classList.contains('menu-open')) {
+                        closeMenu();
+                    }
+                });
+            }
+
+            const rightMenu = document.querySelector('.right-menu');
+            const mobileDrawerContent = document.querySelector('.mobile-drawer-content');
+            if (rightMenu && mobileDrawerContent) {
+                const originalParent = rightMenu.parentElement;
+                const originalNextSibling = rightMenu.nextSibling;
+                const placeholder = document.createComment('right-menu-placeholder');
+
+                if (originalParent) {
+                    originalParent.insertBefore(placeholder, originalNextSibling);
+                }
+
+                const relocateRightMenu = (moveToMobile) => {
+                    if (moveToMobile) {
+                        mobileDrawerContent.appendChild(rightMenu);
+                        if (!document.body.classList.contains('menu-open') && mobileDrawer) {
+                            mobileDrawer.setAttribute('aria-hidden', 'true');
+                        }
+                    } else if (placeholder.parentNode) {
+                        placeholder.parentNode.insertBefore(rightMenu, placeholder);
+                        document.body.classList.remove('menu-open');
+                        if (menuToggle) {
+                            menuToggle.classList.remove('is-active');
+                            menuToggle.setAttribute('aria-expanded', 'false');
+                        }
+                        if (overlay) {
+                            overlay.setAttribute('aria-hidden', 'true');
+                        }
+                        if (mobileDrawer) {
+                            mobileDrawer.setAttribute('aria-hidden', 'true');
+                        }
+                    }
+                };
+
+                const rightMenuBreakpoint = window.matchMedia('(max-width: 768px)');
+                relocateRightMenu(rightMenuBreakpoint.matches);
+                rightMenuBreakpoint.addEventListener('change', (event) => {
+                    relocateRightMenu(event.matches);
+                });
+            }
+        });
+        document.addEventListener('DOMContentLoaded', function () {
+            // Обработчик для мобильной иконки информации
+            const mobileInfoIcon = document.querySelector('.mobile-info-icon');
+            if (mobileInfoIcon) {
+                mobileInfoIcon.addEventListener('click', function () {
+                    setHash("info");
+
+                    // Синхронизация состояния с другими иконками информации
+                    document.querySelectorAll('.toolbar-icon[title="Информация"]').forEach(icon => {
+                        icon.classList.add('active', 'highlighted');
+                    });
+
+                    // Скрытие других иконок
+                    document.querySelectorAll('.toolbar-icon').forEach(icon => {
+                        if (icon.getAttribute('title') !== 'Информация') {
+                            icon.classList.remove('active', 'highlighted');
+                        }
+                    });
+                });
+            }
+        })
+
+        function updateMobileBreadcrumbs() {
+            const [category, id] = parseHash();
+            const nav = document.querySelector('.mobile-breadcrumbs');
+            if (!nav) return;
+
+            // Показываем только на странице сфер и только название сферы
+            if (category === 'sphere' && id) {
+                const sphere = Sphere.getById(id);
+                nav.style.display = 'flex';
+                nav.innerHTML = sphere ? `<span class="breadcrumb-item">${sphere.name}</span>` : '';
+            } else {
+                nav.style.display = 'none';
+                nav.innerHTML = '';
+            }
+        }
+
+        window.addEventListener('hashchange', updateMobileBreadcrumbs);
+        document.addEventListener('DOMContentLoaded', updateMobileBreadcrumbs);
+    </script>
+</body>
+
+</html>

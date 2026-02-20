@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Страница не найдена - Vincere Psychology</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles/landing/styles.css?v=20251001">
+  <link rel="stylesheet" href="styles/landing/error.css?v=20250919">
+    <!-- Основная favicon -->
+    <link rel="icon" href="assets/planer/Vinc-mini-light.png?v=4" type="image/png">
+    <!-- Для Apple устройств -->
+    <link rel="apple-touch-icon" href="assets/planer/Vinc-mini-light.png?v=4">
+    <!-- Для некоторых браузеров -->
+    <link rel="shortcut icon" href="assets/planer/Vinc-mini-light.png?v=4">
+    
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+      m[i].l = 1 * new Date();
+      for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+      k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+    })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=104332712', 'ym');
+
+    ym(104332712, 'init', { ssr: true, webvisor: true, clickmap: true, ecommerce: "dataLayer", accurateTrackBounce: true, trackLinks: true });
+  </script>
+  <noscript>
+    <div><img src="https://mc.yandex.ru/watch/104332712" style="position:absolute; left:-9999px;" alt="" /></div>
+  </noscript>
+  <!-- /Yandex.Metrika counter -->
+</head>
+
+<body>
+
+  <header class="header">
+    <nav class="container nav">
+      <a href="landing.html">
+        <img class="logo" src="assets/landing/logo-main.png" alt="Vinc Logo">
+      </a>
+    </nav>
+  </header>
+
+  <main class="error-container">
+    <div class="error-content">
+      <div class="error-code" id="error-code">404</div>
+      <h1 class="error-title" id="error-title">Страница не найдена</h1>
+      <p class="error-description" id="error-description">
+        К сожалению, запрашиваемая страница не существует. Возможно, она была перемещена или удалена.
+      </p>
+      <div class="error-actions">
+        <a href="landing.html" class="btn btn--primary">Вернуться на главную</a>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script>
+    // Система автоматической обработки ошибок
+    class ErrorHandler {
+      constructor() {
+        this.errorTypes = {
+          400: {
+            title: 'Неверный запрос',
+            description: 'Сервер не может обработать запрос из-за неверного синтаксиса.'
+          },
+          401: {
+            title: 'Не авторизован',
+            description: 'Для доступа к этой странице требуется авторизация.'
+          },
+          403: {
+            title: 'Доступ запрещен',
+            description: 'У вас нет прав для просмотра этой страницы.'
+          },
+          404: {
+            title: 'Страница не найдена',
+            description: 'К сожалению, запрашиваемая страница не существует. Возможно, она была перемещена или удалена.'
+          },
+          500: {
+            title: 'Внутренняя ошибка сервера',
+            description: 'На сервере произошла непредвиденная ошибка. Пожалуйста, попробуйте позже.'
+          },
+          503: {
+            title: 'Сервис недоступен',
+            description: 'Сервер временно не может обработать запрос. Пожалуйста, попробуйте позже.'
+          },
+          default: {
+            title: 'Произошла ошибка',
+            description: 'На сайте произошла непредвиденная ошибка. Мы уже работаем над ее устранением.'
+          }
+        };
+
+        this.init();
+      }
+
+      init() {
+        this.detectErrorFromURL();
+        this.setupEventListeners();
+        this.loadFooter();
+        this.setupGlobalErrorHandling();
+      }
+
+      // Определение ошибки из URL параметров
+      detectErrorFromURL() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const errorCode = urlParams.get('error');
+
+        if (errorCode && this.errorTypes[errorCode]) {
+          this.displayError(errorCode);
+        } else if (window.location.pathname.includes('404')) {
+          this.displayError('404');
+        }
+      }
+
+      // Отображение соответствующей ошибки
+      displayError(code) {
+        const error = this.errorTypes[code] || this.errorTypes.default;
+
+        document.getElementById('error-code').textContent = code;
+        document.getElementById('error-title').textContent = error.title;
+        document.getElementById('error-description').textContent = error.description;
+        document.title = `${error.title} - Vincere Psychology`;
+
+        // Показываем кнопку "Назад" если есть история переходов
+        if (history.length > 1) {
+          document.getElementById('go-back-btn').style.display = 'inline-block';
+        }
+
+        // Отправка ошибки в аналитику (если есть)
+        this.trackError(code);
+      }
+
+      // Настройка обработчиков событий
+      setupEventListeners() {
+        // Кнопка "Назад"
+        document.getElementById('go-back-btn').addEventListener('click', () => {
+          window.history.back();
+        });
+      }
+
+      // Загрузка футера
+      loadFooter() {
+        fetch('footer.html')
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Футер не найден');
+            }
+            return response.text();
+          })
+          .then(data => {
+            document.getElementById('footer-container').innerHTML = data;
+          })
+          .catch(error => {
+            console.warn('Не удалось загрузить футер:', error);
+            document.getElementById('footer-container').innerHTML = `
+            <footer class="footer">
+              <div class="container">
+                <p>© ${new Date().getFullYear()} Vincere Psychology. Все права защищены.</p>
+              </div>
+            </footer>
+          `;
+          });
+      }
+
+      // Глобальный обработчик ошибок JavaScript
+      setupGlobalErrorHandling() {
+        window.addEventListener('error', (e) => {
+          console.error('Произошла ошибка:', e.error);
+          // Здесь можно отправить ошибку на сервер для логирования
+        });
+
+        // Обработка Promise rejections
+        window.addEventListener('unhandledrejection', (e) => {
+          console.error('Необработанное отклонение промиса:', e.reason);
+          e.preventDefault();
+        });
+      }
+
+      // Отслеживание ошибок (можно интегрировать с аналитикой)
+      trackError(code) {
+        console.log(`Отслеживание ошибки: ${code}`);
+        // Здесь можно добавить отправку в Google Analytics, Yandex.Metrica и т.д.
+        /*
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'error', {
+            'event_category': 'error_page',
+            'event_label': code,
+            'value': 1
+          });
+        }
+        */
+      }
+    }
+
+    // Инициализация при загрузке документа
+    document.addEventListener('DOMContentLoaded', () => {
+      new ErrorHandler();
+    });
+
+    // Резервная обработка ошибок для старых браузеров
+    window.onerror = function (msg, url, lineNo, columnNo, error) {
+      console.error('Ошибка:', msg, 'в', url, 'на строке', lineNo);
+      return false;
+    };
+  </script>
+
+</body>
+
+</html>

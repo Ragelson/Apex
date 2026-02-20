@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>О платформе</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles/landing/styles.css?v=20251104">
+  <link rel="stylesheet" href="styles/landing/auth.css?v=20250919">
+  <link rel="stylesheet" href="styles/chat-poput.css?v=20250919">
+    <!-- Основная favicon -->
+    <link rel="icon" href="assets/planer/Vinc-mini-light.png?v=4" type="image/png">
+    <!-- Для Apple устройств -->
+    <link rel="apple-touch-icon" href="assets/planer/Vinc-mini-light.png?v=4">
+    <!-- Для некоторых браузеров -->
+    <link rel="shortcut icon" href="assets/planer/Vinc-mini-light.png?v=4">
+  <style>
+    /* Дополнительные стили для психологов */
+    :root {
+      --primary: #00394C;
+      --primary-dark: #002A38;
+      --secondary: #f2f3ff;
+      --dark: #212529;
+      --light: #ffffff;
+      --section-dark: #f5f9ff;
+    }
+
+    .psychologist-features {
+      background-color: var(--section-dark);
+      padding: 5rem 0;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 5rem;
+      margin-top: 3rem;
+    }
+
+    .feature-item {
+      background: white;
+      padding: 2rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    .feature-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(47, 209, 197, 0.2);
+    }
+
+    .feature-icon {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .benefits-section {
+      padding: 5rem 0;
+      text-align: center;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .benefit-card {
+      background: white;
+      padding: 2rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border-top: 4px solid var(--primary);
+    }
+
+    .how-it-works {
+      padding: 5rem 0;
+      background-color: var(--section-dark);
+    }
+
+    .steps-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .step-card {
+      flex: 1 1 300px;
+      background: white;
+      padding: 2rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      position: relative;
+      padding-top: 3.5rem;
+    }
+
+    .step-number {
+      position: absolute;
+      top: -1.5rem;
+      left: 2rem;
+      width: 3rem;
+      height: 3rem;
+      background: var(--primary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .testimonials-section {
+      padding: 5rem 0;
+    }
+
+    .psychologist-card {
+      background: white;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    .psychologist-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .psychologist-image {
+      height: 200px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .psychologist-info {
+      padding: 1.5rem;
+    }
+
+    .specialization {
+      display: inline-block;
+      background: var(--secondary);
+      color: var(--primary);
+      padding: 0.3rem 0.8rem;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .requirements-section {
+      background-color: var(--light);
+    }
+
+    .requirements-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .requirement-card {
+      background: white;
+      padding: 2.5rem 2rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      text-align: center;
+      transition: var(--transition);
+      border-top: 4px solid var(--primary);
+    }
+
+    .requirement-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 57, 76, 0.15);
+    }
+
+    .requirement-icon {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+    }
+
+    .requirement-card h3 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+      font-size: 1.25rem;
+    }
+
+    .requirement-card p {
+      color: var(--dark);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* Адаптивность для мобильных устройств */
+    @media (max-width: 768px) {
+      .requirements-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .requirement-card {
+        padding: 2rem 1.5rem;
+      }
+    }
+
+    .cta-section {
+      padding: 3rem 0;
+      text-align: center;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: white;
+    }
+
+    /* Для очень маленьких экранов можно убрать полностью */
+    @media (max-width: 480px) {
+      .cta-section {
+        padding: 2rem;
+      }
+    }
+
+    .cta-content {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .btn-psychologist {
+      background: white;
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .btn-psychologist:hover {
+      background: var(--secondary);
+      color: var(--primary-dark);
+    }
+
+    .stats-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin: 3rem 0;
+    }
+
+    .stat-item {
+      text-align: center;
+      margin: 1rem;
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      font-size: 1rem;
+      color: var(--dark);
+    }
+  </style>
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+      m[i].l = 1 * new Date();
+      for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+      k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+    })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=104332712', 'ym');
+
+    ym(104332712, 'init', { ssr: true, webvisor: true, clickmap: true, ecommerce: "dataLayer", accurateTrackBounce: true, trackLinks: true });
+  </script>
+  <noscript>
+    <div><img src="https://mc.yandex.ru/watch/104332712" style="position:absolute; left:-9999px;" alt="" /></div>
+  </noscript>
+  <!-- /Yandex.Metrika counter -->
+</head>
+
+<body>
+
+  <!-- Модальное окно входа -->
+  <div id="loginModal" class="modal">
+    <div class="auth-content">
+      <h2>Войдите в аккаунт</h2>
+      <form id="loginForm">
+        <div class="auth-group">
+          <label for="loginEmail">Введите почту:</label>
+          <input type="email" id="loginEmail" required placeholder="Введите свою почту">
+        </div>
+        <div class="auth-group">
+          <label for="loginPassword">Введите пароль:</label>
+          <input type="password" id="loginPassword" required placeholder="Введите пароль">
+          <!-- Добавленная ссылка "Забыли пароль?" -->
+          <div class="forgot-password-link">
+            <a href="#" class="switch-to-forgot">Забыли пароль?</a>
+          </div>
+        </div>
+        <button type="submit" class="btn-in">Войти</button>
+        <div class="auth-footer">
+          Нет аккаунта? <a href="#" class="switch-to-register">Зарегистрироваться</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Модальное окно восстановления пароля -->
+  <div id="forgotPasswordModal" class="modal">
+    <div class="auth-content">
+      <h2>Восстановление пароля</h2>
+      <form id="forgotPasswordForm">
+        <div class="auth-group">
+          <label for="forgotEmail">Введите вашу почту:</label>
+          <input type="email" id="forgotEmail" required placeholder="Введите почту для восстановления">
+        </div>
+        <button type="submit" class="btn-in">Восстановить пароль</button>
+        <div class="auth-footer">
+          <a href="#" class="switch-to-login">Вернуться ко входу</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Модальное окно регистрации -->
+  <div id="registerModal" class="modal">
+    <div class="auth-content">
+      <h2>Регистрация</h2>
+      <form id="registerForm">
+        <div class="auth-group">
+          <label for="registerName">Имя:</label>
+          <input type="text" id="registerName" required placeholder="Введите имя">
+        </div>
+        <div class="auth-group">
+          <label for="registerEmail">E-mail:</label>
+          <input type="email" id="registerEmail" required placeholder="Введите почту">
+        </div>
+        <div class="auth-group">
+          <label for="registerPassword">Пароль:</label>
+          <input type="password" id="registerPassword" required placeholder="Введите пароль">
+        </div>
+        <div class="auth-group">
+          <label for="registerConfirmPassword">Подтверждение пароля</label>
+          <input type="password" id="registerConfirmPassword" required placeholder="Повторите пароль">
+        </div>
+
+        <!-- Добавляем блок с соглашениями -->
+        <div class="auth-agreements">
+          <div class="auth-agreement">
+            <input type="checkbox" id="agreeLicense" name="agreeLicense" required>
+            <label for="agreeLicense">
+              Я согласен(а) с <a href="license.html" class="open-agreement-modal" data-modal="agreement">Лицензионным
+                соглашением</a>
+            </label>
+          </div>
+          <div class="auth-agreement">
+            <input type="checkbox" id="agreePrivacy" name="agreePrivacy" required>
+            <label for="agreePrivacy">
+              Я прочитал(а) и согласен(а) с <a href="privacy.html" class="open-agreement-modal"
+                data-modal="privacy">Политикой конфиденциальности</a>
+            </label>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-in">Создать аккаунт</button>
+        <div class="auth-footer">
+          Уже есть аккаунт? <a href="#" class="switch-to-login">Войти</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="video-container">
+    <video id="video-bg-1" class="video-background" autoplay muted loop>
+      <source src="assets/video-background.mp4" type="video/mp4">
+    </video>
+    <video id="video-bg-2" class="video-background" muted>
+      <source src="assets/video-background.mp4" type="video/mp4">
+    </video>
+    <div class="video-overlay"></div>
+  </div>
+
+  <header class="header">
+    <nav class="container nav" style="margin:auto ;">
+      <a href="landing.html" class="logo-link" style="display: contents;">
+        <img class="logo" src="assets/landing/logo-main.png" alt="Vinc Logo">
+      </a>
+      <div class="header-actions">
+        <a href="form.html" class="btn btn--header light-btn">Подать заявку</a>
+        <div class="auth-dropdown">
+          <button class="auth-btn">
+            <div class="profile-avatar">Вход</div>
+          </button>
+          <div class="auth-dropdown-content">
+            <div class="auth-dropdown-header">
+              <div class="dropdown-avatar">Г</div>
+              <div class="dropdown-user-info">
+                <div class="dropdown-username">Гость</div>
+                <div class="dropdown-email">Не авторизован</div>
+              </div>
+            </div>
+            <div class="auth-dropdown-divider"></div>
+            <a href="#" class="auth-dropdown-item login-btn">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+                <polyline points="10 17 15 12 10 7"></polyline>
+                <line x1="15" y1="12" x2="3" y2="12"></line>
+              </svg>
+              <span>Войти</span>
+            </a>
+            <a href="#" class="auth-dropdown-item register-btn">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="8.5" cy="7" r="4"></circle>
+                <line x1="20" y1="8" x2="20" y2="14"></line>
+                <line x1="23" y1="11" x2="17" y2="11"></line>
+              </svg>
+              <span>Регистрация</span>
+            </a>
+            <!-- Добавленная кнопка выхода -->
+            <a href="#" class="auth-dropdown-item logout-btn" style="display: none;">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                <polyline points="16 17 21 12 16 7"></polyline>
+                <line x1="21" y1="12" x2="9" y2="12"></line>
+              </svg>
+              <span>Выйти</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Герой -->
+    <section class="hero container">
+      <div class="hero__content">
+        <div class="hero__text">
+          <h1>Профессиональная платформа для психологов</h1>
+          <p class="hero__subtitle">Присоединяйтесь к сообществу профессионалов, расширяйте практику и помогайте
+            клиентам с помощью современных инструментов</p>
+          <div class="hero__cta">
+            <a href="form.html" class="btn btn--primary btn--large">Присоединиться</a>
+            <a href="#features" class="btn btn--secondary">Узнать больше</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Статистика Временно не работает 
+
+    <section class="benefits-section">
+      <div class="container">
+        <div class="stats-container">
+          <div class="stat-item">
+            <div class="stat-number">500+</div>
+            <div class="stat-label">Профессиональных психологов</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">95%</div>
+            <div class="stat-label">Удовлетворенности клиентов</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">10K+</div>
+            <div class="stat-label">Сессий ежемесячно</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">24/7</div>
+            <div class="stat-label">Поддержка специалистов</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  -->
+    <!-- Возможности -->
+    <section id="features" class="psychologist-features">
+      <div class="container">
+        <h2 class="section-title">Почему психологи выбирают Vincere?</h2>
+        <p class="section-subtitle">Все инструменты для успешной практики в одном месте</p>
+
+        <div class="feature-grid">
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-calendar-check"></i>
+            </div>
+            <h3>Удобное расписание</h3>
+            <p>Интуитивный планировщик сессий с автоматическими напоминаниями для вас и клиентов</p>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3>Стабильный поток клиентов</h3>
+            <p>Мы берем на себя привлечение клиентов, вам остается только качественная работа</p>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-lock"></i>
+            </div>
+            <h3>Безопасность и конфиденциальность</h3>
+            <p>Защищенные видеосессии и шифрование всех данных в соответствии с этическим кодексом</p>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-file-invoice-dollar"></i>
+            </div>
+            <h3>Прозрачные выплаты</h3>
+            <p>Автоматизированная система расчетов с различными вариантами вывода средств</p>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <h3>Профессиональное сообщество</h3>
+            <p>Супервизии, интервизии и обмен опытом с коллегами</p>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <h3>Программы развития</h3>
+            <p>Доступ к курсам повышения квалификации и эксклюзивным материалам</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Преимущества -->
+    <section class="benefits-section">
+      <div class="container">
+        <h2 class="section-title">Ваши преимущества с Vincere</h2>
+        <p class="section-subtitle">Все, что нужно для успешной практики</p>
+
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <i class="fas fa-clock" style="color: var(--primary); font-size: 2rem; margin-bottom: 1rem;"></i>
+            <h3>Гибкий график</h3>
+            <p>Работайте в удобное время из любой точки мира</p>
+          </div>
+
+          <div class="benefit-card">
+            <i class="fas fa-hand-holding-usd" style="color: var(--primary); font-size: 2rem; margin-bottom: 1rem;"></i>
+            <h3>Достойный доход</h3>
+            <p>Устанавливайте собственные расценки и получайте до 85% от стоимости сессии</p>
+          </div>
+
+          <div class="benefit-card">
+            <i class="fas fa-shield-alt" style="color: var(--primary); font-size: 2rem; margin-bottom: 1rem;"></i>
+            <h3>Юридическая защита</h3>
+            <p>Все договоры и соглашения уже подготовлены</p>
+          </div>
+
+          <div class="benefit-card">
+            <i class="fas fa-tools" style="color: var(--primary); font-size: 2rem; margin-bottom: 1rem;"></i>
+            <h3>Инструменты для работы</h3>
+            <p>Готовые методики, тесты и шаблоны документов</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Как это работает -->
+    <section id="how-it-works" class="how-it-works">
+      <div class="container">
+        <h2 class="section-title">Как присоединиться к платформе?</h2>
+        <p class="section-subtitle">Всего несколько шагов до начала работы</p>
+
+        <div class="steps-container">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <h3>Заполните анкету</h3>
+            <p>Расскажите о своем образовании, опыте и специализации</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <h3>Пройдите верификацию</h3>
+            <p>Мы проверим ваши документы и квалификацию</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <h3>Обучающий курс</h3>
+            <p>Короткая программа по работе с платформой</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">4</div>
+            <h3>Начните принимать клиентов</h3>
+            <p>После активации аккаунта вы сразу можете начинать работу</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Требования -->
+    <section class="requirements-section" style="padding: 5rem 0;">
+      <div class="container">
+        <h2 class="section-title">Требования к психологам</h2>
+        <p class="section-subtitle">Мы заботимся о качестве предоставляемых услуг</p>
+
+        <div class="requirements-grid">
+          <div class="requirement-card">
+            <div class="requirement-icon">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <h3>Профильное образование</h3>
+            <p>Высшее психологическое образование или профессиональная переподготовка от 500 часов</p>
+          </div>
+
+          <div class="requirement-card">
+            <div class="requirement-icon">
+              <i class="fas fa-briefcase"></i>
+            </div>
+            <h3>Опыт практики</h3>
+            <p>Не менее 2 лет консультирования (студенческая практика не учитывается)</p>
+          </div>
+
+          <div class="requirement-card">
+            <div class="requirement-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <h3>Супервизии</h3>
+            <p>Регулярное участие в супервизиях (не менее 1 раза в 2 месяца)</p>
+          </div>
+
+          <div class="requirement-card">
+            <div class="requirement-icon">
+              <i class="fas fa-file-contract"></i>
+            </div>
+            <h3>Юридический статус</h3>
+            <p>Официальная регистрация в качестве самозанятого или ИП</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Призыв к действию -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content">
+          <h2 style="color: white; margin-bottom: 1.5rem;">Готовы начать?</h2>
+          <p style="color: white; opacity: 0.9; margin-bottom: 2rem;">Присоединяйтесь к сообществу профессиональных
+            психологов уже сегодня. <br>Заполните анкету, и мы свяжемся с вами в течение 2 рабочих дней.</p>
+          <a href="form.html" class="btn btn-psychologist btn--large">Подать заявку</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script>
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-container').innerHTML = data;
+      })
+      .catch(error => console.error('Ошибка загрузки футера:', error));
+  </script>
+
+  <!-- Кнопка Telegram -->
+  <a href="https://t.me/VincereSupportBot" class="telegram-btn" target="_blank" aria-label="Telegram поддержки">
+    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+      <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 
+    12-12-5.373-12-12-12zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508
+    l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054
+    5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658
+    -.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.941z" />
+    </svg>
+  </a>
+  <script src="scripts/planer/DTO/User.js?v=20250919"></script>
+  <script src="scripts/auth.js?v=20250926"></script>
+  <script src="scripts/landing/auth.js?v=20250919"></script>
+  <script src="scripts/landing/videobackground.js?v=20250930"></script>
+  <script src="scripts/landing/main.js?v=20250919"></script>
+  <script src="scripts/apiService.js?v=20250919"></script>
+
+  <script>
+    // Дополнительный скрипт для психологов
+    document.addEventListener('DOMContentLoaded', function () {
+      // Инициализация карусели отзывов
+      const testimonialsSlider = document.querySelector('.testimonials__slider');
+      if (testimonialsSlider) {
+        let currentSlide = 0;
+        const slides = testimonialsSlider.querySelectorAll('.testimonial');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+          testimonialsSlider.style.transform = `translateX(-${index * 100}%)`;
+        }
+
+        // Автопрокрутка
+        setInterval(() => {
+          currentSlide = (currentSlide + 1) % totalSlides;
+          showSlide(currentSlide);
+        }, 5000);
+      }
+
+      // Анимация карточек преимуществ
+      const featureItems = document.querySelectorAll('.feature-item');
+      featureItems.forEach((item, index) => {
+        item.style.transitionDelay = `${index * 0.1}s`;
+      });
+    });
+  </script>
+</body>
+
+</html>

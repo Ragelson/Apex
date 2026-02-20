@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Регистрация психолога</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles/landing/styles.css?v=20251031">
+  <link rel="stylesheet" href="styles/landing/auth.css?v=20250919">
+  <link rel="stylesheet" href="styles/chat-poput.css?v=20250919">
+    <!-- Основная favicon -->
+    <link rel="icon" href="assets/planer/Vinc-mini-light.png?v=4" type="image/png">
+    <!-- Для Apple устройств -->
+    <link rel="apple-touch-icon" href="assets/planer/Vinc-mini-light.png?v=4">
+    <!-- Для некоторых браузеров -->
+    <link rel="shortcut icon" href="assets/planer/Vinc-mini-light.png?v=4">
+  <style>
+    /* Основные переменные стилей из chooser.html */
+    :root {
+      --primary: #00394C;
+      --primary-dark: #002837;
+      --light: #ffffff;
+      --light-gray: #e9ecef;
+      --gray: #6c757d;
+      --dark: #212529;
+      --radius: 12px;
+      --radius-sm: 8px;
+      --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
+      --transition: all 0.3s ease;
+    }
+
+    /* Основные стили формы */
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      color: var(--dark);
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+    }
+
+    .registration-container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: var(--light);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    main>section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+      z-index: -1;
+      margin-top: calc(-50vw + 50%);
+      margin-bottom: calc(-30vw + 50%);
+    }
+
+    .form-section {
+      display: none;
+      animation: fadeIn 0.5s ease;
+    }
+
+    .form-section.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      color: var(--primary);
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="number"],
+    input[type="password"],
+    input[type="file"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid var(--light-gray);
+      border-radius: var(--radius-sm);
+      font-family: 'Inter', sans-serif;
+      box-sizing: border-box;
+      transition: var(--transition);
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="tel"]:focus,
+    input[type="number"]:focus,
+    input[type="password"]:focus,
+    input[type="file"]:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 2px rgba(0, 57, 76, 0.2);
+    }
+
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .checkbox-group,
+    .radio-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .checkbox-item,
+    .radio-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .specialties-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.5rem;
+      margin: 1rem 0;
+    }
+
+    .specialty-label {
+      padding: 0.75rem;
+      border: 1px solid var(--light-gray);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: var(--transition);
+      text-align: center;
+    }
+
+    .specialty-label:hover,
+    .specialty-label.selected {
+      background-color: var(--primary);
+      color: var(--light);
+      border-color: var(--primary);
+    }
+
+    .navigation-btns {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 2rem;
+    }
+
+    .btn {
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: var(--radius-sm);
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .btn--primary {
+      background-color: var(--primary);
+      color: var(--light);
+    }
+
+    .btn--primary:hover {
+      background-color: var(--primary-dark);
+      box-shadow: var(--shadow);
+    }
+
+    .btn-back {
+      background-color: var(--light-gray);
+      color: var(--dark);
+    }
+
+    .btn-back:hover {
+      background-color: #ddd;
+    }
+
+    .form-toolbar {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid var(--light-gray);
+      padding-bottom: 1rem;
+    }
+
+    .form-step {
+      flex: 1;
+      text-align: center;
+      cursor: pointer;
+      position: relative;
+      color: var(--gray);
+      transition: var(--transition);
+      padding: 0.5rem;
+    }
+
+    .form-step:after {
+      content: '';
+      position: absolute;
+      bottom: -1rem;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background-color: transparent;
+      transition: var(--transition);
+    }
+
+    .form-step.active {
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .form-step.active:after {
+      background-color: var(--primary);
+    }
+
+    .form-step.completed {
+      color: var(--dark);
+    }
+
+    .form-step:hover:not(.active) {
+      color: var(--dark);
+    }
+
+    .form-step.disabled {
+      pointer-events: none;
+      opacity: 0.5;
+    }
+
+    /* Стили для расписания */
+    .schedule-container {
+      margin-top: 1.5rem;
+    }
+
+    .days-selector {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .day-checkbox {
+      display: none;
+    }
+
+    .day-label {
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--light-gray);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: var(--transition);
+      font-size: 0.9rem;
+    }
+
+    .day-checkbox:checked+.day-label {
+      background-color: var(--primary);
+      color: var(--light);
+      border-color: var(--primary);
+    }
+
+    .time-range-container {
+      display: none;
+      margin-top: 1rem;
+      padding: 1rem;
+      background-color: #f9f9f9;
+      border-radius: var(--radius-sm);
+    }
+
+    .time-range-container.active {
+      display: block;
+    }
+
+    .time-inputs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .time-input-group {
+      flex: 1;
+      min-width: 150px;
+    }
+
+    .time-input {
+      position: relative;
+    }
+
+    .time-input select {
+      appearance: none;
+      padding-right: 2.5rem;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2300394C' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 0.75rem center;
+      background-size: 16px 12px;
+    }
+
+    .add-time-btn {
+      margin-top: 1rem;
+      background-color: var(--primary);
+      color: var(--light);
+      border: none;
+      border-radius: var(--radius-sm);
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .time-slots {
+      margin-top: 1rem;
+    }
+
+    .time-slot {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem;
+      background-color: var(--light);
+      border: 1px solid var(--light-gray);
+      border-radius: var(--radius-sm);
+      margin-bottom: 0.5rem;
+    }
+
+    .remove-time {
+      color: #ff4d4d;
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-size: 1.1rem;
+    }
+
+    /* Стили для поля цены */
+    .price-container {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .price-input {
+      flex: 1;
+      position: relative;
+    }
+
+    .price-input input {
+      padding-left: 2.5rem;
+    }
+
+    .price-input::before {
+      content: '₽';
+      position: absolute;
+      left: 0.75rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--gray);
+      font-weight: 500;
+    }
+
+    .price-note {
+      font-size: 0.875rem;
+      color: var(--gray);
+      margin-top: 0.5rem;
+    }
+
+    /* Стили для кнопок */
+    .btn-in {
+      width: 100%;
+      padding: 0.75rem;
+      background-color: var(--primary);
+      color: var(--light);
+      border: none;
+      border-radius: var(--radius-sm);
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+      margin-top: 1rem;
+    }
+
+    .btn-in:hover {
+      background-color: var(--primary-dark);
+      box-shadow: var(--shadow);
+    }
+
+    /* Стили для контейнера образования */
+    #education-container {
+      margin-bottom: 1rem;
+    }
+
+    .education-item {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr auto;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+      align-items: center;
+    }
+
+    .education-item input {
+      padding: 0.75rem;
+      border: 1px solid var(--light-gray);
+      border-radius: var(--radius-sm);
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* Стили для кнопки добавления образования */
+    .add-education {
+      background-color: var(--primary);
+      color: var(--light);
+      border: none;
+      border-radius: var(--radius-sm);
+      padding: 0.75rem 1.5rem;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .add-education:hover {
+      background-color: var(--primary-dark);
+      box-shadow: var(--shadow);
+    }
+
+    .add-education:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(0, 57, 76, 0.3);
+    }
+
+    /* Стили для кнопки удаления образования */
+    .remove-education {
+      background: none;
+      border: none;
+      color: #ff4d4d;
+      font-size: 1.25rem;
+      cursor: pointer;
+      padding: 0.5rem;
+      line-height: 1;
+      transition: transform 0.2s ease;
+    }
+
+    .remove-education:hover {
+      transform: scale(1.2);
+    }
+
+    .form-section {
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    /* Адаптивные стили для мобильных устройств */
+    @media (max-width: 768px) {
+      .registration-container {
+        padding: 1rem;
+        margin: 1rem;
+      }
+
+      .specialties-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .form-toolbar {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .form-step {
+        padding: 0.5rem 0;
+      }
+
+      .time-inputs {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .time-input-group {
+        width: 100%;
+      }
+
+      .price-container {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .education-item {
+        grid-template-columns: 1fr;
+      }
+
+      .education-item input {
+        width: 100%;
+      }
+
+      .remove-education {
+        justify-self: start;
+        margin-bottom: 1rem;
+      }
+    }
+
+    /* Стили для поля стоимости сессии */
+    #price {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid var(--light-gray);
+      border-radius: var(--radius-sm);
+      font-family: 'Inter', sans-serif;
+      min-height: 60px;
+      resize: vertical;
+      transition: border-color 0.3s ease;
+    }
+
+    #price:focus {
+      border-color: var(--primary);
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(0, 57, 76, 0.1);
+    }
+
+    /* Улучшенные стили для заголовков */
+    h1 {
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+      font-size: 2rem;
+    }
+
+    h2 {
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+      border-bottom: 1px solid var(--light-gray);
+      padding-bottom: 0.5rem;
+    }
+
+    p {
+      color: var(--gray);
+      margin-bottom: 1.5rem;
+    }
+  </style>
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+      m[i].l = 1 * new Date();
+      for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+      k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+    })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=104332712', 'ym');
+
+    ym(104332712, 'init', { ssr: true, webvisor: true, clickmap: true, ecommerce: "dataLayer", accurateTrackBounce: true, trackLinks: true });
+  </script>
+  <noscript>
+    <div><img src="https://mc.yandex.ru/watch/104332712" style="position:absolute; left:-9999px;" alt="" /></div>
+  </noscript>
+  <!-- /Yandex.Metrika counter -->
+</head>
+
+<body>
+
+  <!-- Видеофон -->
+  <div class="video-container">
+    <video id="video-bg-1" class="video-background" autoplay muted loop>
+      <source src="assets/video-background.mp4" type="video/mp4">
+    </video>
+    <div class="video-overlay"></div>
+  </div>
+
+  <!-- Модальное окно входа -->
+  <div id="loginModal" class="modal">
+    <div class="auth-content">
+      <h2>Войдите в аккаунт</h2>
+      <form id="loginForm">
+        <div class="auth-group">
+          <label for="loginEmail">Введите почту:</label>
+          <input type="email" id="loginEmail" required placeholder="Введите свою почту">
+        </div>
+        <div class="auth-group">
+          <label for="loginPassword">Введите пароль:</label>
+          <input type="password" id="loginPassword" required placeholder="Введите пароль">
+          <!-- Добавленная ссылка "Забыли пароль?" -->
+          <div class="forgot-password-link">
+            <a href="#" class="switch-to-forgot">Забыли пароль?</a>
+          </div>
+        </div>
+        <button type="submit" class="btn-in">Войти</button>
+        <div class="auth-footer">
+          Нет аккаунта? <a href="#" class="switch-to-register">Зарегистрироваться</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Модальное окно восстановления пароля -->
+  <div id="forgotPasswordModal" class="modal">
+    <div class="auth-content">
+      <h2>Восстановление пароля</h2>
+      <form id="forgotPasswordForm">
+        <div class="auth-group">
+          <label for="forgotEmail">Введите вашу почту:</label>
+          <input type="email" id="forgotEmail" required placeholder="Введите почту для восстановления">
+        </div>
+        <button type="submit" class="btn-in">Восстановить пароль</button>
+        <div class="auth-footer">
+          <a href="#" class="switch-to-login">Вернуться ко входу</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Модальное окно регистрации -->
+  <div id="registerModal" class="modal">
+    <div class="auth-content">
+      <h2>Регистрация</h2>
+      <form id="registerForm">
+        <div class="auth-group">
+          <label for="registerName">Имя:</label>
+          <input type="text" id="registerName" required placeholder="Введите имя">
+        </div>
+        <div class="auth-group">
+          <label for="registerEmail">E-mail:</label>
+          <input type="email" id="registerEmail" required placeholder="Введите почту">
+        </div>
+        <div class="auth-group">
+          <label for="registerPassword">Пароль:</label>
+          <input type="password" id="registerPassword" required placeholder="Введите пароль">
+        </div>
+        <div class="auth-group">
+          <label for="registerConfirmPassword">Подтверждение пароля</label>
+          <input type="password" id="registerConfirmPassword" required placeholder="Повторите пароль">
+        </div>
+
+        <!-- Добавляем блок с соглашениями -->
+        <div class="auth-agreements">
+          <div class="auth-agreement">
+            <input type="checkbox" id="agreeLicense" name="agreeLicense" required>
+            <label for="agreeLicense">
+              Я согласен(а) с <a href="license.html" class="open-agreement-modal" data-modal="agreement">Лицензионным
+                соглашением</a>
+            </label>
+          </div>
+          <div class="auth-agreement">
+            <input type="checkbox" id="agreePrivacy" name="agreePrivacy" required>
+            <label for="agreePrivacy">
+              Я прочитал(а) и согласен(а) с <a href="privacy.html" class="open-agreement-modal"
+                data-modal="privacy">Политикой
+                конфиденциальности</a>
+            </label>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-in">Создать аккаунт</button>
+        <div class="auth-footer">
+          Уже есть аккаунт? <a href="#" class="switch-to-login">Войти</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <div class="video-container">
+    <video id="video-bg-1" class="video-background" autoplay muted loop>
+      <source src="assets/video-background.mp4" type="video/mp4">
+    </video>
+    <video id="video-bg-2" class="video-background" muted>
+      <source src="assets/video-background.mp4" type="video/mp4">
+    </video>
+    <div class="video-overlay"></div>
+  </div>
+
+  <header class="header">
+    <nav class="container nav">
+      <a href="landing.html" class="logo-link" style="display: contents;">
+        <img class="logo" src="assets/landing/logo-main.png" alt="Vinc Logo">
+      </a>
+      <div class="header-actions">
+        <div class="auth-dropdown">
+          <button class="auth-btn">
+            <div class="profile-avatar">Вход</div>
+          </button>
+          <div class="auth-dropdown-content">
+            <div class="auth-dropdown-header">
+              <div class="dropdown-avatar">Г</div>
+              <div class="dropdown-user-info">
+                <div class="dropdown-username">Гость</div>
+                <div class="dropdown-email">Не авторизован</div>
+              </div>
+            </div>
+            <div class="auth-dropdown-divider"></div>
+            <a href="#" class="auth-dropdown-item login-btn">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+                <polyline points="10 17 15 12 10 7"></polyline>
+                <line x1="15" y1="12" x2="3" y2="12"></line>
+              </svg>
+              <span>Войти</span>
+            </a>
+            <a href="#" class="auth-dropdown-item register-btn">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="8.5" cy="7" r="4"></circle>
+                <line x1="20" y1="8" x2="20" y2="14"></line>
+                <line x1="23" y1="11" x2="17" y2="11"></line>
+              </svg>
+              <span>Регистрация</span>
+            </a>
+            <!-- Добавленная кнопка выхода -->
+            <a href="#" class="auth-dropdown-item logout-btn" style="display: none;">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                <polyline points="16 17 21 12 16 7"></polyline>
+                <line x1="21" y1="12" x2="9" y2="12"></line>
+              </svg>
+              <span>Выйти</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="registration-container">
+      <h1>Регистрация на платформе</h1>
+      <p>Заполните анкету, чтобы присоединиться к нашей платформе</p>
+
+      <!-- Тулбар с разделами формы -->
+      <div class="form-toolbar">
+        <div class="form-step active" data-section="personal-info">
+          Личная информация
+        </div>
+        <div class="form-step" data-section="professional-info">
+          Проф. информация
+        </div>
+      </div>
+
+      <form id="psychologist-form">
+        <!-- Личная информация -->
+        <section id="personal-info" class="form-section active">
+          <h2>Личная информация</h2>
+
+          <div class="form-group">
+            <label for="full-name">ФИО:</label>
+            <input type="text" id="full-name" name="full-name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="birth-date">Дата рождения:</label>
+            <input type="date" id="birth-date" name="birth-date" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Телефон:</label>
+            <input type="tel" id="phone" name="phone" required>
+          </div>
+
+          <div class="form-group">
+            <label for="city">Город:</label>
+            <input type="text" id="city" name="city" required>
+          </div>
+
+          <div class="navigation-btns">
+            <button type="button" class="btn btn--primary" style="margin-left:auto;"
+              onclick="goToSection('professional-info')">Далее</button>
+          </div>
+        </section>
+
+        <!-- Профессиональная информация -->
+        <section id="professional-info" class="form-section">
+          <h2>Профессиональная информация</h2>
+
+          <div class="form-group">
+            <label for="education">Образование:</label>
+            <div id="education-container">
+              <div class="education-item">
+                <input type="text" placeholder="Учебное заведение" required>
+                <input type="text" placeholder="Специальность" required>
+                <input type="text" placeholder="Годы обучения (например, 2010-2015)" required>
+                <button type="button" class="remove-education">&times;</button>
+              </div>
+            </div>
+            <button type="button" class="add-education" onclick="addEducationField()">+ Добавить образование</button>
+          </div>
+
+          <div class="form-group">
+            <label for="experience">Опыт работы (лет):</label>
+            <input type="number" id="experience" name="experience" min="0" required>
+          </div>
+
+          <div class="form-group">
+            <label>Выберите специализации:</label>
+            <div class="specialties-grid">
+              <label class="specialty-label">
+                <input type="checkbox" name="specialty" value="anxiety" style="display: none;">
+                Тревожность
+              </label>
+              <label class="specialty-label">
+                <input type="checkbox" name="specialty" value="depression" style="display: none;">
+                Депрессия
+              </label>
+              <label class="specialty-label">
+                <input type="checkbox" name="specialty" value="relationships" style="display: none;">
+                Отношения
+              </label>
+              <label class="specialty-label">
+                <input type="checkbox" name="specialty" value="family" style="display: none;">
+                Семейные проблемы
+              </label>
+              <label class="specialty-label">
+                <input type="checkbox" name="specialty" value="work" style="display: none;">
+                Работа и карьера
+              </label>
+              <label class="specialty-label">
+                <input type="checkbox" name="specialty" value="trauma" style="display: none;">
+                Травмы
+              </label>
+              <label class="specialty-label">
+                <input type="checkbox" name="specialty" value="self-esteem" style="display: none;">
+                Самооценка
+              </label>
+              <label class="specialty-label">
+                <input type="checkbox" name="specialty" value="stress" style="display: none;">
+                Стресс
+              </label>
+              <label class="specialty-label">
+                <input type="checkbox" name="specialty" value="addiction" style="display: none;">
+                Зависимости
+              </label>
+              <label class="specialty-label">
+                <input type="checkbox" name="specialty" value="parenting" style="display: none;">
+                Детско-родительские отношения
+              </label>
+              <label class="specialty-label">
+                <input type="checkbox" name="specialty" value="grief" style="display: none;">
+                Горе и утрата
+              </label>
+              <label class="specialty-label">
+                <input type="checkbox" name="specialty" value="other" style="display: none;">
+                Другое
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="other-specialty">Если выбрано "Другое", укажите:</label>
+            <input type="text" id="other-specialty" name="other-specialty">
+          </div>
+
+          <div class="form-group">
+            <label for="client-types">С какими клиентами работаете?</label>
+            <div class="checkbox-group">
+              <div class="checkbox-item">
+                <input type="checkbox" id="adults" name="client-types" value="adults">
+                <label for="adults">Взрослые</label>
+              </div>
+              <div class="checkbox-item">
+                <input type="checkbox" id="teens" name="client-types" value="teens">
+                <label for="teens">Подростки</label>
+              </div>
+              <div class="checkbox-item">
+                <input type="checkbox" id="children" name="client-types" value="children">
+                <label for="children">Дети</label>
+              </div>
+              <div class="checkbox-item">
+                <input type="checkbox" id="couples" name="client-types" value="couples">
+                <label for="couples">Пары</label>
+              </div>
+              <div class="checkbox-item">
+                <input type="checkbox" id="families" name="client-types" value="families">
+                <label for="families">Семьи</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="about">Коротко о себе:</label>
+            <textarea id="about" name="about" required></textarea>
+          </div>
+
+          <div class="navigation-btns">
+            <button type="button" class="btn btn-back" onclick="goToSection('personal-info')">Назад</button>
+            <button type="submit" class="btn btn--primary" id="submit-btn">Отправить заявку</button>
+          </div>
+        </section>
+      </form>
+    </section>
+  </main>
+  <div id="footer-container"></div>
+
+  <script>
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-container').innerHTML = data;
+      })
+      .catch(error => console.error('Ошибка загрузки футера:', error));
+  </script>
+
+  <!-- Кнопка Telegram -->
+  <a href="https://t.me/VincereSupportBot" class="telegram-btn" target="_blank" aria-label="Telegram поддержки">
+    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+      <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 
+    12-12-5.373-12-12-12zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508
+    l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054
+    5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658
+    -.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.941z" />
+    </svg>
+  </a>
+
+  <script>
+    // Текущий активный раздел
+    let currentSection = 'personal-info';
+    const sections = ['personal-info', 'professional-info'];
+
+    // Инициализация формы
+    document.addEventListener('DOMContentLoaded', function () {
+      // Обработчики кликов для шагов в тулбаре
+      document.querySelectorAll('.form-step').forEach(step => {
+        step.addEventListener('click', function () {
+          const sectionId = this.getAttribute('data-section');
+          if (sectionId !== currentSection) {
+            goToSection(sectionId);
+          }
+        });
+      });
+
+      // Обработчик отправки формы
+      document.getElementById('psychologist-form').addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        try {
+          const fullName = document.getElementById('full-name').value.trim();
+          const birthDate = document.getElementById('birth-date').value;
+          const phone = document.getElementById('phone').value.trim();
+          const city = document.getElementById('city').value.trim();
+          const experience = document.getElementById('experience').value.trim();
+          const about = document.getElementById('about').value.trim();
+
+          // Сбор образований
+          const educations = Array.from(document.querySelectorAll('.education-item')).map(item => {
+            const inputs = item.querySelectorAll('input');
+            return `${inputs[0].value.trim()}, ${inputs[1].value.trim()}, ${inputs[2].value.trim()}`;
+          });
+
+          // Сбор специализаций
+          const specialties = Array.from(document.querySelectorAll('input[name="specialty"]:checked')).map(i =>
+            i.value.trim()
+          );
+          const otherSpecialty = document.getElementById('other-specialty').value.trim();
+          if (specialties.includes('other') && otherSpecialty) {
+            specialties.push(otherSpecialty);
+          }
+
+          // Сбор типов клиентов
+          const targetClients = Array.from(document.querySelectorAll('input[name="client-types"]:checked')).map(i =>
+            i.value.trim()
+          );
+
+          const payload = {
+            fullName: fullName,
+            city: city,
+            birthDate: birthDate,
+            phoneNumber: phone,
+            educations: educations,
+            workExperience: experience,
+            specializations: specialties,
+            targetClients: targetClients,
+            aboutMe: about
+          };
+
+          await apiPost('/v1/psychologist/apply', payload);
+          const shortName = fullName.split(/\s+/).slice(0, 2).join(' ');
+          window.location.href = 'landing.html?formSubmitted=true&name=' + encodeURIComponent(shortName);
+
+        } catch (error) {
+          console.error('Ошибка при отправке анкеты:', error);
+          alert('Ошибка при отправке анкеты. Попробуйте ещё раз.');
+        }
+      });
+    });
+
+    // Добавление поля для образования
+    function addEducationField() {
+      const container = document.getElementById('education-container');
+      if (!container) return;
+
+      const newItem = document.createElement('div');
+      newItem.className = 'education-item';
+
+      const institutionInput = document.createElement('input');
+      institutionInput.type = 'text';
+      institutionInput.placeholder = 'Учебное заведение';
+      institutionInput.required = true;
+
+      const specialtyInput = document.createElement('input');
+      specialtyInput.type = 'text';
+      specialtyInput.placeholder = 'Специальность';
+      specialtyInput.required = true;
+
+      const yearsInput = document.createElement('input');
+      yearsInput.type = 'text';
+      yearsInput.placeholder = 'Годы обучения (например, 2010-2015)';
+      yearsInput.required = true;
+
+      const removeBtn = document.createElement('button');
+      removeBtn.type = 'button';
+      removeBtn.className = 'remove-education';
+      removeBtn.innerHTML = '&times;';
+      removeBtn.addEventListener('click', () => {
+        newItem.remove();
+      });
+
+      newItem.appendChild(institutionInput);
+      newItem.appendChild(specialtyInput);
+      newItem.appendChild(yearsInput);
+      newItem.appendChild(removeBtn);
+
+      container.appendChild(newItem);
+      institutionInput.focus();
+    }
+
+    // Обработчик для выбора специализаций
+    document.querySelectorAll('.specialty-label').forEach(label => {
+      label.addEventListener('click', function () {
+        const checkbox = this.querySelector('input[type="checkbox"]');
+        checkbox.checked = !checkbox.checked;
+        this.classList.toggle('selected', checkbox.checked);
+
+        // Показываем/скрываем поле "Другое" при необходимости
+        if (checkbox.value === 'other') {
+          document.getElementById('other-specialty').style.display = checkbox.checked ? 'block' : 'none';
+        }
+      });
+    });
+
+    // Инициализация состояния поля "Другое"
+    document.getElementById('other-specialty').style.display = 'none';
+
+    // Переход к определенному разделу
+    function goToSection(sectionId) {
+      const currentIndex = sections.indexOf(currentSection);
+      const targetIndex = sections.indexOf(sectionId);
+
+      if (targetIndex > currentIndex) {
+        if (!validateSection(currentSection)) {
+          return;
+        }
+      }
+
+      document.getElementById(currentSection).classList.remove('active');
+      document.querySelector(`.form-step[data-section="${currentSection}"]`).classList.remove('active');
+
+      document.getElementById(sectionId).classList.add('active');
+      document.querySelector(`.form-step[data-section="${sectionId}"]`).classList.add('active');
+
+      updateToolbarSteps(sectionId);
+      currentSection = sectionId;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Обновление состояния шагов в тулбаре
+    function updateToolbarSteps(activeSectionId) {
+      const activeIndex = sections.indexOf(activeSectionId);
+
+      document.querySelectorAll('.form-step').forEach((step, index) => {
+        step.classList.remove('active', 'completed');
+
+        if (index === activeIndex) {
+          step.classList.add('active');
+        } else if (index < activeIndex) {
+          step.classList.add('completed');
+        }
+
+        if (index > activeIndex) {
+          step.classList.add('disabled');
+        } else {
+          step.classList.remove('disabled');
+        }
+      });
+    }
+
+    // Валидация раздела перед переходом
+    function validateSection(sectionId) {
+      const section = document.getElementById(sectionId);
+      if (!section) return true;
+
+      const inputs = section.querySelectorAll('input[required], textarea[required], select[required]');
+      let isValid = true;
+
+      inputs.forEach(input => {
+        if (!input.value.trim()) {
+          input.style.borderColor = 'red';
+          isValid = false;
+        } else {
+          input.style.borderColor = '';
+        }
+      });
+
+      if (!isValid) {
+        alert('Пожалуйста, заполните все обязательные поля перед переходом к следующему шагу.');
+      }
+
+      return isValid;
+    }
+  </script>
+  <script src="scripts/planer/DTO/User.js?v=20250919"></script>
+  <script src="scripts/auth.js?v=20250926"></script>
+  <script src="scripts/landing/auth.js?v=20250919"></script>
+  <script src="scripts/landing/videobackground.js?v=20250919"></script>
+  <script src="scripts/landing/main.js?v=20250919"></script>
+  <script src="scripts/apiService.js?v=20250919"></script>
+</body>
+
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ошибка оплаты</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Основная favicon -->
+    <link rel="icon" href="assets/planer/Vinc-mini-light.png?v=4" type="image/png">
+    <!-- Для Apple устройств -->
+    <link rel="apple-touch-icon" href="assets/planer/Vinc-mini-light.png?v=4">
+    <!-- Для некоторых браузеров -->
+    <link rel="shortcut icon" href="assets/planer/Vinc-mini-light.png?v=4">
+    <style>
+        :root {
+            --primary: #4a6bff;
+            --secondary: #f8f9ff;
+            --accent: #ff6b6b;
+            --text: #333;
+            --gray: #666;
+            --light-gray: #f5f5f5;
+            --radius: 12px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+            --max-width: 1200px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--light-gray);
+        }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .fail-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 0;
+        }
+
+        .fail-card {
+            background: white;
+            padding: 3rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-lg);
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .fail-icon {
+            width: 80px;
+            height: 80px;
+            background: #f44336;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+        }
+
+        .fail-icon i {
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        .fail-card h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #f44336;
+        }
+
+        .fail-card p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            margin-bottom: 2rem;
+        }
+
+        .error-details {
+            background: #fff3f3;
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            margin: 2rem 0;
+            text-align: left;
+            border-left: 4px solid #f44336;
+        }
+
+        .error-details h3 {
+            margin-bottom: 1rem;
+            color: #f44336;
+        }
+
+        .possible-reasons {
+            list-style: none;
+            padding: 0;
+        }
+
+        .possible-reasons li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .possible-reasons li::before {
+            content: '•';
+            color: #f44336;
+            position: absolute;
+            left: 0;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #3a5bff;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: var(--secondary);
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .support-contact {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+        }
+
+        .support-contact p {
+            margin-bottom: 0.5rem;
+        }
+
+        .support-email {
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .fail-card {
+                padding: 2rem;
+                margin: 1rem;
+            }
+
+            .fail-card h1 {
+                font-size: 2rem;
+            }
+
+            .btn-group {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+            m[i].l = 1 * new Date();
+            for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=104332712', 'ym');
+
+        ym(104332712, 'init', { ssr: true, webvisor: true, clickmap: true, ecommerce: "dataLayer", accurateTrackBounce: true, trackLinks: true });
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/104332712" style="position:absolute; left:-9999px;" alt="" /></div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
+</head>
+
+<body>
+    <div class="container">
+        <section class="fail-section">
+            <div class="fail-card">
+                <div class="fail-icon">
+                    <i class="fas fa-times"></i>
+                </div>
+                <h1>Ошибка оплаты</h1>
+                <p>К сожалению, произошла ошибка при обработке вашего платежа.</p>
+
+                <div class="error-details">
+                    <h3>Возможные причины:</h3>
+                    <ul class="possible-reasons">
+                        <li>Недостаточно средств на карте</li>
+                        <li>Неверные данные карты</li>
+                        <li>Превышен лимит операций</li>
+                        <li>Временные проблемы с банком</li>
+                    </ul>
+                </div>
+
+                <div class="btn-group">
+                    <a href="vinc.html" class="btn btn-primary">Попробовать снова</a>
+                </div>
+
+                <div class="support-contact">
+                    <p>Нужна помощь?</p>
+                    <a href="https://t.me/VincereSupportBot" class="support-email">Техническая поддержка в Telegram</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Эффект появления
+        document.addEventListener('DOMContentLoaded', function () {
+            const card = document.querySelector('.fail-card');
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+
+            setTimeout(() => {
+                card.style.transition = 'all 0.5s ease';
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, 100);
+        });
+    </script>
+</body>
+
+</html>
