@@ -1,0 +1,578 @@
+/* Основные стили */
+:root {
+    --primary: #00394C;
+    --secondary: #f2f3ff;
+    --dark: #00394C;
+    --light: #ffffff;
+    --radius: 12px;
+    --shadow: 0 4px 12px rgba(47, 209, 197, 0.5);
+    --max-width: 1200px;
+    --transition: .3s ease;
+    --section-dark: #f5f9ff;
+    --section-light: #ffffff;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f5fbff;
+    color: var(--dark);
+    line-height: 1.5;
+  }
+  
+  main {
+    max-width: 900px;
+    min-height: max-content;
+    margin: 2rem auto;
+    background-color: white;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+  
+  /* Меню */
+  .menu {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    background-color: var(--primary);
+    border-radius: var(--radius) var(--radius) 0 0;
+  }
+  
+  .menu-button {
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-weight: 500;
+    transition: var(--transition);
+  }
+  
+  .menu-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Секции формы */
+  .form-section {
+    padding: 2rem;
+    display: none;
+  }
+  
+  .form-section.active {
+    display: block;
+  }
+  
+  h2 {
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  
+  /* Формы */
+  .question-form, .payment-info, .psychologist-info {
+    background-color: var(--section-dark);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--dark);
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  input[type="password"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: var(--radius);
+    font-family: 'Inter', sans-serif;
+    transition: var(--transition);
+  }
+  
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="number"]:focus,
+  input[type="password"]:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(0, 57, 76, 0.1);
+  }
+  
+  /* Группы радио и чекбоксов */
+  .radio-group,
+  .checkbox-group,
+  .time-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 0.5rem;
+  }
+  
+  .radio-group label,
+  .checkbox-group label,
+  .time-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 400;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    background-color: white;
+    border-radius: var(--radius);
+    border: 1px solid #ddd;
+    transition: var(--transition);
+  }
+  
+  .radio-group input[type="radio"],
+  .checkbox-group input[type="checkbox"],
+  .time-group input[type="radio"] {
+    margin: 0;
+    appearance: none;
+    width: 1rem;
+    height: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    transition: var(--transition);
+    position: relative;
+  }
+  
+  .radio-group input[type="radio"]:checked,
+  .time-group input[type="radio"]:checked {
+    border-color: var(--primary);
+  }
+  
+  .radio-group input[type="radio"]:checked::after,
+  .time-group input[type="radio"]:checked::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: var(--primary);
+    border-radius: 50%;
+  }
+  
+  .checkbox-group input[type="checkbox"] {
+    border-radius: 4px;
+  }
+  
+  .checkbox-group input[type="checkbox"]:checked {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    position: relative;
+  }
+  
+  .checkbox-group input[type="checkbox"]:checked::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 0.75rem;
+  }
+  
+  /* Кнопки */
+  button[type="submit"] {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius);
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    width: auto;
+    margin-top: 1rem;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #002b3a;
+    box-shadow: var(--shadow);
+  }
+  
+  /* Информационные блоки */
+  .psychologist-info,
+  .payment-info {
+    background-color: white;
+    border: 1px solid #ddd;
+  }
+  
+  .psychologist-info p,
+  .payment-info p {
+    margin-bottom: 0.5rem;
+  }
+  
+  .psychologist-info strong,
+  .payment-info strong {
+    color: var(--primary);
+  }
+  
+  /* Соглашение */
+  .agreement {
+    margin-top: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .agreement input[type="checkbox"] {
+    margin: 0;
+  }
+  
+  /* Адаптивность */
+  @media (max-width: 768px) {
+    .menu {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    
+    .menu-button {
+      margin: 0;
+      width: 100%;
+    }
+    
+    .radio-group,
+    .checkbox-group,
+    .time-group {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
+
+
+/* Основные стили */
+.chooser-hero {
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.chooser-hero h1 {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.chooser-hero__subtitle {
+  font-size: 1.2rem;
+  color: var(--gray);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Переключатель консультаций */
+.consultation-switch {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+  background-color: var(--light-gray);
+  border-radius: 50px;
+  padding: 0.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.switch-btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-weight: 500;
+  border-radius: 50px;
+  transition: var(--transition);
+  flex: 1;
+}
+
+.switch-btn.active {
+  background-color: var(--primary);
+  color: white;
+}
+
+/* Фильтры */
+.filter-section {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.filter-group {
+  flex: 1;
+  min-width: 200px;
+  max-width: 300px;
+}
+
+.filter-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.filter-group select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: var(--radius-sm);
+  font-family: 'Inter', sans-serif;
+}
+
+/* Карточки психологов */
+.psychologists-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.psychologist-card {
+  background: white;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: var(--transition);
+  display: flex;
+}
+
+.psychologist-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.psychologist-avatar {
+  width: 120px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--secondary);
+}
+
+.psychologist-avatar img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+}
+
+.rating {
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.rating i {
+  color: #FFC107;
+}
+
+.reviews {
+  color: var(--gray);
+  font-size: 0.8rem;
+}
+
+.psychologist-info {
+  flex: 1;
+  padding: 1rem;
+}
+
+.psychologist-info h3 {
+  margin: 0 0 0.5rem;
+  color: var(--primary);
+}
+
+.specialization {
+  font-size: 0.9rem;
+  color: var(--gray);
+  margin: 0 0 0.5rem;
+}
+
+.experience {
+  font-size: 0.9rem;
+  margin: 0 0 1rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.tag {
+  background-color: var(--light-gray);
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  font-size: 0.8rem;
+}
+
+.session-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.session-info p {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Как это работает */
+.how-it-works {
+  margin: 4rem 0;
+  text-align: center;
+}
+
+.steps-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.step {
+  flex: 1;
+  min-width: 250px;
+  max-width: 300px;
+  background: white;
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  position: relative;
+}
+
+.step-number {
+  width: 40px;
+  height: 40px;
+  background-color: var(--primary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin: 0 auto 1rem;
+}
+
+.step h3 {
+  margin-bottom: 0.5rem;
+}
+
+/* FAQ */
+.faq-section {
+  margin: 4rem 0;
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  margin-bottom: 1rem;
+  border: 1px solid #eee;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.faq-question {
+  padding: 1rem;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.faq-question h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.faq-answer {
+  padding: 0 1rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.faq-answer p {
+  margin: 0;
+  padding: 0 0 1rem;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 200px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .psychologists-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .psychologist-card {
+    flex-direction: column;
+  }
+  
+  .psychologist-avatar {
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 1rem;
+  }
+  
+  .psychologist-avatar img {
+    margin-bottom: 0;
+  }
+  
+  .consultation-switch {
+    flex-direction: column;
+    border-radius: var(--radius);
+  }
+  
+  .switch-btn {
+    border-radius: var(--radius);
+  }
+}
+
+main > section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 200px;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  z-index: -1;
+}
+
+main > section:nth-child(even)::before {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+main > section:nth-child(odd)::before {
+  background-color: rgba(245, 249, 255, 0.7);
+}
