@@ -1,0 +1,405 @@
+body {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Видеофон */
+.video-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  overflow: hidden;
+}
+
+.video-background {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.video-background.active {
+  opacity: 1;
+}
+
+.video-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.85);
+  z-index: -1;
+}
+
+
+:root {
+  --primary: #2FD1C5;
+  --secondary: #f2f3ff;
+  --dark: #00394C;
+  --light: #ffffff;
+  --radius: 12px;
+  --shadow: 0 4px 12px rgba(47, 209, 197,.5);
+  --max-width: 1200px;
+  --transition: .3s ease;
+  --section-dark: #f5f9ff; /* Чуть темнее фон */
+  --section-light: #ffffff; /* Чуть светлее фон */
+}
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      color: var(--dark);
+      background-color: var(--light);
+      line-height: 1.5;
+      overflow-x: hidden;
+      -webkit-tap-highlight-color: transparent !important;
+      outline: none !important;
+      cursor:none;
+
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      text-decoration: none !important;
+      color: inherit;
+    }
+    
+    /* Reset для состояний ссылок */
+    a:visited, a:active, a:hover, a:focus {
+      text-decoration: none !important;
+    }
+    a, 
+    a:hover, 
+    a:focus, 
+    a:active,
+    .btn, 
+    .btn:hover, 
+    .btn:focus, 
+    .btn:active,
+    .footer__links a,
+    .footer__links a:hover,
+    .footer__links a:focus,
+    .footer__links a:active,
+    .modal-link,
+    .modal-link:hover,
+    .modal-link:focus,
+    .modal-link:active {
+      text-decoration: none !important;
+    }
+
+/* Убираем выделение при нажатии */
+* {
+  -webkit-tap-highlight-color: transparent;
+  -moz-tap-highlight-color: transparent;
+  -tap-highlight-color: transparent;
+  outline: none !important;
+}
+
+*:focus,
+*:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Для кнопок и интерактивных элементов */
+button,
+input,
+a {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Для мобильных устройств */
+@media (hover: none) {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+    
+.logo {
+  height: 24px;
+  transition: var(--transition);
+  width: auto;
+}
+
+.logo-link:hover .logo {
+  transform: scale(1.05);
+}
+       .container {
+      width: 90%;
+      max-width: var(--max-width);
+      margin-inline: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-block: 0 2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: .75rem 2rem;
+      border-radius: var(--radius);
+      font-weight: 600;
+      text-align: center;
+      white-space: nowrap;
+      border: 2px solid transparent;
+      text-decoration: none !important;
+
+    }
+
+    .btn--header {
+      margin-left:472px;
+      background-color: #FFCD69;
+      color: var(--dark);
+      text-decoration: none !important;
+
+    }
+
+    .btn--primary {
+      background-color: var(--primary);
+      color: var(--light);
+      text-decoration: none !important;
+
+    }
+
+    .btn--secondary {
+      background-color: var(--secondary);
+      border-color: var(--primary);
+      color: var(--primary);
+      text-decoration: none !important;
+
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .header {
+      background-color: #F5FBFF;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,.04);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-block: .5rem;
+    }
+
+    .nav__links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+      margin-right:20px;
+
+    }
+
+    .burger {
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .burger span {
+      width: 24px;
+      height: 3px;
+      background-color: var(--dark);
+      transition: var(--transition);
+    }
+
+    @media (max-width: 768px) {
+      .nav__links {
+        position: absolute;
+        inset: 0 0 auto auto;
+        flex-direction: column;
+        background-color: var(--light);
+        padding: 2rem;
+        transform: translateX(100%);
+        transition: var(--transition);
+        box-shadow: var(--shadow);
+        height: 100vh;
+      }
+
+      .nav__links.open {
+        transform: translateX(0);
+      }
+
+      .burger {
+        display: flex;
+      }
+    }
+
+    .hero {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-block: 4rem;
+      text-align: center;
+    }
+    
+    .hero__content {
+      width: 100%;
+      max-width: 1200px;
+    }
+    
+    .hero__text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .hero__text h1 {
+      font-size: 60px;
+      margin-bottom: 20px;
+      max-width: 900px;
+    }
+    
+    .hero__text p {
+      font-size: 16px;
+      color: #666;
+      max-width: 600px;
+      margin-bottom: 20px;
+    }
+    
+    .hero__cta {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    
+    .custom-container {
+      margin-top: 50px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      max-width: 1200px;
+    }
+    
+    .custom-element {
+      width: 240px;
+      height: 105px;
+      background-color: #fff;
+      padding: 10px 14px;
+      border-left: 6px solid var(--primary);
+      border-top: 1px solid var(--primary);
+      border-right: 1px solid var(--primary);
+      border-bottom: 1px solid var(--primary);
+      border-radius: 8px;
+      font-weight: 350;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    
+    @media (max-width: 768px) {
+      .hero__text h1 {
+        font-size: 36px;
+        padding: 0 20px;
+      }
+      
+      .hero__text p {
+        padding: 0 20px;
+      }
+      
+      .custom-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .custom-element {
+        width: 80%;
+        height: auto;
+        min-height: 105px;
+      }
+    }
+
+
+
+   
+
+/* Основной стиль для всех секций */
+main > section {
+  position: relative;
+  padding: 4rem 0;
+  margin: 0;
+}
+
+/* Создаем "клетку" для фона секции */
+main > section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  z-index: -1;
+}
+
+main > section:nth-child(even)::before {
+  background-color: rgba(255, 255, 255, 0.7); /* Полупрозрачный белый */
+}
+
+main > section:nth-child(odd)::before {
+  background-color: rgba(245, 249, 255, 0.7); /* Полупрозрачный голубоватый */
+}
+
+/* Исключаем header и footer из этого правила */
+header, footer {
+  background-color: #F5FBFF;
+  position: relative;
+  z-index: 1;
+}
+
+/* Убираем фон у контейнеров секций, так как теперь фон на всю ширину */
+.hero, .help, .steps, .planner, .insturctions, .testimonials {
+  background-color: transparent;
+}
+
+
+
