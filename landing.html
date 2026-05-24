@@ -3,25 +3,40 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Планер Vinc</title>
+  <title>Apex — пространство для совместной работы над проектами</title>
+  <meta name="description"
+    content="Apex — рабочее пространство для команд: задачи, доска, календарь, чат и общий доступ. Ведите проекты вместе, не теряя контекст.">
+  <meta name="theme-color" content="#05070D">
+
+  <!-- Open Graph / соцсети -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Apex — пространство для совместной работы над проектами">
+  <meta property="og:description" content="Задачи, доска, календарь и заметки для всей команды в одном окне. Учебный проект УУНиТ.">
+  <meta property="og:site_name" content="Apex">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:image" content="assets/landing/logo-main.png">
+  <meta name="twitter:card" content="summary_large_image">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <!-- preload критических ресурсов: лого + основной CSS -->
+  <link rel="preload" href="assets/landing/logo-main.png?v=20260524" as="image">
+  <link rel="preload" href="styles/landing/styles.css?v=20260524" as="style">
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="styles/landing/styles.css?v=20260219">
-  <link rel="stylesheet" href="styles/about/styles.css?v=20260219">
-  <link rel="stylesheet" href="styles/landing/auth.css?v=20260219">
-  <link rel="stylesheet" href="styles/planer/info.css?v=20260219">
-  <link rel="stylesheet" href="styles/chat-poput.css?v=20260219">
-    <!-- Основная favicon -->
-    <link rel="icon" href="assets/planer/Vinc-mini-light.png?v=4" type="image/png">
-    <!-- Для Apple устройств -->
-    <link rel="apple-touch-icon" href="assets/planer/Vinc-mini-light.png?v=4">
-    <!-- Для некоторых браузеров -->
-    <link rel="shortcut icon" href="assets/planer/Vinc-mini-light.png?v=4">
+  <link rel="stylesheet" href="styles/landing/styles.css?v=20260524">
+  <link rel="stylesheet" href="styles/about/styles.css?v=20260524">
+  <link rel="stylesheet" href="styles/landing/auth.css?v=20260524">
+  <link rel="stylesheet" href="styles/planer/info.css?v=20260524">
+  <link rel="stylesheet" href="styles/chat-poput.css?v=20260524">
+  <!-- TODO[apex-favicon]: заменить файл на финальную иконку Apex и переименовать в assets/planer/apex-mini-light.png -->
+  <link rel="icon" href="assets/planer/Vinc-mini-light.png?v=20260524" type="image/png">
+  <link rel="apple-touch-icon" href="assets/planer/Vinc-mini-light.png?v=20260524">
+  <link rel="shortcut icon" href="assets/planer/Vinc-mini-light.png?v=20260524">
   <!-- Yandex.Metrika counter -->
   <script type="text/javascript">
     (function (m, e, t, r, i, k, a) {
@@ -58,7 +73,6 @@
         <div class="auth-group">
           <label for="loginPassword">Введите пароль:</label>
           <input type="password" id="loginPassword" required placeholder="Введите пароль">
-          <!-- Добавленная ссылка "Забыли пароль?" -->
           <div class="forgot-password-link">
             <a href="#" class="switch-to-forgot">Забыли пароль?</a>
           </div>
@@ -110,7 +124,6 @@
           <input type="password" id="registerConfirmPassword" required placeholder="Повторите пароль">
         </div>
 
-        <!-- Добавляем блок с соглашениями -->
         <div class="auth-agreements">
           <div class="auth-agreement">
             <input type="checkbox" id="agreeLicense" name="agreeLicense" required>
@@ -156,14 +169,14 @@
 
   <header class="header">
     <nav class="container nav">
-      <a href="landing.html" class="logo-link">
-        <img class="logo" src="assets/landing/logo-main.png?v=7" alt="Vinc Logo">
+      <a href="landing.html" class="logo-link" aria-label="Apex — на главную">
+        <img class="logo" src="assets/landing/logo-main.png?v=20260524" alt="Apex">
       </a>
       <div class="header-actions">
-        <a class="btn btn--header light-btn go-to-planer-btn">Планер Vinc</a>
+        <a class="btn btn--header light-btn go-to-planer-btn">Открыть Apex</a>
 
         <div class="auth-dropdown">
-          <button class="auth-btn">
+          <button class="auth-btn" aria-label="Меню аккаунта">
             <div class="profile-avatar">Вход</div>
           </button>
           <div class="auth-dropdown-content">
@@ -192,7 +205,6 @@
               </svg>
               <span>Регистрация</span>
             </a>
-            <!-- Добавленная кнопка выхода -->
             <a href="#" class="auth-dropdown-item logout-btn" style="display: none;">
               <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
@@ -206,177 +218,327 @@
       </div>
     </nav>
   </header>
+
   <main>
 
     <section class="hero-container container">
       <div class="hero-content">
         <div class="hero-text">
-          <h1>Планер Vinc — ваш идеальный организатор</h1>
+          <span class="hero-eyebrow">
+            <span class="hero-eyebrow__dot" aria-hidden="true"></span>
+            Учебный проект УУНиТ
+          </span>
+          <h1>Пространство, где проект <span class="hero-accent">собирается&nbsp;в&nbsp;одном&nbsp;месте</span></h1>
           <p class="hero-subtitle">
-            Объединяем задачи, календарь, цели и командную работу в одном простом и минималистичном интерфейсе.
+            Задачи, доска, календарь и заметки для всей команды в одном окне. Общий доступ,
+            прозрачный прогресс и фокус на результат — без переключений между инструментами.
           </p>
           <div class="cta-buttons">
             <a class="btn btn--primary btn--large go-to-planer-btn">Начать бесплатно</a>
+            <a href="#detailed-features" class="btn btn--secondary btn--large">Посмотреть, как устроено</a>
           </div>
+          <ul class="hero-bullets">
+            <li><i class="fas fa-check"></i> Веб и мобильное приложение</li>
+            <li><i class="fas fa-check"></i> Совместная работа в реальном времени</li>
+            <li><i class="fas fa-check"></i> Без рекламы и трекеров</li>
+          </ul>
         </div>
-        <div class="hero-media">
-          <div class="image-container">
-            <img src="assets/landing/planer-hero.png" alt="Интерфейс Планер Vinc" loading="lazy"
-              class="hero-image hero-image-pc" />
-            <p class="image-caption">Десктопная версия</p>
+
+        <div class="hero-stage" aria-hidden="true">
+          <div class="hero-stage__glow"></div>
+
+          <!-- Desktop mock -->
+          <div class="hero-stage__desktop">
+            <div class="app-mock app-mock--hero">
+
+              <div class="hero-mock__topbar">
+                <div class="hero-mock__brand">
+                  <span class="hero-mock__brand-logo"><img src="assets/landing/favicon.png" alt="Apex" style="width: 100%; height: 100%; object-fit: contain;"></span>
+                  <span>Apex</span>
+                </div>
+                <div class="hero-mock__crumb">Сегодня <small>· 14 мая</small></div>
+                <div class="hero-mock__profile">
+                  <span class="hero-mock__search"><i class="fas fa-search"></i></span>
+                  <span class="hero-mock__bell"><i class="far fa-bell"></i><b></b></span>
+                  <span class="mock-avatar">М</span>
+                </div>
+              </div>
+
+              <div class="hero-mock__grid">
+                <!-- Тулбар -->
+                <nav class="mock-toolbar hero-mock__toolbar">
+                  <div class="mock-toolbar__group">
+                    <button class="mock-toolbar__icon is-active" title="Проекты"><i class="fas fa-layer-group"></i></button>
+                    <button class="mock-toolbar__icon" title="Календарь"><i class="fas fa-calendar-alt"></i></button>
+                    <button class="mock-toolbar__icon" title="Задачи"><i class="fas fa-tasks"></i></button>
+                    <button class="mock-toolbar__icon" title="Прогресс"><i class="fas fa-trophy"></i></button>
+                    <button class="mock-toolbar__icon" title="Заметки"><i class="fas fa-sticky-note"></i></button>
+                    <button class="mock-toolbar__icon" title="Чат"><i class="fas fa-comments"></i></button>
+                  </div>
+                  <div class="mock-toolbar__group mock-toolbar__group--bottom">
+                    <button class="mock-toolbar__icon" title="Профиль"><i class="fas fa-user-cog"></i></button>
+                  </div>
+                </nav>
+
+                <!-- Лента задач на сегодня -->
+                <div class="hero-mock__main">
+                  <div class="hero-mock__section">Сегодня · 5 задач</div>
+                  <ul class="hero-feed">
+                    <li>
+                      <span class="hero-feed__time">09:30</span>
+                      <span class="hero-feed__dot" style="background:#2E8FE0"></span>
+                      <span class="hero-feed__title">Стендап команды</span>
+                      <span class="hero-feed__tag" style="background:rgba(46,143,224,.18); color:#7CC0F0">Релиз 2.0</span>
+                    </li>
+                    <li class="is-progress">
+                      <span class="hero-feed__time">10:00</span>
+                      <span class="hero-feed__dot" style="background:#00BFA5"></span>
+                      <span class="hero-feed__title">Подключить SSO к стейджу</span>
+                      <span class="hero-feed__meta"><i class="far fa-check-square"></i> 3/5</span>
+                    </li>
+                    <li>
+                      <span class="hero-feed__time">14:30</span>
+                      <span class="hero-feed__dot" style="background:#FFB74D"></span>
+                      <span class="hero-feed__title">Ревью дизайн-системы</span>
+                      <span class="hero-feed__meta"><i class="far fa-comment"></i> 4</span>
+                    </li>
+                    <li class="is-focus">
+                      <span class="hero-feed__time">16:00</span>
+                      <span class="hero-feed__dot" style="background:#7E89F5"></span>
+                      <span class="hero-feed__title">Фокус: текст лендинга</span>
+                      <span class="hero-feed__meta"><i class="fas fa-bullseye"></i> 90 мин</span>
+                    </li>
+                    <li class="is-done">
+                      <span class="hero-feed__time">18:00</span>
+                      <span class="hero-feed__dot" style="background:#8A99B5"></span>
+                      <span class="hero-feed__title">Опубликовать релиз 1.8</span>
+                      <span class="hero-feed__meta"><i class="fas fa-check"></i></span>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Правый сайдбар: проекты -->
+                <aside class="hero-mock__right">
+                  <div class="hero-mock__section">Проекты</div>
+                  <ul class="mock-side__list">
+                    <li class="is-active"><span class="dot" style="background:#2E8FE0"></span>Релиз 2.0<span class="count">12</span></li>
+                    <li><span class="dot" style="background:#00BFA5"></span>Маркетинг<span class="count">7</span></li>
+                    <li><span class="dot" style="background:#FFB74D"></span>Дизайн<span class="count">4</span></li>
+                    <li><span class="dot" style="background:#E573D7"></span>Research<span class="count">3</span></li>
+                  </ul>
+                  <div class="hero-mock__progress">
+                    <div class="hero-mock__progress-head">
+                      <span>Прогресс недели</span>
+                      <strong>72%</strong>
+                    </div>
+                    <div class="mock-card__progress"><span style="width:72%"></span></div>
+                  </div>
+                </aside>
+              </div>
+            </div>
           </div>
 
-          <div class="image-container">
-            <img src="assets/landing/planer-hero-mob.jpg" alt="Мобильный интерфейс Планер Vinc" loading="lazy"
-              class="hero-image hero-image-mobile" />
-            <p class="image-caption">Мобильная версия</p>
+          <!-- Mobile mock (phone) -->
+          <div class="hero-stage__mobile">
+            <div class="phone-mock">
+              <div class="phone-mock__notch"></div>
+              <div class="phone-mock__screen">
+                <div class="phone-mock__statusbar">
+                  <span>9:41</span>
+                  <span><i class="fas fa-signal"></i> <i class="fas fa-wifi"></i> <i class="fas fa-battery-three-quarters"></i></span>
+                </div>
+                <div class="phone-mock__header">
+                  <div>
+                    <div class="phone-mock__hello">Привет, Мария</div>
+                    <div class="phone-mock__date">Сегодня · 14 мая</div>
+                  </div>
+                  <span class="mock-avatar">М</span>
+                </div>
+
+                <div class="phone-mock__quick">
+                  <button><i class="fas fa-plus"></i><span>Задача</span></button>
+                  <button><i class="far fa-calendar-plus"></i><span>Событие</span></button>
+                  <button><i class="far fa-sticky-note"></i><span>Заметка</span></button>
+                </div>
+
+                <div class="phone-mock__section">Ближайшее</div>
+                <ul class="phone-mock__feed">
+                  <li>
+                    <span class="phone-mock__time">09:30</span>
+                    <div>
+                      <div class="phone-mock__title">Стендап команды</div>
+                      <div class="phone-mock__sub">Релиз 2.0 · 5 участников</div>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="phone-mock__time">10:00</span>
+                    <div>
+                      <div class="phone-mock__title">Подключить SSO</div>
+                      <div class="phone-mock__sub"><i class="far fa-check-square"></i> 3/5</div>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="phone-mock__time">14:30</span>
+                    <div>
+                      <div class="phone-mock__title">Ревью дизайн-системы</div>
+                      <div class="phone-mock__sub"><i class="far fa-comment"></i> 4 комментария</div>
+                    </div>
+                  </li>
+                </ul>
+
+                <div class="phone-mock__tabs">
+                  <button class="is-active"><i class="fas fa-home"></i></button>
+                  <button><i class="fas fa-tasks"></i></button>
+                  <button><i class="far fa-calendar"></i></button>
+                  <button><i class="far fa-user"></i></button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
-
-        <section class="qr-section container">
-      <div class="qr-content">
-        <div class="qr-text">
-          <h2>Скачайте мобильное приложение</h2>
-          <p class="qr-subtitle">
-            Получите доступ к вашему планеру в любое время и в любом месте. <br>
-            Сканируйте QR-код для загрузки приложения на ваш смартфон.
-          </p>
-          <div class="qr-features">
-            <div class="qr-feature">
-              <i class="fas fa-sync-alt"></i>
-              <span>Синхронизация с веб-версией</span>
-            </div>
-  
-            <div class="qr-feature">
-              <i class="fas fa-mobile-alt"></i>
-              <span>Удобный мобильный интерфейс</span>
-            </div>
-          </div>
-        </div>
-        <div class="qr-code-container">
-          <div class="qr-code-card">
-            <img src="assets/landing/rustore.png" alt="QR-код для скачивания приложения" class="qr-code-image">
-<a href="https://www.rustore.ru/catalog/app/com.vincere.myapppsychology" target="_blank">
-    <img class="qr-caption" src="assets/landing/rustore.svg" alt="RuStore">
-</a>          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="instruction-container container">
-      <script>
-        document.addEventListener("DOMContentLoaded", () => {
-          if (typeof getVideoPlayerHTML === "function") {
-            document.querySelector(".instruction-container").innerHTML = getVideoPlayerHTML();
-            initVideoPlayer();
-          }
-        });
-      </script>
-    </section>
-
 
     <section id="features" class="features container">
       <div class="features__header">
-        <h2 class="section-title">Основные возможности</h2>
-        <p class="section-subtitle">Все инструменты для эффективного планирования в одном месте</p>
+        <h2 class="section-title">Что есть в Apex</h2>
+        <p class="section-subtitle">Всё, чтобы команда вела проекты в одном пространстве — без переключений</p>
       </div>
       <div class="features__grid">
         <div class="feature-card">
           <div class="feature-icon">
             <i class="fas fa-layer-group"></i>
           </div>
-          <h3>Сферы жизни</h3>
-          <p>Группируйте задачи по ключевым областям вашей жизни с помощью кастомных категорий</p>
+          <h3>Проекты и направления</h3>
+          <p>Разделяйте работу команды по проектам и направлениям, настраивайте цвета и иконки</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">
             <i class="fas fa-calendar-alt"></i>
           </div>
-          <h3>Умный календарь</h3>
-          <p>Мини-календарь в сайдбаре и полноэкранный режим для управления событиями</p>
+          <h3>Общий календарь</h3>
+          <p>Дедлайны, встречи и спринты команды в едином календаре — без двойного учёта</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">
             <i class="fas fa-tasks"></i>
           </div>
           <h3>Задачи и доска</h3>
-          <p>Лента задач на сегодня и полноценная доска с чек-листами и комментариями</p>
+          <p>Канбан-доска и лента задач на сегодня с чек-листами, комментариями и вложениями</p>
         </div>
-        <!--<div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-comments"></i>
-          </div>
-          <h3>Командный чат</h3>
-          <p>Групповые диалоги с возможностью отправки файлов и эмодзи</p>
-        </div>-->
         <div class="feature-card">
           <div class="feature-icon">
             <i class="fas fa-trophy"></i>
           </div>
-          <h3>Мои победы</h3>
-          <p>Фиксируйте достижения с помощью красочных карточек успеха</p>
+          <h3>Прогресс команды</h3>
+          <p>Фиксируйте релизы, спринты и ключевые результаты — видно, что и кем сделано</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">
             <i class="fas fa-sliders-h"></i>
           </div>
           <h3>Гибкие настройки</h3>
-          <p>Персонализируйте интерфейс под себя: темы, уведомления и профиль</p>
+          <p>Роли, уведомления, темы и интеграции — подстраивайте под процессы вашей команды</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">
             <i class="fas fa-sticky-note"></i>
           </div>
           <h3>Быстрые заметки</h3>
-          <p>Создавайте моментальные записи и напоминания в один клик</p>
+          <p>Идеи, решения встреч и наброски — одним кликом, с переносом в задачи</p>
         </div>
-        <!--<div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-user-md"></i>
-          </div>
-          <h3>Поддержка сертифицированного психолога</h3>
-          <p>Профессиональная помощь в управлении стрессом и повышении продуктивности</p>
-        </div>
-      </div>-->
+      </div>
     </section>
 
     <section id="detailed-features" class="detailed-features container">
       <div class="features__header">
-        <h2 class="section-title">Подробнее о возможностях</h2>
-        <p class="section-subtitle">Полный контроль над вашими задачами и временем</p>
+        <h2 class="section-title">Как устроен Apex</h2>
+        <p class="section-subtitle">Прозрачный контроль над проектами, временем и людьми</p>
       </div>
 
       <div class="feature-detail">
         <div class="feature-detail__content">
           <h3>Навигационный тулбар</h3>
           <ul>
-            <li>Логотип Vinc</li>
-            <li>Быстрый доступ к Сферам, Календарю, Моим победам, Заметкам и Чату</li>
-            <li>Внизу – Профиль, Справка</li>
+            <li>Логотип Apex и быстрый возврат к домашнему пространству</li>
+            <li>Доступ к Проектам, Календарю, Прогрессу, Заметкам и Чату в один клик</li>
+            <li>Внизу — Профиль и Справка</li>
           </ul>
         </div>
-        <div class="feature-detail__image">
-          <img src="assets/landing/navbar-demo1.png" alt="Навигационный тулбар">
-        </div>
-
-        <div class="feature-detail__image">
-          <img src="assets/landing/navbar-demo2.png" alt="Навигационный тулбар">
+        <div class="feature-detail__mock" aria-hidden="true">
+          <div class="app-mock">
+            <div class="app-mock__body app-mock__body--toolbar">
+              <nav class="mock-toolbar">
+                <div class="mock-toolbar__logo"><img src="assets/landing/favicon.png" alt="Apex" style="width: 100%; height: 100%; object-fit: contain;"></div>
+                <div class="mock-toolbar__group">
+                  <button class="mock-toolbar__icon is-active" title="Проекты"><i class="fas fa-layer-group"></i></button>
+                  <button class="mock-toolbar__icon" title="Календарь"><i class="fas fa-calendar-alt"></i></button>
+                  <button class="mock-toolbar__icon" title="Задачи"><i class="fas fa-tasks"></i></button>
+                  <button class="mock-toolbar__icon" title="Прогресс"><i class="fas fa-trophy"></i></button>
+                  <button class="mock-toolbar__icon" title="Заметки"><i class="fas fa-sticky-note"></i></button>
+                  <button class="mock-toolbar__icon" title="Чат"><i class="fas fa-comments"></i></button>
+                </div>
+                <div class="mock-toolbar__group mock-toolbar__group--bottom">
+                  <button class="mock-toolbar__icon" title="Профиль"><i class="fas fa-user-cog"></i></button>
+                  <button class="mock-toolbar__icon" title="Справка"><i class="fas fa-circle-info"></i></button>
+                </div>
+              </nav>
+              <div class="mock-pane">
+                <div class="mock-pane__header">
+                  <div class="mock-crumb">Проекты <span>›</span> Релиз 2.0</div>
+                  <div class="mock-avatar">М</div>
+                </div>
+                <div class="mock-pane__body">
+                  <div class="mock-skeleton mock-skeleton--lg"></div>
+                  <div class="mock-skeleton"></div>
+                  <div class="mock-skeleton mock-skeleton--sm"></div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
       <div class="feature-detail reverse">
         <div class="feature-detail__content">
-          <h3>Сферы (категории жизни)</h3>
+          <h3>Проекты команды</h3>
           <ul>
-            <li>Список кастомных «сфер» в боковом меню</li>
-            <li>Группировка задач и событий по ключевым областям</li>
-            <li>Персонализация цветов и иконок для каждой сферы</li>
+            <li>Список проектов и направлений в боковом меню</li>
+            <li>Группировка задач и событий по проектам с общим доступом</li>
+            <li>Персонализация цветов и иконок для каждого проекта</li>
           </ul>
         </div>
-        <div class="feature-detail__image">
-          <img src="assets/landing/spheres-demo.png" alt="Сферы жизни">
+        <div class="feature-detail__mock" aria-hidden="true">
+          <div class="app-mock">
+            <div class="app-mock__body">
+              <aside class="mock-side">
+                <div class="mock-side__title">Проекты</div>
+                <ul class="mock-side__list">
+                  <li class="is-active"><span class="dot" style="background:#2E8FE0"></span>Релиз 2.0<span class="count">12</span></li>
+                  <li><span class="dot" style="background:#00BFA5"></span>Маркетинг Q3<span class="count">7</span></li>
+                  <li><span class="dot" style="background:#FFB74D"></span>Дизайн-система<span class="count">4</span></li>
+                  <li><span class="dot" style="background:#E573D7"></span>Исследования<span class="count">3</span></li>
+                  <li><span class="dot" style="background:#7E89F5"></span>Onboarding<span class="count">5</span></li>
+                </ul>
+                <button class="mock-side__add"><i class="fas fa-plus"></i> Новый проект</button>
+              </aside>
+              <div class="mock-pane">
+                <div class="mock-pane__header">
+                  <div class="mock-crumb">Релиз 2.0</div>
+                  <div class="mock-people">
+                    <span class="mock-avatar">М</span>
+                    <span class="mock-avatar">A</span>
+                    <span class="mock-avatar">К</span>
+                    <span class="mock-avatar mock-avatar--more">+2</span>
+                  </div>
+                </div>
+                <div class="mock-pane__body">
+                  <div class="mock-skeleton mock-skeleton--lg"></div>
+                  <div class="mock-skeleton"></div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -385,57 +547,140 @@
           <h3>Календарь</h3>
           <ul>
             <li>Мини-календарь в правом сайд-баре</li>
-            <li>Полноэкранный календарь со всеми вашими событиями</li>
+            <li>Полноэкранный календарь со всеми событиями команды</li>
           </ul>
         </div>
-        <div class="feature-detail__image">
-          <img src="assets/landing/calendar-demo1.png" alt="Календарь">
-        </div>
-        <div class="feature-detail__image">
-          <img src="assets/landing/calendar-demo2.png" alt="Календарь">
+        <div class="feature-detail__mock" aria-hidden="true">
+          <div class="app-mock">
+            <div class="app-mock__body app-mock__body--pad">
+              <div class="mock-cal">
+                <div class="mock-cal__header">
+                  <button class="mock-icon-btn"><i class="fas fa-chevron-left"></i></button>
+                  <div class="mock-cal__title">Май 2026</div>
+                  <button class="mock-icon-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="mock-cal__week">
+                  <span>Пн</span><span>Вт</span><span>Ср</span><span>Чт</span><span>Пт</span><span class="mock-cal__off">Сб</span><span class="mock-cal__off">Вс</span>
+                </div>
+                <div class="mock-cal__grid">
+                  <span class="dim">28</span><span class="dim">29</span><span class="dim">30</span><span>1</span><span>2</span><span class="off">3</span><span class="off">4</span>
+                  <span>5</span><span class="has-evt">6</span><span>7</span><span>8</span><span class="has-evt">9</span><span class="off">10</span><span class="off">11</span>
+                  <span>12</span><span>13</span><span class="has-evt today">14</span><span>15</span><span>16</span><span class="off">17</span><span class="off">18</span>
+                  <span>19</span><span class="has-evt">20</span><span>21</span><span>22</span><span class="has-evt">23</span><span class="off">24</span><span class="off">25</span>
+                  <span>26</span><span>27</span><span>28</span><span>29</span><span>30</span><span class="off">31</span><span class="dim off">1</span>
+                </div>
+                <div class="mock-cal__events">
+                  <div class="mock-event"><span class="mock-event__dot" style="background:#2E8FE0"></span>10:00 · Стендап команды</div>
+                  <div class="mock-event"><span class="mock-event__dot" style="background:#FFB74D"></span>14:30 · Ревью дизайн-системы</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
       <div class="feature-detail reverse">
         <div class="feature-detail__content">
-          <h3>Задачи и доска задач</h3>
+          <h3>Задачи и доска</h3>
           <ul>
             <li>Лента задач на сегодня (таймлайн)</li>
-            <li>Полноэкранное модальное окно для создания/редактирования задачи</li>
+            <li>Полноэкранное окно для создания и обсуждения задачи</li>
             <li>Чек-листы, комментарии с эмодзи и вложениями</li>
-            <li>Статус, таймер «Фокус-режим»</li>
+            <li>Статусы и «Фокус-режим» с таймером</li>
           </ul>
         </div>
-        <div class="feature-detail__image">
-          <img src="assets/landing/tasks-demo.png" alt="Задачи">
+        <div class="feature-detail__mock" aria-hidden="true">
+          <div class="app-mock">
+            <div class="app-mock__body app-mock__body--pad">
+              <div class="mock-board">
+                <div class="mock-col">
+                  <div class="mock-col__title">К выполнению <span>3</span></div>
+                  <div class="mock-card">
+                    <div class="mock-card__tag" style="background:rgba(46,143,224,.18); color:#7CC0F0">Релиз 2.0</div>
+                    <div class="mock-card__title">Подключить SSO</div>
+                    <div class="mock-card__meta"><i class="far fa-comment"></i> 4 · <i class="far fa-check-square"></i> 2/5</div>
+                  </div>
+                  <div class="mock-card">
+                    <div class="mock-card__tag" style="background:rgba(255,183,77,.18); color:#FFC97A">Дизайн</div>
+                    <div class="mock-card__title">Гайдлайн иконок</div>
+                    <div class="mock-card__meta"><i class="far fa-clock"></i> 23 мая</div>
+                  </div>
+                </div>
+                <div class="mock-col">
+                  <div class="mock-col__title">В работе <span>2</span></div>
+                  <div class="mock-card is-progress">
+                    <div class="mock-card__tag" style="background:rgba(0,191,165,.18); color:#5FE0CB">Маркетинг</div>
+                    <div class="mock-card__title">Подготовить лендинг</div>
+                    <div class="mock-card__progress"><span style="width:62%"></span></div>
+                  </div>
+                </div>
+                <div class="mock-col">
+                  <div class="mock-col__title">Готово <span>5</span></div>
+                  <div class="mock-card mock-card--done">
+                    <div class="mock-card__tag" style="background:rgba(126,137,245,.18); color:#A7B2F9">Бэк</div>
+                    <div class="mock-card__title">API авторизации</div>
+                    <div class="mock-card__meta"><i class="fas fa-check"></i> Закрыто</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="feature-detail">
-        <div class="feature-detail__content">
-          <h3>Чат</h3>
-          <ul>
-            <li>Групповые диалоги внутри приложения</li>
-            <li>Отправка файлов и эмодзи</li>
-            <li>Упоминания участников и уведомления</li>
-          </ul>
-        </div>
-        <div class="feature-detail__image">
-          <img src="assets/landing/chat-demo.png" alt="Чат">
-        </div>
-      </div>
+
 
       <div class="feature-detail reverse">
         <div class="feature-detail__content">
-          <h3>Победы (достижения)</h3>
+          <h3>Прогресс и достижения</h3>
           <ul>
-            <li>Фиксация личных достижений в разделе «Мои победы»</li>
-            <li>Красочные карточки для каждого успеха</li>
-            <li>Статистика и аналитика прогресса</li>
+            <li>Фиксация результатов и побед команды</li>
+            <li>Карточки релизов и ключевых результатов</li>
+            <li>Статистика и аналитика прогресса по проектам</li>
           </ul>
         </div>
-        <div class="feature-detail__image">
-          <img src="assets/landing/wins-demo.png" alt="Победы">
+        <div class="feature-detail__mock" aria-hidden="true">
+          <div class="app-mock">
+            <div class="app-mock__body app-mock__body--pad">
+              <div class="mock-stats">
+                <div class="mock-stat">
+                  <div class="mock-stat__num">42</div>
+                  <div class="mock-stat__label">задач закрыто</div>
+                </div>
+                <div class="mock-stat">
+                  <div class="mock-stat__num">7</div>
+                  <div class="mock-stat__label">релизов в месяц</div>
+                </div>
+                <div class="mock-stat">
+                  <div class="mock-stat__num">94%</div>
+                  <div class="mock-stat__label">в срок</div>
+                </div>
+              </div>
+              <div class="mock-wins">
+                <div class="mock-win">
+                  <div class="mock-win__icon"><i class="fas fa-trophy"></i></div>
+                  <div>
+                    <div class="mock-win__title">Релиз 1.8 в проде</div>
+                    <div class="mock-win__sub">21 мая · 5 участников</div>
+                  </div>
+                </div>
+                <div class="mock-win">
+                  <div class="mock-win__icon" style="background:rgba(255,183,77,.16); color:#FFC97A"><i class="fas fa-medal"></i></div>
+                  <div>
+                    <div class="mock-win__title">Закрыт первый клиентский контракт</div>
+                    <div class="mock-win__sub">17 мая · Маркетинг</div>
+                  </div>
+                </div>
+                <div class="mock-win">
+                  <div class="mock-win__icon" style="background:rgba(0,191,165,.16); color:#5FE0CB"><i class="fas fa-flag-checkered"></i></div>
+                  <div>
+                    <div class="mock-win__title">Onboarding 2.0 запущен</div>
+                    <div class="mock-win__sub">12 мая · Команда продукта</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -443,24 +688,90 @@
         <div class="feature-detail__content">
           <h3>Профиль и настройки</h3>
           <ul>
-            <li>Управление аватаром, именем, Email</li>
-            <li>Уведомления и прочие опции</li>
+            <li>Управление аватаром, именем и email</li>
+            <li>Уведомления, темы и прочие опции</li>
           </ul>
         </div>
-        <div class="feature-detail__image">
-          <img src="assets/landing/profile-demo.png" alt="Профиль">
+        <div class="feature-detail__mock" aria-hidden="true">
+          <div class="app-mock">
+            <div class="app-mock__body app-mock__body--pad">
+              <div class="mock-profile">
+                <div class="mock-profile__head">
+                  <div class="mock-profile__avatar">М</div>
+                  <div>
+                    <div class="mock-profile__name">Мария Иванова</div>
+                    <div class="mock-profile__role">Product · Команда Apex</div>
+                  </div>
+                  <button class="mock-btn">Изменить</button>
+                </div>
+                <div class="mock-form">
+                  <label>Имя
+                    <div class="mock-input">Мария Иванова</div>
+                  </label>
+                  <label>E-mail
+                    <div class="mock-input">maria@example.com</div>
+                  </label>
+                </div>
+                <div class="mock-toggles">
+                  <div class="mock-toggle">
+                    <span>Уведомления в Telegram</span>
+                    <span class="mock-switch is-on"><i></i></span>
+                  </div>
+                  <div class="mock-toggle">
+                    <span>Тёмная тема</span>
+                    <span class="mock-switch is-on"><i></i></span>
+                  </div>
+                  <div class="mock-toggle">
+                    <span>Дайджест по понедельникам</span>
+                    <span class="mock-switch"><i></i></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+
       <div class="feature-detail reverse">
         <div class="feature-detail__content">
           <h3>Быстрые заметки</h3>
           <ul>
-            <li>Быстрый способ зафиксировать свои мысли с возможностью перенести их в задачи</li>
-            <li>Индивидуальные закладки для разных типов заметок</li>
+            <li>Быстро зафиксировать мысль и потом перенести её в задачу</li>
+            <li>Отдельные закладки для разных типов заметок</li>
           </ul>
         </div>
-        <div class="feature-detail__image">
-          <img src="assets/landing/notes.png" alt="Победы">
+        <div class="feature-detail__mock" aria-hidden="true">
+          <div class="app-mock">
+            <div class="app-mock__body app-mock__body--pad">
+              <div class="mock-notes">
+                <div class="mock-note" style="--c:#2E8FE0">
+                  <div class="mock-note__tag">Идея</div>
+                  <div class="mock-note__title">Сделать публичный roadmap</div>
+                  <div class="mock-note__body">Чтобы клиенты видели, что мы релизим в этом квартале.</div>
+                  <button class="mock-note__action"><i class="fas fa-arrow-right"></i> в задачу</button>
+                </div>
+                <div class="mock-note" style="--c:#FFB74D">
+                  <div class="mock-note__tag">Встреча</div>
+                  <div class="mock-note__title">Стендап 14 мая</div>
+                  <div class="mock-note__body">Маша блокирует на ревью. Костя берёт миграцию.</div>
+                </div>
+                <div class="mock-note" style="--c:#00BFA5">
+                  <div class="mock-note__tag">Чек-лист</div>
+                  <div class="mock-note__title">Перед релизом</div>
+                  <ul class="mock-note__check">
+                    <li class="done">Тесты</li>
+                    <li class="done">Документация</li>
+                    <li>Уведомить клиентов</li>
+                  </ul>
+                </div>
+                <div class="mock-note" style="--c:#7E89F5">
+                  <div class="mock-note__tag">Ссылка</div>
+                  <div class="mock-note__title">Reference про onboarding</div>
+                  <div class="mock-note__body">notion.so/apex-onboarding</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -474,29 +785,28 @@
           <p>Создайте аккаунт или войдите в существующий</p>
         </li>
         <li>
-          <h3>Создайте сферы</h3>
-          <p>Определите ключевые области вашей жизни для группировки задач</p>
+          <h3>Создайте проект</h3>
+          <p>Опишите направление работы и пригласите участников</p>
         </li>
         <li>
           <h3>Добавьте задачи</h3>
-          <p>Создавайте задачи с чек-листами, комментариями и сроками</p>
+          <p>Соберите задачи с чек-листами, ответственными и сроками</p>
         </li>
         <li>
           <h3>Запланируйте события</h3>
-          <p>Добавляйте встречи и дедлайны в календарь</p>
+          <p>Добавляйте встречи и дедлайны в общий календарь</p>
         </li>
-
         <li>
           <h3>Пригласите команду</h3>
-          <p>Работайте вместе в чате и над общими задачами</p>
+          <p>Обсуждайте задачи в чате и работайте над проектами вместе</p>
         </li>
         <li>
-          <h3>Фиксируйте победы</h3>
-          <p>Отмечайте достижения и следите за прогрессом</p>
+          <h3>Фиксируйте результат</h3>
+          <p>Отмечайте достижения и отслеживайте прогресс команды</p>
         </li>
         <li>
           <h3>Быстрые заметки</h3>
-          <p>Записывайте мысли и идеи в любое время</p>
+          <p>Записывайте идеи и решения встреч в любое время</p>
         </li>
         <li>
           <h3>Появились вопросы? Напишите в чат поддержки.</h3>
@@ -508,114 +818,66 @@
     <!-- Блок стоимости подписки -->
     <section class="subscription-pricing container">
       <h2 class="section-title">Выберите подписку</h2>
-      <p class="section-subtitle">Доступ ко всем функциям планировщика</p>
+      <p class="section-subtitle">Доступ ко всем функциям Apex</p>
 
       <div class="pricing-cards" id="pricingCards"></div>
     </section>
-
-
-    <!-- Рекламный блок для психологов 
-    <section class="ad-section container">
-      <div class="ad-card reverse">
-        <div class="ad-content">
-          <h3>Поддержка для вас и вашего настроения</h3>
-          <p>Запишитесь на консультацию к сертифицированному психологу прямо из приложения Vinc. Анонимно, удобно,
-            эффективно.</p>
-          <div class="ad-features">
-            <div class="ad-feature">
-              <i class="fas fa-user-md"></i>
-              <span>Квалифицированные специалисты</span>
-            </div>
-            <div class="ad-feature">
-              <i class="fas fa-lock"></i>
-              <span>Полная конфиденциальность</span>
-            </div>
-            <div class="ad-feature">
-              <i class="fas fa-video"></i>
-              <span>Онлайн-консультации</span>
-            </div>
-          </div>
-          <a href="landing.html" class="btn btn--primary">Выбрать психолога</a>
-        </div>
-        <div class="ad-image">
-          <img src="assets/landing/psychology-ad.png" alt="Психологическая помощь" loading="lazy">
-        </div>
-      </div>
-    </section>-->
-
-    <section id="cta" class="cta-section container">
-      <div class="cta-content">
-        <h2>Готовы организовать свою жизнь?</h2>
-        <p>Станьте одними из первых, кто повысит свою продуктивность с Планером Vinc</p>
-        <div class="cta-buttons">
-          <a class="btn btn--primary btn--large go-to-planer-btn">Начать бесплатно</a>
-        </div>
-      </div>
-    </section>
   </main>
 
-  <footer class="footer">
-  <div class="container footer__columns">
-      <!-- Первая колонка (логотип и QR-код) -->
-      <div class="footer__column">
-        <h3 class="footer__title">Где скачать?</h3>
-          <a href="https://www.rustore.ru/catalog/app/com.vincere.myapppsychology" class="google-link"><img src="assets/landing/rustore.svg" alt="App Store"></a>
-        <div class="app-links">
-          <div class="text"> Ждите наше приложение в App Store</div>
-          <a href="#" class="apple-link"><img src="assets/landing/apple.png" alt="App Store"></a>
+  <footer class="footer footer--edu">
+    <div class="container footer__edu">
+      <div class="footer__edu-brand">
+<div class="footer__edu-logo" aria-hidden="true">
+  <img src="assets/landing/favicon.png" alt="Apex" style="width: 100%; height: 100%; object-fit: contain;">
+</div>        <div>
+          <div class="footer__edu-title">Apex</div>
+          <div class="footer__edu-sub">Пространство для совместной работы над проектами</div>
         </div>
-
       </div>
-    <div class="footer__column">
-      <h3 class="footer__title">ООО «ВИНЦЕРЕ ПСИХОЛОДЖИ»</h3>
-      <ul class="footer__links">
-        <li><a href="privacy.html" target="_blank" class="modal-link">Политика конфиденциальности</a></li>
-        <li><a href="license.html" target="_blank" class="modal-link">Лицензионное соглашение</a></li>
-        <li><a href="offert.html" target="_blank" class="modal-link">Публичная оферта</a></li>
-      </ul>
-    </div>
 
-    <div class="footer__column">
-      <!-- Не решено что делать<div class="footer__copyright">
-        <p>© 2025 Vinc</p>
-        <a href="https://reestr.digital.gov.ru/" class="registry-link">Включено в единый реестр российских программ</a>
+      <div class="footer__edu-note">
+        <span class="footer__edu-badge">Учебный проект</span>
+        <p>
+          Сайт и приложение разработаны в рамках учебной работы в
+          <strong>УУНиТ</strong> (Уфимский университет науки и технологий). <br>
+          Реальная коммерческая деятельность не ведётся, оплата не принимается.
+        </p>
       </div>
-       -->
-      <h3 class="footer__title">Поддержка</h3>
-      <div class="social-links">
-        <a href="https://vk.com/vincere.psychology" class="social-link"><img src="assets/landing/vk-icon.svg" alt="Вконтакте"></a>
-        <a href="https://t.me/+36yqFws00fAyYWIy" class="social-link"><img src="assets/landing/telegram-icon.svg" alt="Telegram"></a>
-        <a href="Vincteam@mail.ru" class="social-link"><img src="assets/landing/email-icon.svg" alt="E-mail"></a>
-        <a href="https://www.youtube.com/channel/UCC_A_tpczf9aT3HHFYgLtYA" class="social-link"><img src="assets/landing/youtube-icon.svg" alt="YouTube"></a>
-        <a href="https://www.instagram.com/vincere.psy?igsh=MWppZjJjZTc3dXo2cg%3D%3D&utm_source=qr" class="social-link"><img src="assets/landing/instagram-icon.svg" alt="Instagram"></a>
+
+      <div class="footer__edu-meta">
+        <div>© 2026 Apex · учебный демо-проект</div>
+        <ul class="footer__edu-links">
+          <li><a href="privacy.html" target="_blank" rel="noopener">Конфиденциальность</a></li>
+          <li><a href="license.html" target="_blank" rel="noopener">Соглашение</a></li>
+          <li><a href="offert.html" target="_blank" rel="noopener">Оферта</a></li>
+        </ul>
       </div>
     </div>
-    
-  </div>
   </footer>
+  <!-- Плавный скролл к якорям внутри страницы (например, "Посмотреть, как устроено") -->
+  <script>
+    document.addEventListener('click', (e) => {
+      const link = e.target.closest('a[href^="#"]');
+      if (!link) return;
+      const id = link.getAttribute('href');
+      if (id.length < 2) return;
+      const target = document.querySelector(id);
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (history.replaceState) history.replaceState(null, '', id);
+    }, { passive: false });
+  </script>
 
-  <!-- Кнопка Telegram -->
-  <a href="https://t.me/VincereSupportBot" class="telegram-btn" target="_blank" aria-label="Telegram поддержки">
-    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
-      <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 
-    12-12-5.373-12-12-12zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508
-    l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054
-    5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658
-    -.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.941z" />
-    </svg>
-  </a>
-
-  <script src="scripts/planer/DTO/User.js?v=20260219"></script>
-  <script src="scripts/planer/info.js?v=20260219"></script>
-  <script src="scripts/auth.js?v=20260219"></script>
-  <script src="scripts/paymentService.js?v=20260219"></script>
-  <script src="scripts/about/payment.js?v=20260219"></script>
-  <script src="scripts/landing/auth.js?v=20260219"></script>
-  <script src="scripts/landing/gradientBackground.js?v=20260219"></script>
-  <script src="scripts/landing/main.js?v=20260219"></script>
-  <script src="scripts/apiService.js?v=20260219"></script>
-
-
+  <script src="scripts/planer/DTO/User.js?v=20260524"></script>
+  <script src="scripts/planer/info.js?v=20260524"></script>
+  <script src="scripts/auth.js?v=20260524"></script>
+  <script src="scripts/paymentService.js?v=20260524"></script>
+  <script src="scripts/about/payment.js?v=20260524"></script>
+  <script src="scripts/landing/auth.js?v=20260524"></script>
+  <script src="scripts/landing/gradientBackground.js?v=20260524"></script>
+  <script src="scripts/landing/main.js?v=20260524"></script>
+  <script src="scripts/apiService.js?v=20260524"></script>
 
 </body>
 

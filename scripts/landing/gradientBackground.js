@@ -54,13 +54,14 @@
     vign.className = 'bg-vignette';
     root.appendChild(vign);
 
+    // Apex palette: deep blue → bright blue (hues ~205-220)
     const blobs = [];
     for (let i=0;i<6;i++){
       blobs.push({
         x: rand(0,1), y: rand(0,1),
         r: rand(0.2,0.8),
         w: rand(0.2,0.8),
-        hue: rand(200,320),
+        hue: rand(205,225),
         speed: rand(0.0005, 0.002)
       });
     }
@@ -79,7 +80,7 @@
       const pts = [];
       const count = 4 + Math.floor(rand(0,4));
       for (let j=0;j<count;j++) pts.push({x: rand(0,1), y: rand(0,1)});
-      lines.push({pts, t: rand(0,1000), speed: rand(0.0002,0.001), colorHue: rand(260,340)});
+      lines.push({pts, t: rand(0,1000), speed: rand(0.0002,0.001), colorHue: rand(200,220)});
     }
 
     function drawGradient(time){
@@ -97,9 +98,9 @@
         const gy = b.y * h;
         const radius = Math.max(w,h) * b.r;
         const g = ctx.createRadialGradient(gx, gy, radius*0.12, gx, gy, radius);
-        g.addColorStop(0, `hsla(${b.hue},85%,65%,0.24)`);
-        g.addColorStop(0.4, `hsla(${(b.hue+30)%360},80%,35%,0.12)`);
-        g.addColorStop(1, `rgba(6,10,15,0)`);
+        g.addColorStop(0, `hsla(${b.hue},88%,42%,0.28)`);
+        g.addColorStop(0.4, `hsla(${b.hue+8},80%,22%,0.14)`);
+        g.addColorStop(1, `rgba(5,7,13,0)`);
         ctx.globalCompositeOperation = 'screen';
         ctx.fillStyle = g;
         ctx.fillRect(0,0,w,h);
@@ -117,10 +118,10 @@
         const y = (0.45 + Math.cos(t*0.7 + i)*0.28) * h;
         const r = Math.max(w,h) * (0.18 + i*0.06);
         const g = ctx.createRadialGradient(x,y,r*0.02,x,y,r);
-        const hue = 220 + i*45;
-        g.addColorStop(0, `hsla(${hue},90%,70%,0.18)`);
-        g.addColorStop(0.4, `hsla(${hue+30},85%,45%,0.08)`);
-        g.addColorStop(1, 'rgba(0,0,0,0)');
+        const hue = 210 + i*8; // tight blue range (Apex)
+        g.addColorStop(0, `hsla(${hue},85%,55%,0.16)`);
+        g.addColorStop(0.4, `hsla(${hue+5},80%,30%,0.07)`);
+        g.addColorStop(1, 'rgba(5,7,13,0)');
         ctx.fillStyle = g;
         ctx.fillRect(0,0,w,h);
       }
