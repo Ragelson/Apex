@@ -21,7 +21,7 @@
 /* Заголовок статуса */
 .status-header {
   padding: 8px 12px;
-  color: #00394c;
+  color: #2E8FE0;
   min-width: 240px;
   font-weight: bold;
   margin-bottom: 10px;
@@ -66,7 +66,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #00394C;
+  color: #2E8FE0;
   margin-left: -12px;
 }
 
@@ -84,7 +84,7 @@
   border-radius: 6px;
   padding: 10px 0 0 0;
   margin-bottom: 20px;
-  background-color: #fff;
+  background-color: #121826;
   width: 100%; /* Добавлено */
   flex-grow: 1;
   position: relative;
@@ -99,10 +99,10 @@
 /* ==================== */
 
 .task-item {
-  color: #00394C;
+  color: #2E8FE0;
   border-radius: 6px;
   padding: 12px 15px;
-  background-color: white;
+  background-color: #121826;
   width: auto;
   max-width: 400px;
   overflow: hidden;
@@ -142,7 +142,7 @@
 
 .task-date {
   font-size: 12px;
-  color: #666;
+  color: #8A99B5;
   margin-left: 8px;
 }
 
@@ -172,7 +172,7 @@
 .task-body {
   flex-grow: 1;
   font-size: 14px;
-  color: #444;
+  color: #8A99B5;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -242,9 +242,11 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  
+    background-color: transparent;
   gap: 8px;
   padding: 8px 18px;
-  color: rgb(0, 57, 76);
+  color: #2E8FE0;
   border: none;
   border-radius: 8px;
   font-size: 14px;
@@ -269,7 +271,7 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  color: #0f172a;
+  color: #EAF1FB;
   transition: all 0.2s;
 }
 
@@ -284,7 +286,7 @@
 
 .task-description1 {
   font-size: 14px;
-  color: #555;
+  color: #8A99B5;
   margin: 8px 0;
   line-height: 1.4;
   
@@ -344,7 +346,7 @@
 
 .subtasks-count {
   font-size: 12px;
-  color: #666;
+  color: #8A99B5;
 }
 
 .subtasks-list {
@@ -366,7 +368,7 @@
 
 .subtask-text {
   font-size: 13px;
-  color: #333;
+  color: #8A99B5;
   flex-grow: 1;
   text-decoration: none;
   transition: all 0.2s;
@@ -388,17 +390,17 @@
 }
 
 .subtasks-list::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #121826;
   border-radius: 2px;
 }
 
 .subtasks-list::-webkit-scrollbar-thumb {
-  background: #ccc;
+  background: #1A2236;
   border-radius: 2px;
 }
 
 .subtasks-list::-webkit-scrollbar-thumb:hover {
-  background: #aaa;
+  background: #1A2236;
 }
 
 
@@ -418,12 +420,12 @@
 .status-dragging {
   opacity: 0.7;
   transform: scale(1.02);
-  box-shadow: 0 0 15px rgba(0, 57, 76, 0.3);
+  box-shadow: 0 0 15px rgba(0, 53, 119, 0.3);
 }
 
 .status-drag-over {
-  border: 2px dashed #00394C !important;
-  background-color: rgba(0, 57, 76, 0.05);
+  border: 2px dashed #003577 !important;
+  background-color: rgba(46, 143, 224, 0.12);
 }
 
 /* Стили для перетаскивания задач */
@@ -435,35 +437,35 @@
 }
 
 .task-drag-over {
-  background-color: rgba(0, 57, 76, 0.05);
-  border: 2px dashed #00394C !important;
+  background-color: rgba(46, 143, 224, 0.12);
+  border: 2px dashed #003577 !important;
 }
 
 /* Зона для перетаскивания */
 .drop-zone {
   min-height: 50px;
-  border: 2px dashed #ccc;
+  border: 2px dashed rgba(255, 255, 255, 0.10);
   border-radius: 6px;
   margin: 5px 0;
-  background-color: rgba(0, 57, 76, 0.02);
+  background-color: rgba(46, 143, 224, 0.12);
   transition: all 0.2s;
 }
 
 .drop-zone.active {
-  background-color: rgba(0, 57, 76, 0.05);
-  border-color: #00394C;
+  background-color: rgba(46, 143, 224, 0.12);
+  border-color: #003577;
 }
 
 /* Стиль при наведении во время перетаскивания */
 .drop-zone.highlight {
-  background-color: rgba(0, 57, 76, 0.1);
-  border-color: #00394C;
+  background-color: rgba(46, 143, 224, 0.12);
+  border-color: #003577;
 }
 
 /* Индикатор места вставки */
 .drop-indicator {
   height: 2px;
-  background-color: #00394C;
+  background-color: #003577;
   margin: 5px 0;
   opacity: 0;
   transition: opacity 0.2s;
@@ -478,7 +480,7 @@
 /* ==================== */
 
 .status-context-menu {
-  background: white;
+  background: #121826;
   border-radius: 4px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   padding: 8px 0;
@@ -499,7 +501,7 @@
 }
 
 .status-context-menu li:hover {
-  background-color: #f5f5f5;
+  background-color: #121826;
 }
 
 /* ==================== */
@@ -512,7 +514,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 57, 76, 0.85);
+  background-color: rgba(0, 53, 119, 0.85);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -525,7 +527,7 @@
 }
 
 .modal-content {
-  background-color: #F5FBFF;
+  background-color: #121826;
   padding: 20px;
   border-radius: 8px;
   width: 400px;
@@ -536,7 +538,7 @@
   margin-top: 0;
   margin-bottom: 15px;
   text-align: center;
-  color: #0f172a;
+  color: #EAF1FB;
 }
 
 .form-group {
@@ -553,7 +555,7 @@
   width: 100%;
   padding: 8px;
   text-align: center;
-  border: 1px solid #ddd;
+  border: 1px solid rgba(255, 255, 255, 0.10);
   border-radius: 4px;
   font-size: 16px;
 }
@@ -567,7 +569,7 @@
   display: flex;
   gap: 20px;
   padding: 20px;
-  background-color: #fff;
+  background-color: #121826;
   position: sticky;
   top: 0;
   z-index: 10;
@@ -604,7 +606,7 @@
       scroll-behavior: smooth;
       -webkit-overflow-scrolling: touch;
       z-index: 100;
-      background: #fff;
+      background: #121826;
       min-height: 100vh;
       max-height: 500vh;
       align-items: flex-start;
@@ -641,20 +643,20 @@
     margin-bottom: 0;
     cursor: pointer;
     transition: all 0.3s ease;
-    background: white;
-    box-shadow: 0 2px 8px rgba(0, 57, 76, 0.1);
+    background: #121826;
+    box-shadow: 0 2px 8px rgba(0, 53, 119, 0.1);
   }
 
   .status-header.active {
-    background: rgba(0, 57, 76, 0.1);
-    box-shadow: 0 4px 12px rgba(0, 57, 76, 0.2);
+    background: rgba(46, 143, 224, 0.12);
+    box-shadow: 0 4px 12px rgba(0, 53, 119, 0.2);
   }
 
 .tasks-container {
     padding: 12px;
     border-radius: 12px;
-    background: white;
-    box-shadow: 0 2px 8px rgba(0, 57, 76, 0.1);
+    background: #121826;
+    box-shadow: 0 2px 8px rgba(0, 53, 119, 0.1);
     min-height: 1500px;
     height: calc(353px * var(--items-count));
     overflow-y: auto;
@@ -696,7 +698,7 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    color: #0f172a;
+    color: #EAF1FB;
     transition: all 0.2s;
     position: static;
     top: auto;
@@ -704,7 +706,7 @@
     width: 100%;
     height: 100%;
     background: transparent;
-    color: #0f172a;
+    color: #EAF1FB;
     border-radius: 0;
     padding: 0;
     box-shadow: none;

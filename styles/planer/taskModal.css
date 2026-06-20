@@ -25,7 +25,7 @@
     width: 100%;
     max-width: 900px;
     margin: 40px auto;
-    background: white;
+    background: #121826;
     border-radius: 16px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
     animation: slideUp 0.3s ease;
@@ -48,7 +48,7 @@
     justify-content: space-between;
     gap: 16px;
     padding: 24px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
 }
 
 .modal-title-section {
@@ -62,7 +62,7 @@
     border: none;
     background: none;
     padding: 0;
-    color: #1a202c;
+    color: #8A99B5;
     font-family: inherit;
     transition: all 0.2s ease;
 }
@@ -73,7 +73,7 @@
 }
 
 .task-title-input::placeholder {
-    color: rgba(0, 0, 0, 0.3);
+    color: rgba(234, 241, 251, 0.3);
 }
 
 .modal-close-btn {
@@ -86,14 +86,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: rgba(0, 0, 0, 0.7);
+    color: rgba(234, 241, 251, 0.7);
     transition: all 0.2s ease;
     flex-shrink: 0;
 }
 
 .modal-close-btn:hover {
     background: rgba(0, 0, 0, 0.1);
-    color: #000;
+    color: #EAF1FB;
 }
 
 /* ============ ВКЛАДКИ НАВИГАЦИИ ============ */
@@ -104,7 +104,7 @@
     align-items: center;
     gap: 0;
     padding: 0 24px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
     background: rgba(0, 0, 0, 0.02);
 }
 
@@ -113,7 +113,7 @@
     border: none;
     background: none;
     cursor: pointer;
-    color: rgba(0, 0, 0, 0.6);
+    color: rgba(234, 241, 251, 0.6);
     font-weight: 500;
     font-size: 14px;
     position: relative;
@@ -123,7 +123,7 @@
 
 .modal-tab-btn:hover {
     color: #1a73e8;
-    background: rgba(26, 115, 232, 0.05);
+    background: rgba(46, 143, 224, 0.12);
 }
 
 .modal-tab-btn.active {
@@ -212,7 +212,7 @@
     margin: 0;
     font-size: 15px;
     font-weight: 600;
-    color: #1a202c;
+    color: #8A99B5;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     display: flex;
@@ -228,7 +228,7 @@
 }
 
 .checklist-progress {
-    background: rgba(26, 115, 232, 0.1);
+    background: rgba(46, 143, 224, 0.12);
     color: #1a73e8;
     font-size: 12px;
     font-weight: 600;
@@ -243,11 +243,11 @@
     width: 100%;
     min-height: 120px;
     padding: 12px;
-    border: 1px solid rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.10);
     border-radius: 8px;
     font-family: inherit;
     font-size: 14px;
-    color: #1a202c;
+    color: #8A99B5;
     background: rgba(0, 0, 0, 0.02);
     resize: vertical;
     transition: all 0.2s ease;
@@ -256,12 +256,12 @@
 .task-description:focus {
     outline: none;
     border-color: #1a73e8;
-    background: white;
+    background: #121826;
     box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.1);
 }
 
 .task-description::placeholder {
-    color: rgba(0, 0, 0, 0.4);
+    color: rgba(234, 241, 251, 0.4);
 }
 
 /* ============ ИНФОРМАЦИОННАЯ СЕТКА ============ */
@@ -277,7 +277,7 @@
     flex-direction: column;
     gap: 6px;
     padding: 12px;
-    background: rgba(26, 115, 232, 0.05);
+    background: rgba(46, 143, 224, 0.12);
     border-radius: 8px;
     border: 1px solid rgba(26, 115, 232, 0.1);
 }
@@ -285,13 +285,13 @@
 .info-label {
     font-size: 12px;
     font-weight: 600;
-    color: rgba(0, 0, 0, 0.6);
+    color: rgba(234, 241, 251, 0.6);
     text-transform: uppercase;
 }
 
 .info-value {
     font-size: 14px;
-    color: #1a202c;
+    color: #8A99B5;
     font-weight: 500;
 }
 
@@ -312,7 +312,7 @@
 .date-label {
     font-size: 13px;
     font-weight: 600;
-    color: #1a202c;
+    color: #8A99B5;
 }
 
 .date-inputs-row {
@@ -324,12 +324,12 @@
 .time-input {
     flex: 1;
     padding: 10px 12px;
-    border: 1px solid rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.10);
     border-radius: 8px;
     font-size: 14px;
     font-family: inherit;
     background: rgba(0, 0, 0, 0.02);
-    color: #1a202c;
+    color: #8A99B5;
     transition: all 0.2s ease;
 }
 
@@ -337,7 +337,7 @@
 .time-input:focus {
     outline: none;
     border-color: #1a73e8;
-    background: white;
+    background: #121826;
     box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.1);
 }
 
@@ -358,17 +358,17 @@
 .select-label {
     font-size: 13px;
     font-weight: 600;
-    color: #1a202c;
+    color: #8A99B5;
 }
 
 .form-select {
     padding: 10px 12px;
-    border: 1px solid rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.10);
     border-radius: 8px;
     font-size: 14px;
     font-family: inherit;
-    background: white;
-    color: #1a202c;
+    background: #121826;
+    color: #8A99B5;
     cursor: pointer;
     transition: all 0.2s ease;
 }
@@ -397,13 +397,13 @@
     padding: 12px;
     background: rgba(0, 0, 0, 0.02);
     border-radius: 8px;
-    border: 1px solid rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.10);
     transition: all 0.2s ease;
 }
 
 .subtask-item:hover {
     background: rgba(0, 0, 0, 0.04);
-    border-color: rgba(0, 0, 0, 0.12);
+    border-color: rgba(255, 255, 255, 0.10);
 }
 
 .subtask-checkbox {
@@ -420,7 +420,7 @@
     border: none;
     background: none;
     font-size: 14px;
-    color: #1a202c;
+    color: #8A99B5;
     font-family: inherit;
     cursor: text;
     transition: all 0.2s ease;
@@ -452,7 +452,7 @@
     background: rgba(0, 0, 0, 0.05);
     border-radius: 6px;
     cursor: pointer;
-    color: rgba(0, 0, 0, 0.5);
+    color: rgba(234, 241, 251, 0.5);
     transition: all 0.2s ease;
     display: flex;
     align-items: center;
@@ -468,7 +468,7 @@
 .btn-add-subtask {
     padding: 12px 16px;
     border: 2px dashed rgba(26, 115, 232, 0.3);
-    background: rgba(26, 115, 232, 0.05);
+    background: rgba(46, 143, 224, 0.12);
     color: #1a73e8;
     border-radius: 8px;
     font-weight: 600;
@@ -483,7 +483,7 @@
 
 .btn-add-subtask:hover {
     border-color: #1a73e8;
-    background: rgba(26, 115, 232, 0.1);
+    background: rgba(46, 143, 224, 0.12);
 }
 
 /* ============ КОММЕНТАРИИ ============ */
@@ -522,9 +522,9 @@
 
 .task-comment-item {
     padding: 12px;
-    background: white;
+    background: #121826;
     border-radius: 8px;
-    border: 1px solid rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.10);
     animation: slideUp 0.2s ease;
 }
 
@@ -553,18 +553,18 @@
 
 .task-comment-author {
     font-weight: 600;
-    color: #1a202c;
+    color: #8A99B5;
     font-size: 13px;
 }
 
 .task-comment-time {
     font-size: 11px;
-    color: rgba(0, 0, 0, 0.5);
+    color: rgba(234, 241, 251, 0.5);
 }
 
 .task-comment-content {
     font-size: 13px;
-    color: #424242;
+    color: #8A99B5;
     line-height: 1.5;
     word-wrap: break-word;
     white-space: pre-wrap;
@@ -577,7 +577,7 @@
     align-items: center;
     gap: 8px;
     background: rgba(0, 0, 0, 0.02);
-    border: 1px solid rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.10);
     border-radius: 12px;
     padding: 8px;
     transition: all 0.2s ease;
@@ -585,7 +585,7 @@
 
 .comment-input-box:focus-within {
     border-color: #1a73e8;
-    background: white;
+    background: #121826;
     box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.1);
 }
 
@@ -599,7 +599,7 @@
     background: none;
     font-family: inherit;
     font-size: 14px;
-    color: #1a202c;
+    color: #8A99B5;
     resize: none;
     transition: all 0.2s ease;
     outline: none;
@@ -622,7 +622,7 @@
     width: 40px;
     height: 40px;
     padding: 0;
-    background: #00394C;
+    background: #003577;
     color: white;
     border: none;
     border-radius: 8px;
@@ -647,7 +647,7 @@
 
 .modal-footer {
     padding: 20px 24px;
-    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
     background: rgba(0, 0, 0, 0.02);
     display: flex;
     justify-content: flex-end;
@@ -691,20 +691,20 @@
 
 .btn-secondary {
     background: rgba(0, 0, 0, 0.05);
-    color: #1a202c;
-    border: 1px solid rgba(0, 0, 0, 0.12);
+    color: #8A99B5;
+    border: 1px solid rgba(255, 255, 255, 0.10);
 }
 
 .btn-secondary:hover {
     background: rgba(0, 0, 0, 0.08);
-    border-color: rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.10);
     transform: translateY(-2px);
 }
 
 .btn-success {
     background: #4caf50;
     color: white;
-    border: 1px solid rgba(0,0,0,0.06);
+    border: 1px solid rgba(255, 255, 255, 0.10);
     box-shadow: 0 2px 8px rgba(76, 175, 80, 0.18);
     transition: all 0.18s ease;
 }
@@ -762,31 +762,31 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: white;
+    background: #121826;
     padding: 24px;
     border-radius: 12px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
     width: 90%;
     max-width: 400px;
     animation: slideUp 0.3s ease;
-    border: 1px solid rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.10);
 }
 
 .subtask-modal-content h3 {
     margin: 0 0 16px 0;
     font-size: 18px;
     font-weight: 600;
-    color: #1a202c;
+    color: #8A99B5;
 }
 
 #subtaskInput {
     width: 100%;
     padding: 12px;
-    border: 1px solid rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.10);
     border-radius: 8px;
     font-size: 14px;
     font-family: inherit;
-    color: #1a202c;
+    color: #8A99B5;
     background: rgba(0, 0, 0, 0.02);
     margin-bottom: 16px;
     transition: all 0.2s ease;
@@ -796,7 +796,7 @@
 #subtaskInput:focus {
     outline: none;
     border-color: #1a73e8;
-    background: white;
+    background: #121826;
     box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.1);
 }
 
@@ -1008,7 +1008,7 @@
     position: relative;
     width: 90%;
     max-width: 450px;
-    background: white;
+    background: #121826;
     border-radius: 16px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
     animation: slideUp 0.3s ease;
@@ -1021,14 +1021,14 @@
     align-items: center;
     justify-content: space-between;
     padding: 20px 24px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
 }
 
 .dialog-title {
     margin: 0;
     font-size: 18px;
     font-weight: 600;
-    color: #1a202c;
+    color: #8A99B5;
 }
 
 .dialog-close-btn {
@@ -1041,13 +1041,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: rgba(0, 0, 0, 0.5);
+    color: rgba(234, 241, 251, 0.5);
     transition: all 0.2s ease;
 }
 
 .dialog-close-btn:hover {
     background: rgba(0, 0, 0, 0.1);
-    color: #000;
+    color: #EAF1FB;
 }
 
 .dialog-body {
@@ -1058,7 +1058,7 @@
     margin: 0;
     font-size: 15px;
     line-height: 1.5;
-    color: #424242;
+    color: #8A99B5;
 }
 
 .dialog-label {
@@ -1066,18 +1066,18 @@
     margin-bottom: 12px;
     font-size: 14px;
     font-weight: 600;
-    color: #1a202c;
+    color: #8A99B5;
 }
 
 .dialog-textarea {
     width: 100%;
     min-height: 120px;
     padding: 12px;
-    border: 1px solid rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.10);
     border-radius: 8px;
     font-family: inherit;
     font-size: 14px;
-    color: #1a202c;
+    color: #8A99B5;
     background: rgba(0, 0, 0, 0.02);
     resize: vertical;
     transition: all 0.2s ease;
@@ -1087,7 +1087,7 @@
 .dialog-textarea:focus {
     outline: none;
     border-color: #1a73e8;
-    background: white;
+    background: #121826;
     box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.1);
 }
 
@@ -1095,7 +1095,7 @@
     display: flex;
     gap: 12px;
     padding: 20px 24px;
-    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
     background: rgba(0, 0, 0, 0.02);
 }
 
@@ -1142,7 +1142,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: rgba(0, 0, 0, 0.5);
+    color: rgba(234, 241, 251, 0.5);
     transition: all 0.2s ease;
 }
 
@@ -1152,7 +1152,7 @@
 }
 
 .task-comment-action-btn.edit-btn:hover {
-    background: rgba(26, 115, 232, 0.1);
+    background: rgba(46, 143, 224, 0.12);
     color: #1a73e8;
 }
 

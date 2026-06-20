@@ -19,7 +19,7 @@
   text-align: center;
   white-space: nowrap;
   border: 2px solid transparent;
-  background-color: #00394C;
+  background-color: #003577;
   color: #fff;
   align-items: center;
   justify-content: center;
@@ -39,8 +39,8 @@
   right: 0;
   top: 100%;
   min-width: 220px;
-  background: #FFFFFF;
-  border: 1px solid #E5E7EB;
+  background: #121826;
+  border: 1px solid rgba(255, 255, 255, 0.10);
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   z-index: 100;
@@ -58,15 +58,15 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  background: #F9FAFB;
-  border-bottom: 1px solid #E5E7EB;
+  background: #121826;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
 }
 
 .dropdown-avatar {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #00394C;
+  background-color: #003577;
   color: #fff;
   display: flex;
   align-items: center;
@@ -82,17 +82,17 @@
 
 .dropdown-username {
   font-weight: 500;
-  color: #111827;
+  color: #EAF1FB;
 }
 
 .dropdown-email {
   font-size: 14px;
-  color: #6B7280;
+  color: #8A99B5;
 }
 
 .auth-dropdown-divider {
   height: 1px;
-  background: #E5E7EB;
+  background: #121826;
 }
 
 .auth-dropdown-item {
@@ -100,14 +100,14 @@
   align-items: center;
   gap: 12px;
   padding: 12px 16px;
-  color: #111827;
+  color: #EAF1FB;
   text-decoration: none;
   font-size: 15px;
   transition: background 0.2s;
 }
 
 .auth-dropdown-item:hover {
-  background: #F3F4F6;
+  background: #121826;
 }
 
 .auth-dropdown-item svg {
@@ -123,7 +123,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 57, 76, 0.5);
+  background: rgba(0, 53, 119, 0.5);
   backdrop-filter: blur(5px);
   z-index: 1000;
   align-items: center;
@@ -137,7 +137,7 @@
 }
 
 .auth-content {
-  background: #FFFFFF;
+  background: #121826;
   border-radius: 12px;
   width: 100%;
   max-width: 400px;
@@ -145,7 +145,7 @@
   position: relative;
   padding: 22px;
   margin-top: 70px;
-  border: 1px solid #E5E7EB;
+  border: 1px solid rgba(255, 255, 255, 0.10);
 }
 
 .close-modal {
@@ -156,12 +156,12 @@
   border: none;
   font-size: 24px;
   cursor: pointer;
-  color: #6B7280;
+  color: #8A99B5;
   padding: 4px;
 }
 
 .close-modal:hover {
-  color: #00394C;
+  color: #2E8FE0;
 }
 
 /* Остальные стили форм (как у вас было) */
@@ -171,7 +171,7 @@
 
 .modal h2 {
   margin-bottom: 10px;
-  color: #00394C;
+  color: #2E8FE0;
   font-size: 28px;
   font-weight: 700;
   text-align: center;
@@ -180,7 +180,7 @@
 .auth-group input {
   width: 100%;
   padding: 12px 16px;
-  border: 1px solid #E5E7EB;
+  border: 1px solid rgba(255, 255, 255, 0.10);
   border-radius: 8px;
   font-size: 16px;
   transition: border-color 0.2s;
@@ -188,21 +188,21 @@
 
 .auth-group input:focus {
   outline: none;
-  border-color: #00394C;
+  border-color: #003577;
 }
 
 .auth-group label {
   display: block;
   margin-bottom: 8px;
   font-size: 14px;
-  color: #4B5563;
+  color: #8A99B5;
 }
 
 .btn-in {
   font-family: 'Inter', sans-serif;
   width: 100%;
   padding: 14px;
-  background: #00394C;
+  background: #003577;
   color: white;
   border: none;
   border-radius: 8px;
@@ -220,11 +220,11 @@
   margin-top: 20px;
   text-align: center;
   font-size: 14px;
-  color: #6B7280;
+  color: #8A99B5;
 }
 
 .auth-footer a {
-  color: #00394C;
+  color: #2E8FE0;
   font-weight: 500;
   text-decoration: none;
 }
@@ -258,7 +258,7 @@
     font-weight: bold;
     font-size: 16px;
     transition: all 0.3s ease;
-  background-color: #2FD1C5 !important;
+  background-color: #2e8fe0 !important;
   color: #fff !important;
   text-decoration: none !important;
 
@@ -273,8 +273,8 @@
 }
 
 .auth-dropdown.light-dropdown .auth-dropdown-content {
-  background: #2FD1C5;
-  border: 1px solid #00394C;
+  background: #2e8fe0;
+  border: 1px solid #003577;
 }
 /* Дополнительные стили для новых полей */
 .auth-group input[type="date"],
@@ -316,12 +316,12 @@
 }
 
 .notification-btn:hover {
-    background-color: rgba(0, 57, 76, 0.1);
+    background-color: rgba(46, 143, 224, 0.12);
 }
 
 .notification-icon svg {
     display: block;
-    color: #00394C;
+    color: #2E8FE0;
 }
 
 .notification-badge {
@@ -348,8 +348,8 @@
     width: 350px;
     max-height: 500px;
     overflow-y: auto;
-    background: #FFFFFF;
-    border: 1px solid #E5E7EB;
+    background: #121826;
+    border: 1px solid rgba(255, 255, 255, 0.10);
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     z-index: 100;
@@ -367,8 +367,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid #E5E7EB;
-    background: #F9FAFB;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+    background: #121826;
     position: sticky;
     top: 0;
     z-index: 10;
@@ -378,7 +378,7 @@
     margin: 0;
     font-size: 16px;
     font-weight: 600;
-    color: #00394C;
+    color: #2E8FE0;
 }
 
 .mark-all-read {
@@ -394,7 +394,7 @@
 }
 
 .mark-all-read:hover {
-    background-color: rgba(47, 209, 197, 0.1);
+    background-color: rgba(46, 143, 224, 0.12);
 }
 
 .notification-list {
@@ -405,17 +405,17 @@
 .notification-item {
     display: flex;
     padding: 12px 16px;
-    border-bottom: 1px solid #F3F4F6;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
     transition: background-color 0.2s;
     cursor: pointer;
 }
 
 .notification-item.unread {
-    background-color: rgba(47, 209, 197, 0.05);
+    background-color: rgba(46, 143, 224, 0.12);
 }
 
 .notification-item:hover {
-    background-color: #F9FAFB;
+    background-color: #121826;
 }
 
 .notification-icon {
@@ -438,20 +438,20 @@
 .notification-text {
     margin: 0 0 4px 0;
     font-size: 14px;
-    color: #00394C;
+    color: #2E8FE0;
     line-height: 1.4;
 }
 
 .notification-time {
     margin: 0;
     font-size: 12px;
-    color: #6B7280;
+    color: #8A99B5;
 }
 
 .notification-footer {
     padding: 12px 16px;
     text-align: center;
-    border-top: 1px solid #E5E7EB;
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
 }
 
 .view-all {

@@ -1,20 +1,20 @@
 
 :root {
-  --primary: #00394C;
-  --primary-dark: #002A38;
-  --secondary: #f2f3ff;
-  --dark: #212529;
-  --light: #ffffff;
-  --gray: #6c757d;
-  --light-gray: #e9ecef;
+  --primary: #2E8FE0;
+  --primary-dark: #006BBD;
+  --secondary: #1A2236;
+  --dark: #EAF1FB;
+  --light: #121826;
+  --gray: #8A99B5;
+  --light-gray: rgba(255, 255, 255, 0.10);
   --radius: 12px;
   --radius-sm: 8px;
   --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.12);
   --max-width: 1200px;
   --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  --section-dark: #f5f9ff;
-  --section-light: #ffffff;
+  --section-dark: #1A2236;
+  --section-light: #121826;
 }
 /* Стили для модального окна подписки */
 .subscription-modal {
@@ -40,7 +40,7 @@
 }
 
 .subscription-modal-content {
-  background-color: #fff;
+  background-color: #121826;
   border-radius: 12px;
   padding: 2rem;
   max-width: 500px;
@@ -65,7 +65,7 @@
 }
 
 .close-subscription-modal:hover {
-  color: #333;
+  color: #8A99B5;
 }
 
 .subscription-modal h2 {
@@ -85,7 +85,7 @@
 .payment-plan {
   flex: 1;
   padding: 1rem;
-  border: 1px solid #e0e0e0;
+  border: 1px solid rgba(255, 255, 255, 0.10);
   border-radius: 8px;
   text-align: center;
   cursor: pointer;
@@ -98,7 +98,7 @@
 
 .payment-plan.active {
   border-color: var(--primary);
-  background-color: rgba(74, 107, 255, 0.05);
+  background-color: rgba(46, 143, 224, 0.12);
 }
 
 .payment-plan h3 {
@@ -116,7 +116,7 @@
 .payment-plan p {
   margin: 0;
   font-size: 0.9rem;
-  color: #666;
+  color: #8A99B5;
 }
 
 /* Стили для методов оплаты */
@@ -135,7 +135,7 @@
   padding: 0.75rem 1rem;
   margin-right: 0.5rem;
   margin-bottom: 0.5rem;
-  border: 1px solid #e0e0e0;
+  border: 1px solid rgba(255, 255, 255, 0.10);
   border-radius: 6px;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -147,7 +147,7 @@
 
 .payment-method.active {
   border-color: var(--primary);
-  background-color: rgba(74, 107, 255, 0.05);
+  background-color: rgba(46, 143, 224, 0.12);
 }
 
 .payment-method i {
@@ -168,13 +168,13 @@
   display: block;
   margin-bottom: 0.5rem;
   font-size: 0.9rem;
-  color: #555;
+  color: #8A99B5;
 }
 
 .form-group input {
   width: 100%;
   padding: 0.75rem;
-  border: 1px solid #ddd;
+  border: 1px solid rgba(255, 255, 255, 0.10);
   border-radius: 6px;
   font-size: 1rem;
 }
@@ -206,7 +206,7 @@
 
 .payment-terms {
   font-size: 0.8rem;
-  color: #666;
+  color: #8A99B5;
   margin-bottom: 1.5rem;
 }
 

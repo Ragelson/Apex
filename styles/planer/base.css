@@ -18,7 +18,7 @@
   background: none;
   border: none;
   cursor: pointer;
-  color: #00394C;
+  color: #2E8FE0;
   width: 24px;
   height: 24px;
   display: flex;
@@ -36,7 +36,7 @@
 }
 
 .attach-file:hover {
-  background-color: rgba(0, 57, 76, 0.1);
+  background-color: rgba(46, 143, 224, 0.12);
 }
 
 .breadcrumb-item {
@@ -47,16 +47,16 @@
 }
 
 .breadcrumb-item:hover {
-  background-color: rgba(0, 57, 76, 0.1);
+  background-color: rgba(46, 143, 224, 0.12);
 }
 
 .breadcrumb-separator {
   margin: 0 5px;
-  color: #757575;
+  color: #8A99B5;
 }
 
 .cal-modal-content {
-  background-color: #fff;
+  background-color: #121826;
   margin: 20px;
   padding: 25px;
   border-radius: 10px;
@@ -117,12 +117,12 @@
 .call-name, .video-name {
   font-size: 20px;
   font-weight: 600;
-  color: #00394C;
+  color: #2E8FE0;
   margin-bottom: 10px;
 }
 
 .cancel-btn:hover {
-  background-color: #e2e8f0;
+  background-color: #121826;
 }
 
 .category-icon {
@@ -141,11 +141,11 @@
 
 .content-placeholder {
   height: 100%;
-  background-color: #fff;
+  background-color: #121826;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #888;
+  color: #8A99B5;
   font-size: 24px;
 }
 
@@ -153,7 +153,7 @@
   margin: 0;
   font-size: 18px;
   font-weight: 600;
-  color: #00394C;
+  color: #2E8FE0;
   min-width: 250px;
   text-align: center;
 }
@@ -186,13 +186,13 @@
 
 .dropdown-email {
   font-size: 12px;
-  color: #757575;
+  color: #8A99B5;
   margin-top: 2px;
 }
 
 .dropdown-empty {
   padding: 8px 16px;
-  color: #757575;
+  color: #8A99B5;
   font-size: 14px;
   text-align: center;
 }
@@ -208,7 +208,7 @@
   cursor: pointer;
   transition: background-color 0.2s;
   font-size: 14px;
-  color: #00394C;
+  color: #2E8FE0;
 }
 
 .dropdown-option .category-icon {
@@ -220,7 +220,7 @@
 }
 
 .dropdown-option:hover {
-  background-color: #f1f5f9;
+  background-color: #121826;
 }
 
 .dropdown-user-info {
@@ -230,12 +230,12 @@
 
 .dropdown-username {
   font-weight: 600;
-  color: #00394C;
+  color: #2E8FE0;
   font-size: 14px;
 }
 
 .empty-message {
-  color: #757575;
+  color: #8A99B5;
   font-size: 14px;
   margin-right: 15px;
   text-align: center;
@@ -244,11 +244,11 @@
 }
 
 .empty-state {
-  border: 1px dashed #ccc;
+  border: 1px dashed rgba(255, 255, 255, 0.10);
   border-radius: 6px;
   padding: 20px;
   text-align: center;
-  color: #666;
+  color: #8A99B5;
 }
 
 .end-call, .end-call {
@@ -275,7 +275,7 @@
 .form-control {
   width: 100%;
   padding: 8px;
-  border: 1px solid #ddd;
+  border: 1px solid rgba(255, 255, 255, 0.10);
   border-radius: 4px;
   font-size: 14px;
 }
@@ -284,7 +284,7 @@
   margin-top: 20px;
   text-align: center;
   font-size: 14px;
-  color: #757575;
+  color: #8A99B5;
 }
 
 .form-footer a {
@@ -305,7 +305,7 @@
 .form-group select {
   width: 100%;
   padding: 10px 15px;
-  border: 1px solid #ddd;
+  border: 1px solid rgba(255, 255, 255, 0.10);
   border-radius: 6px;
   font-size: 16px;
   transition: border-color 0.3s;
@@ -321,7 +321,7 @@
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
-  color: #00394C;
+  color: #2E8FE0;
 }
 
 .goals-grid {
@@ -344,14 +344,14 @@
 
 .hour-label {
   font-size: 12px;
-  color: #757575;
+  color: #8A99B5;
   margin-top: -8px;
   position: absolute;
   left: 0;
 }
 
 .hour-line {
-  border-top: 1px solid #eee;
+  border-top: 1px solid rgba(255, 255, 255, 0.10);
   width: calc(100vw - 350px);
   position: absolute;
   top: 0;
@@ -359,7 +359,7 @@
 }
 
 .light-theme {
-  background: linear-gradient(135deg, #ffffff 50%, #f1f5f9 50%);
+  background: linear-gradient(135deg, #121826 50%, #121826 50%);
 }
 
 .local-video {
@@ -375,7 +375,7 @@
 
 .main-slogan {
   font-size: 20px;
-  color: #666;
+  color: #8A99B5;
   font-weight: 400;
   max-width: 600px;
   line-height: 1.5;
@@ -414,8 +414,8 @@
 
 
 .mute-audio, .mute-video {
-  background-color: #f1f5f9;
-  color: #00394C;
+  background-color: #121826;
+  color: #2E8FE0;
 }
 
 .nav-btn {
@@ -423,7 +423,7 @@
   border: none;
   font-size: 20px;
   cursor: pointer;
-  color: #00394C;
+  color: #2E8FE0;
   width: 30px;
   height: 30px;
   display: flex;
@@ -434,7 +434,7 @@
 }
 
 .nav-btn:hover {
-  background-color: rgba(0, 57, 76, 0.1);
+  background-color: rgba(46, 143, 224, 0.12);
 }
 
 .note-edit-input {
@@ -455,7 +455,7 @@
 }
 
 .note-text:hover {
-  background-color: rgba(0, 57, 76, 0.1);
+  background-color: rgba(46, 143, 224, 0.12);
 }
 
 .page-container {
@@ -526,7 +526,7 @@ s
   background: none;
   border: none;
   cursor: pointer;
-  color: #00394C;
+  color: #2E8FE0;
   width: 24px;
   height: 24px;
   display: flex;
@@ -538,7 +538,7 @@ s
 }
 
 .send-message:hover, .voice-message:hover {
-  background-color: rgba(0, 57, 76, 0.1);
+  background-color: rgba(46, 143, 224, 0.12);
 }
 
 .spheres-container {
@@ -601,11 +601,11 @@ s
 .view-btn {
   padding: 8px 16px;
   border: none;
-  background-color: #f1f5f9;
+  background-color: #121826;
   border-radius: 6px;
   cursor: pointer;
   font-size: 14px;
-  color: #00394C;
+  color: #2E8FE0;
   transition: all 0.2s;
 }
 
@@ -631,7 +631,7 @@ s
 
 /* Выделение выбранного дня */
 .day-cell.selected {
-  background-color: #e8f0fe;
+  background-color: #121826;
   border: 1px solid #4285f4 !important;
 }
 
@@ -648,8 +648,8 @@ s
 
 /* Кнопка отмены в модальном окне */
 .cancel-btn {
-  background-color: #f1f5f9;
-  color: #00394C;
+  background-color: #121826;
+  color: #2E8FE0;
   border: none;
   padding: 8px 16px;
   border-radius: 6px;
@@ -710,7 +710,7 @@ s
 /* Основное содержимое */
 .content {
   flex-grow: 1;
-  background-color: #fff;
+  background-color: #121826;
   padding-top: 0px;
 }
 
@@ -750,7 +750,7 @@ main {
   cursor: pointer;
   transition: all 0.2s;
   border-radius: 4px;
-  color: #00394C;
+  color: #2E8FE0;
   font-size: 14px;
   font-family: inherit;
 }
@@ -761,7 +761,7 @@ main {
   margin: 0;
   font-size: 18px;
   font-weight: 500;
-  color: #00394C;
+  color: #2E8FE0;
 }
 
 /* Стили для модальных окон звонков */
@@ -777,7 +777,7 @@ main {
   flex: 1;
   padding: 15px;
   overflow-y: auto;
-  background-color: #f9f9f9;
+  background-color: #121826;
 }
 
 /* Стили для пустого чата */
@@ -800,6 +800,8 @@ html, body {
   width: 100%;
   height: 100%;
   overflow: hidden;
+  background-color: #0A0E16;
+  color: #EAF1FB;
 }
 
 to {
@@ -824,7 +826,7 @@ to {
 }
 
 .sphere-name-modal .modal-content {
-  background-color: white;
+  background-color: #121826;
   padding: 25px;
   border-radius: 10px;
   width: 100%;
@@ -835,7 +837,7 @@ to {
 }
 
 .sphere-name-modal h3 {
-  color: #00394C;
+  color: #2E8FE0;
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 20px;
@@ -845,7 +847,7 @@ to {
 .sphere-name-input {
   width: 100%;
   padding: 12px 15px;
-  border: 1px solid #ddd;
+  border: 1px solid rgba(255, 255, 255, 0.10);
   border-radius: 6px;
   font-size: 16px;
   margin-bottom: 20px;
@@ -862,7 +864,7 @@ to {
   background: none;
   border: none;
   cursor: pointer;
-  color: #757575;
+  color: #8A99B5;
   width: 24px;
   height: 24px;
   display: flex;
@@ -875,8 +877,8 @@ to {
 }
 
 .edit-sphere-btn:hover {
-  background-color: rgba(0, 57, 76, 0.1);
-  color: #00394C;
+  background-color: rgba(46, 143, 224, 0.12);
+  color: #2E8FE0;
 }
 
 /* Анимации */
@@ -926,8 +928,8 @@ to {
 }
 
 .sphere-name-modal .btn-secondary {
-  background-color: #f1f5f9;
-  color: #00394C;
+  background-color: #121826;
+  color: #2E8FE0;
   border: none;
   padding: 10px 16px;
   border-radius: 6px;
@@ -938,7 +940,7 @@ to {
 }
 
 .sphere-name-modal .btn-secondary:hover {
-  background-color: #e2e8f0;
+  background-color: #121826;
 }
 /* Стили для иконки редактирования */
 .edit-sphere-btn {
@@ -960,12 +962,12 @@ to {
 }
 
 .edit-icon-path {
-  fill: #757575;
+  fill: #8A99B5;
   transition: fill 0.2s;
 }
 
 .edit-sphere-btn:hover {
-  background-color: rgba(0, 57, 76, 0.1);
+  background-color: rgba(46, 143, 224, 0.12);
 }
 
 .edit-sphere-btn:hover .edit-icon-path {
@@ -992,7 +994,7 @@ to {
 }
 
 .toggle-icon-path {
-  fill: #757575;
+  fill: #8A99B5;
   transition: fill 0.2s;
 }
 
@@ -1008,7 +1010,7 @@ to {
 
 /* Hover-эффекты */
 .section-title:hover .toggle-icon {
-  background-color: rgba(0, 57, 76, 0.1);
+  background-color: rgba(46, 143, 224, 0.12);
 }
 
 .section-title:hover .toggle-icon-path {

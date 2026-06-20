@@ -1,16 +1,16 @@
 :root {
   /* базовые цвета приложения */
-  --c-accent: #15c4c4;
-  --c-accent-dark: #0e9e9e;
-  --c-bg-light: #ffffff;
-  --c-bg-dark: #1e293b;
-  --c-card-light: #f8fafc;
-  --c-card-dark: #334155;
-  --c-text-primary: #00394c;
-  --c-text-light: #e2e8f0;
-  --c-text-muted: #7a838b;
-  --c-border: #e2e8f0;
-  --c-border-dark: #334155;
+  --c-accent: #2E8FE0;
+  --c-accent-dark: #006BBD;
+  --c-bg-light: #121826;
+  --c-bg-dark: #0A0E16;
+  --c-card-light: #1A2236;
+  --c-card-dark: #0F1422;
+  --c-text-primary: #EAF1FB;
+  --c-text-light: #EAF1FB;
+  --c-text-muted: #8A99B5;
+  --c-border: rgba(255, 255, 255, 0.10);
+  --c-border-dark: rgba(255, 255, 255, 0.16);
   --radius-s: 6px;
   --radius-m: 12px;
   --radius-l: 20px;
@@ -67,7 +67,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  background-color: #f1f5f9;
+  background-color: #121826;
 }
 
 .photo-upload {
@@ -138,7 +138,7 @@
 
 .profile-status.editing {
   border-color: var(--c-accent);
-  background-color: white;
+  background-color: #121826;
 }
 
 .edit-status-btn {
@@ -239,13 +239,13 @@
   border: 1px solid var(--c-border);
   border-radius: var(--radius-s);
   font-size: 15px;
-  background-color: white;
+  background-color: #121826;
 }
 
 .detail-input:focus {
   outline: none;
   border-color: var(--c-accent);
-  box-shadow: 0 0 0 2px rgba(21, 196, 196, 0.2);
+  box-shadow: 0 0 0 2px rgba(46, 143, 224, 0.2);
 }
 
 .edit-mode .detail-value {
@@ -350,7 +350,7 @@ body.profile-open .content {
   border: 1px solid var(--c-border);
   border-radius: var(--radius-s);
   font-size: 15px;
-  background-color: white;
+  background-color: #121826;
 }
 
 select.detail-input {

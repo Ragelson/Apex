@@ -57,7 +57,7 @@
 }
 
 .delete-sphere-btn {
-  color: #0f172a;
+  color: #EAF1FB;
   background: none;
   border: none;
   cursor: pointer;
@@ -86,14 +86,14 @@
   gap: 1px;
   transition: background-color 0.2s;
   width: 100%;
-  color: #00394C;
+  color: #2E8FE0;
   font-size: 16px;
   margin-top: 8px;
   border-radius: 4px;
 }
 
 .add-sphere-button:hover {
-  background-color: rgba(0, 57, 76, 0.1);
+  background-color: rgba(46, 143, 224, 0.12);
 }
 
 .sphere-dropdown {
@@ -101,8 +101,8 @@
   top: 10px;
   left: 10px;
   z-index: 1000;
-  background-color: white;
-  border: 1px solid #ddd;
+  background-color: #121826;
+  border: 1px solid rgba(255, 255, 255, 0.10);
   border-radius: 4px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   display: block;
@@ -122,12 +122,12 @@
 
 .category-item:focus {
   outline: none;
-  background-color: rgba(0, 57, 76, 0.1);
+  background-color: rgba(46, 143, 224, 0.12);
 }
 
 .category-item:hover {
   transform: translateX(5px);
-  background-color: rgba(0, 57, 76, 0.1);
+  background-color: rgba(46, 143, 224, 0.12);
 }
 
 .right-menu *:before,
@@ -147,7 +147,7 @@
 .right-menu .categories-container {
   flex: 1;
   min-height: 0;
-  overflow-y: auto;
+  overflow-y:hidden;
   padding-right: 5px;
   margin-bottom: 14px;
 }
@@ -155,8 +155,8 @@
 .right-menu .timeline-container {
   flex: 1;
   min-height: 0;
-  overflow-y: auto;
-  border-top: 1px solid #eee;
+  overflow-y: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.10);
   padding: 0px 5px 5px 0;
   box-sizing: border-box;
   display: flex;
@@ -184,8 +184,8 @@
   bottom: 0;
   left: 0;
   box-sizing: border-box;
-  background-color: #fff;
-  color: #00394C;
+  background-color: #121826;
+  color: #2E8FE0;
   overflow: hidden;
   margin-top: 0;
   margin-left: 50px;
@@ -207,7 +207,7 @@
   position: relative;
   padding: 8px 0;
   margin: 0;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
 }
 
 .sphere-item:last-child {
@@ -222,22 +222,6 @@
   margin-right: -16px;
 }
 
-.right-menu .categories-container::-webkit-scrollbar,
-.right-menu .timeline-container::-webkit-scrollbar {
-  width: 5px;
-}
-
-.right-menu .categories-container::-webkit-scrollbar-track,
-.right-menu .timeline-container::-webkit-scrollbar-track {
-  background: #f1f5f9;
-  border-radius: 3px;
-}
-
-.right-menu .categories-container::-webkit-scrollbar-thumb,
-.right-menu .timeline-container::-webkit-scrollbar-thumb {
-  background-color: #00394C;
-  border-radius: 3px;
-}
 
 .right-menu {
   box-shadow: none !important;
@@ -250,9 +234,9 @@
   overflow: hidden;
   cursor: pointer;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  color: #333;
+  color: #8A99B5;
   background-color: #FF9AA2;
-  border-left: 3px solid rgba(0, 0, 0, 0.2);
+  border-left: 3px solid rgba(255, 255, 255, 0.10);
 }
 
 .today-event .event-title {
@@ -262,13 +246,13 @@
 
 .today-event .event-desc {
   font-size: 11px;
-  color: #666;
+  color: #8A99B5;
   margin-bottom: 2px;
 }
 
 .today-event .event-sphere {
   font-size: 10px;
-  color: #555;
+  color: #8A99B5;
   text-align: right;
 }
 
@@ -282,7 +266,7 @@
   margin: 0;
   font-size: 16px;
   font-weight: 600;
-  color: #00394C;
+  color: #2E8FE0;
 }
 
 .section-title .toggle-icon {
@@ -323,7 +307,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #00394C;
+  color: #2E8FE0;
   margin-left: 8px;
   margin-right: 10px;
 }
@@ -353,7 +337,7 @@
 
 .sphere-name-modal .modal-content {
   position: relative;
-  background-color: white;
+  background-color: #121826;
   padding: 25px;
   border-radius: 12px;
   width: 420px;
@@ -365,7 +349,7 @@
   margin: 0 0 20px;
   font-size: 18px;
   font-weight: 600;
-  color: #00394C;
+  color: #2E8FE0;
 }
 
 .sphere-name-modal .form-group {
@@ -376,7 +360,7 @@
   display: block;
   margin-bottom: 8px;
   font-size: 14px;
-  color: #475569;
+  color: #2E8FE0;
   font-weight: 500;
 }
 
@@ -384,7 +368,7 @@
 .sphere-name-modal .form-group input[type="email"] {
   width: 100%;
   padding: 10px 12px;
-  border: 1px solid #E2E8F0;
+  border: 1px solid rgba(255, 255, 255, 0.10);
   border-radius: 6px;
   font-size: 14px;
   transition: border-color 0.2s;
@@ -412,17 +396,17 @@
 .sphere-name-modal .email-input {
   flex: 1;
   padding: 8px 12px;
-  border: 1px solid #E2E8F0;
+  border: 1px solid rgba(255, 255, 255, 0.10);
   border-radius: 6px;
   font-size: 14px;
 }
 
 .sphere-name-modal .add-email-btn {
   padding: 8px 12px;
-  background-color: #F1F5F9;
+  background-color: #121826;
   border: none;
   border-radius: 6px;
-  color: #00394C;
+  color: #2E8FE0;
   font-size: 14px;
   cursor: pointer;
   transition: background-color 0.2s;
@@ -435,7 +419,7 @@
 }
 
 .sphere-name-modal .add-email-btn:hover {
-  background-color: #E2E8F0;
+  background-color: #121826;
 }
 
 .sphere-name-modal .email-tags-container {
@@ -448,11 +432,11 @@
 .sphere-name-modal .email-tag {
   display: flex;
   align-items: center;
-  background-color: #F1F5F9;
+  background-color: #121826;
   padding: 4px 8px;
   border-radius: 4px;
   font-size: 12px;
-  color: #334155;
+  color: #2E8FE0;
 }
 
 .sphere-name-modal .remove-email-btn {
@@ -480,7 +464,7 @@
 }
 
 .sphere-name-modal .btn-primary {
-  background-color: #00394C;
+  background-color: #003577;
   color: white;
   border: none;
   padding: 8px 16px;
@@ -495,8 +479,8 @@
 }
 
 .sphere-name-modal .accept-save-btn {
-  background-color: white;
-  color:#00394C;
+  background-color: #121826;
+  color: #2E8FE0;
   border: none;
   padding: 8px 16px;
   border-radius: 4px;
@@ -507,7 +491,7 @@
 
 
 .sphere-name-modal .accept-save-btn:hover {
-  background-color: #F1F5F9;
+  background-color: #121826;
 }
 
 .sphere-name-modal .btn-danger {
@@ -522,7 +506,7 @@
 }
 
 .sphere-name-modal .btn-danger:hover {
-  background-color: #FEE2E2;
+  background-color: #121826;
 }
 
 .sphere-name-modal .close-modal-btn {
@@ -540,14 +524,14 @@
 
 .sphere-name-modal .close-modal-btn:hover {
   color: #64748B;
-  background-color: #F1F5F9;
+  background-color: #121826;
 }
 
 /* Стили для выбора цвета */
 .sphere-name-modal input[type="color"] {
   width: 100%;
   height: 40px;
-  border: 1px solid #E2E8F0;
+  border: 1px solid rgba(255, 255, 255, 0.10);
   border-radius: 6px;
   padding: 2px;
   cursor: pointer;
@@ -601,7 +585,7 @@
 }
 
 .prev-cycle-btn, .next-cycle-btn {
-  background: #f0f0f0;
+  background: #121826;
   border: none;
   padding: 5px 10px;
   cursor: pointer;
@@ -610,7 +594,7 @@
 }
 
 .prev-cycle-btn:hover, .next-cycle-btn:hover {
-  background: #e0e0e0;
+  background: #121826;
 }
 
 .tasks-title {
@@ -633,7 +617,7 @@
   flex: none; /* Убираем flex-grow */
   min-height: 0;
   overflow-y: auto;
-  border-top: 1px solid #eee;
+  border-top: 1px solid rgba(255, 255, 255, 0.10);
   padding: 0px 5px 5px 0;
   box-sizing: border-box;
   display: flex;
@@ -648,7 +632,7 @@
   flex-direction: column;
   min-height: 0;
   overflow: hidden;
-  border-top: 1px solid #eee;
+  border-top: 1px solid rgba(255, 255, 255, 0.10);
   transition: height 0.3s ease; /* Плавное изменение высоты */
 }
 
@@ -682,7 +666,7 @@ body.calendar-active .mini-calendar-container {
 .time {
   width: 50px;
   flex-shrink: 0;
-  color: #666;
+  color: #8A99B5;
   font-size: 12px;
   font-weight: 500;
   padding-top: 8px;
@@ -694,7 +678,7 @@ body.calendar-active .mini-calendar-container {
   right: 0;
   top: 20px;
   height: 1px;
-  background-image: linear-gradient(to right, #e2e8f0 50%, transparent 50%);
+  background-image: linear-gradient(to right, #121826 50%, transparent 50%);
   background-size: 4px 1px;
   background-repeat: repeat-x;
   z-index: 1;
@@ -740,11 +724,11 @@ body.calendar-active .mini-calendar-container {
 
 .task-title1 {
   font-weight: 500;
-  color: #1e293b;
+  color: #8A99B5;
   margin: 0 5px;
   font-size: 10px;
   font-weight: 600;
-  color: #1e293b;
+  color: #8A99B5;
 }
 
 .task-time {
@@ -758,23 +742,23 @@ body.calendar-active .mini-calendar-container {
   margin: 0 10px;
   font-size: 16px;
   font-weight: 600;
-  color: #1e293b;
+  color: #8A99B5;
 }
 
 .tasks-утро  {
-  color: #00394C;
+  color: #2E8FE0;
 }
 
 .tasks-день {
-  color: #00394C;
+  color: #2E8FE0;
 }
 
 .tasks-вечер {
-  color: #00394C;
+  color: #2E8FE0;
 }
 
 .tasks-ночь {
-  color: #00394C;
+  color: #2E8FE0;
 }
 
 .navigation {
@@ -786,8 +770,8 @@ body.calendar-active .mini-calendar-container {
 }
 
 .prev-cycle-btn, .next-cycle-btn {
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
+  background: #121826;
+  border: 1px solid rgba(255, 255, 255, 0.10);
   padding: 5px 12px;
   cursor: pointer;
   border-radius: 6px;
@@ -797,22 +781,30 @@ body.calendar-active .mini-calendar-container {
 }
 
 .prev-cycle-btn:hover, .next-cycle-btn:hover {
-  background: #f1f5f9;
-  color: #475569;
+  background: #121826;
+  color: #2E8FE0;
 }
 
-/* Modern scrollbar */
-.right-menu ::-webkit-scrollbar {
-  width: 6px;
+.right-menu::-webkit-scrollbar {
+    width: 6px;
 }
 
-.right-menu ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+.right-menu::-webkit-scrollbar-track {
+    background: transparent;
 }
 
-.right-menu ::-webkit-scrollbar-thumb {
-  background-color: #cbd5e1;
-  border-radius: 3px;
+.right-menu::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.15);
+    border-radius: 10px;
+}
+
+.right-menu::-webkit-scrollbar-thumb:hover {
+    background: rgba(255,255,255,0.3);
+}
+
+.right-menu {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255,255,255,0.2) transparent;
 }
 
 .highlighted-task {
@@ -828,7 +820,7 @@ body.calendar-active .mini-calendar-container {
 .sphere-modal-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0, 57, 76, 0.85);
+    background: rgba(0, 53, 119, 0.85);
     backdrop-filter: blur(4px);
     display: flex;
     align-items: center;
@@ -839,15 +831,15 @@ body.calendar-active .mini-calendar-container {
 }
 
 .sphere-modal-box {
-    background: linear-gradient(135deg, #F5FBFF 0%, #E8F4FF 100%);
-    border: 2px solid #00394C;
+    background: linear-gradient(135deg, #121826 0%, #121826 100%);
+    border: 2px solid #003577;
     border-radius: 16px;
     padding: 0;
     width: 100%;
     max-width: 480px;
     max-height: 90vh;
     overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0, 57, 76, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 53, 119, 0.3);
     animation: victoryModalSlideIn 0.3s ease-out;
 }
 
@@ -856,15 +848,15 @@ body.calendar-active .mini-calendar-container {
     justify-content: space-between;
     align-items: center;
     padding: 24px 24px 16px;
-    border-bottom: 1px solid rgba(0, 57, 76, 0.1);
-    background: rgba(255, 255, 255, 0.5);
+    border-bottom: 1px solid rgba(0, 53, 119, 0.1);
+    background: rgba(18, 24, 38, 0.5);
 }
 
 .sphere-modal-header h3 {
     margin: 0;
     font-size: 20px;
     font-weight: 600;
-    color: #00394C;
+    color: #2E8FE0;
 }
 
 .sphere-modal-close {
@@ -881,8 +873,8 @@ body.calendar-active .mini-calendar-container {
 }
 
 .sphere-modal-close:hover {
-    background: rgba(0, 57, 76, 0.1);
-    color: #00394C;
+    background: rgba(46, 143, 224, 0.12);
+    color: #2E8FE0;
     transform: rotate(90deg);
 }
 
@@ -897,8 +889,8 @@ body.calendar-active .mini-calendar-container {
     gap: 12px;
     justify-content: center;
     padding: 20px 24px;
-    border-top: 1px solid rgba(0, 57, 76, 0.1);
-    background: rgba(255, 255, 255, 0.5);
+    border-top: 1px solid rgba(0, 53, 119, 0.1);
+    background: rgba(18, 24, 38, 0.5);
     width: 100%;
 }
 
@@ -987,11 +979,11 @@ body.calendar-active .mini-calendar-container {
 .email-tag {
     display: flex;
     align-items: center;
-    background: rgba(0, 57, 76, 0.1);
+    background: rgba(46, 143, 224, 0.12);
     padding: 6px 10px;
     border-radius: 8px;
     font-size: 13px;
-    color: #00394C;
+    color: #2E8FE0;
     gap: 6px;
 }
 
@@ -1006,8 +998,8 @@ body.calendar-active .mini-calendar-container {
 }
 
 .remove-email-btn:hover {
-    background: rgba(0, 57, 76, 0.1);
-    color: #00394C;
+    background: rgba(46, 143, 224, 0.12);
+    color: #2E8FE0;
 }
 
 /* Кнопки */
@@ -1023,25 +1015,25 @@ body.calendar-active .mini-calendar-container {
 }
 
 .btn-secondary {
-    background: rgba(0, 57, 76, 0.1);
-    color: #00394C;
+    background: rgba(46, 143, 224, 0.12);
+    color: #2E8FE0;
 }
 
 .btn-secondary:hover {
-    background: rgba(0, 57, 76, 0.2);
+    background: rgba(46, 143, 224, 0.2);
     transform: translateY(-1px);
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, #00394C 0%, #002233 100%);
+    background: linear-gradient(135deg, #003577 0%, #002a60 100%);
     color: #FFFFFF;
-    box-shadow: 0 2px 8px rgba(0, 57, 76, 0.3);
+    box-shadow: 0 2px 8px rgba(0, 53, 119, 0.3);
 }
 
 .btn-primary:hover {
-    background: linear-gradient(135deg, #024c64 0%, #00394C 100%);
+    background: linear-gradient(135deg, #00428c 0%, #003577 100%);
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(0, 57, 76, 0.4);
+    box-shadow: 0 4px 12px rgba(0, 53, 119, 0.4);
 }
 
 .btn-danger {
@@ -1078,28 +1070,28 @@ body.calendar-active .mini-calendar-container {
     display: block;
     margin-bottom: 8px;
     font-weight: 500;
-    color: #00394C;
+    color: #2E8FE0;
     font-size: 14px;
 }
 
 .form-input {
     width: 100%;
     padding: 12px 16px;
-    border: 1px solid rgba(0, 57, 76, 0.2);
+    border: 1px solid rgba(0, 53, 119, 0.2);
     border-radius: 12px;
     font-family: inherit;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(18, 24, 38, 0.8);
     transition: all 0.3s ease;
     font-size: 15px;
-    color: #00394C;
+    color: #2E8FE0;
     resize: vertical;
 }
 
 .form-input:focus {
     outline: none;
-    border-color: #00394C;
-    background-color: #FFFFFF;
-    box-shadow: 0 0 0 3px rgba(0, 57, 76, 0.1);
+    border-color: #003577;
+    background-color: #121826;
+    box-shadow: 0 0 0 3px rgba(0, 53, 119, 0.1);
 }
 
 .form-hint {
@@ -1129,7 +1121,7 @@ body.calendar-active .mini-calendar-container {
 }
 
 .color-input-wrapper input[type="color"]::-webkit-color-swatch {
-    border: 2px solid #FFFFFF;
+    border: 2px solid rgba(255, 255, 255, 0.10);
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
@@ -1143,18 +1135,18 @@ body.calendar-active .mini-calendar-container {
     align-items: center;
     gap: 8px;
     padding: 8px 12px;
-    background: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(0, 57, 76, 0.2);
+    background: rgba(18, 24, 38, 0.8);
+    border: 1px solid rgba(0, 53, 119, 0.2);
     border-radius: 8px;
     cursor: pointer;
     font-size: 14px;
-    color: #386675;
+    color: #2E8FE0;
     transition: all 0.2s ease;
 }
 
 .color-preview:hover {
-    background: #FFFFFF;
-    border-color: #00394C;
+    background: #121826;
+    border-color: #003577;
 }
 @media (max-width: 768px) {
   .mobile-drawer .right-menu {

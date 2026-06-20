@@ -4,7 +4,7 @@
   max-width: 1200px;
   margin: 0 auto;
   font-family: 'Inter', sans-serif;
-  color: #0f172a;
+  color: #EAF1FB;
 }
 
 .note-header {
@@ -17,7 +17,7 @@
 .note-title {
   font-size: 28px;
   font-weight: 600;
-  color: #0f172a;
+  color: #EAF1FB;
   margin: 0;
 }
 
@@ -27,7 +27,7 @@
 }
 
 .note-add-btn {
-  background: linear-gradient(135deg, #00394c, #005b78);
+  background: linear-gradient(135deg, #003577, #004f9a);
   color: white;
   border: none;
   border-radius: 8px;
@@ -43,15 +43,15 @@
   font-family: 'Segoe UI', sans-serif;
   font-weight: 500;
   font-size: 15px;
-  box-shadow: 0 2px 8px rgba(0, 57, 76, 0.2);
+  box-shadow: 0 2px 8px rgba(0, 53, 119, 0.2);
   position: relative;
   overflow: hidden;
 }
 
 .note-add-btn:hover {
-  background: linear-gradient(135deg, #024c64, #00759a);
+  background: linear-gradient(135deg, #00428c, #006BBD);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 57, 76, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 53, 119, 0.3);
 }
 
 .note-add-btn:active {
@@ -65,7 +65,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  background: linear-gradient(rgba(18, 24, 38, 0.1), rgba(18, 24, 38, 0));
   pointer-events: none;
 }
 
@@ -98,13 +98,13 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  background: white;
+  background: #121826;
   border-radius: 20px;
   padding: 6px 12px 6px 6px;
   cursor: pointer;
   transition: all 0.2s;
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-  border: 1px solid #e2e8f0;
+  border: 1px solid rgba(255, 255, 255, 0.10);
 }
 
 .note-sphere:hover {
@@ -112,12 +112,12 @@
 }
 
 .note-sphere.active {
-  background: #f8fafc;
-  border-color: #cbd5e1;
+  background: #121826;
+  border-color: rgba(255, 255, 255, 0.10);
 }
 
 .note-sphere-badge {
-  --sphere-color: #64748b;
+  --sphere-color: #94A3B8;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -168,7 +168,7 @@
 }
 
 .note-sphere-add:hover, .note-sphere-menu:hover {
-  color: #00394c;
+  color: #2E8FE0;
 }
 
 .note-sphere-add svg {
@@ -191,7 +191,7 @@
 }
 
 .note-add-sphere-btn:hover {
-  color: #00394c;
+  color: #2E8FE0;
   transform: scale(1.1);
 }
 
@@ -211,7 +211,7 @@
 }
 
 .note-card {
-  background: white;
+  background: #121826;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
   padding: 16px;
@@ -219,7 +219,7 @@
   flex-direction: column;
   gap: 12px;
   transition: all 0.2s;
-  border: 1px solid #e2e8f0;
+  border: 1px solid rgba(255, 255, 255, 0.10);
 }
 
 .note-card:hover {
@@ -228,7 +228,7 @@
 }
 
 .note-card-header {
-  --sphere-color: #64748b;
+  --sphere-color: #94A3B8;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -247,7 +247,7 @@
 }
 
 .note-sphere-badge {
-  background: rgba(0, 57, 76, 0.1);
+  background: rgba(46, 143, 224, 0.12);
   color: var(--sphere-color);
   padding: 4px 8px;
   border-radius: 12px;
@@ -264,7 +264,7 @@
 .note-content {
   font-size: 15px;
   line-height: 1.5;
-  color: #0f172a;
+  color: #EAF1FB;
   white-space: pre-wrap;
   word-break: break-word;
   flex-grow: 1;
@@ -291,8 +291,8 @@
 }
 
 .note-actions button:hover {
-  background: #f1f5f9;
-  color: #00394c;
+  background: #121826;
+  color: #2E8FE0;
 }
 
 .note-actions button svg {
@@ -331,7 +331,7 @@
 }
 
 .note-modal-box {
-  background: white;
+  background: #121826;
   border-radius: 12px;
   padding: 24px;
   width: 100%;
@@ -341,7 +341,7 @@
 
 .note-modal-box h3 {
   margin: 0 0 20px;
-  color: #0f172a;
+  color: #EAF1FB;
   font-size: 20px;
 }
 
@@ -353,14 +353,14 @@
   display: block;
   margin-bottom: 6px;
   font-size: 14px;
-  color: #475569;
+  color: #2E8FE0;
   font-weight: 500;
 }
 
 .note-input, .note-sphere-select {
   width: 100%;
   padding: 10px 12px;
-  border: 1px solid #e2e8f0;
+  border: 1px solid rgba(255, 255, 255, 0.10);
   border-radius: 8px;
   font-size: 14px;
   transition: all 0.2s;
@@ -368,8 +368,8 @@
 
 .note-input:focus, .note-sphere-select:focus {
   outline: none;
-  border-color: #00394c;
-  box-shadow: 0 0 0 2px rgba(0, 57, 76, 0.1);
+  border-color: #003577;
+  box-shadow: 0 0 0 2px rgba(0, 53, 119, 0.1);
 }
 
 .note-input {
@@ -381,7 +381,7 @@ input[type="color"] {
   width: 100%;
   height: 40px;
   padding: 2px;
-  border: 1px solid #e2e8f0;
+  border: 1px solid rgba(255, 255, 255, 0.10);
   border-radius: 8px;
   cursor: pointer;
 }
@@ -403,13 +403,13 @@ input[type="color"] {
 }
 
 .btn-cancel {
-  background: #f1f5f9;
-  color: #0f172a;
+  background: #121826;
+  color: #EAF1FB;
   border: none;
 }
 
 .btn-cancel:hover {
-  background: #e2e8f0;
+  background: #121826;
 }
 
 .btn-save {
@@ -423,7 +423,7 @@ input[type="color"] {
 }
 
 .note-context-menu {
-  background: white;
+  background: #121826;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   padding: 8px 0;
@@ -445,20 +445,20 @@ input[type="color"] {
 }
 
 .note-context-menu li:hover {
-  background: #f8fafc;
-  color: #00394c;
+  background: #121826;
+  color: #2E8FE0;
 }
 
 .convert-menu {
-  box-shadow: 0 8px 24px rgba(0,57,76,0.12);
+  box-shadow: 0 8px 24px rgba(0, 53, 119,0.12);
   border-radius: 12px;
-  background: #fff;
+  background: #121826;
   font-family: 'Inter', sans-serif;
   font-size: 15px;
   min-width: 260px;
   z-index: 2000;
   animation: fadeInMenu 250ms;
-  border: 1px solid #e2e8f0;
+  border: 1px solid rgba(255, 255, 255, 0.10);
 }
 @keyframes fadeInMenu {
   from { opacity: 0; transform: translateY(-10px);}
@@ -472,7 +472,7 @@ input[type="color"] {
 .convert-menu-title {
   padding: 12px 16px 8px 16px;
   font-size: 14px;
-  color: #00394c;
+  color: #2E8FE0;
   background: none;
   cursor: default;
 }
@@ -480,14 +480,14 @@ input[type="color"] {
   transition: background 0.2s;
 }
 .convert-menu-item:hover, .convert-menu-item:focus {
-  background: #f8fafc;
+  background: #121826;
   outline: none;
 }
 /* Улучшенные стили для модальных окон заметок */
 .note-modal {
   position: fixed;
   inset: 0;
-  background: rgba(0, 57, 76, 0.85);
+  background: rgba(0, 53, 119, 0.85);
   backdrop-filter: blur(4px);
   display: flex;
   align-items: center;
@@ -509,15 +509,15 @@ input[type="color"] {
 }
 
 .note-modal-box {
-  background: linear-gradient(135deg, #F5FBFF 0%, #E8F4FF 100%);
-  border: 2px solid #00394C;
+  background: linear-gradient(135deg, #121826 0%, #121826 100%);
+  border: 2px solid #003577;
   border-radius: 16px;
   padding: 0;
   width: 100%;
   max-width: 500px;
   max-height: 90vh;
   overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 57, 76, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 53, 119, 0.3);
   animation: noteModalSlideIn 0.3s ease-out;
 }
 
@@ -537,15 +537,15 @@ input[type="color"] {
   justify-content: space-between;
   align-items: center;
   padding: 24px 24px 16px;
-  border-bottom: 1px solid rgba(0, 57, 76, 0.1);
-  background: rgba(255, 255, 255, 0.5);
+  border-bottom: 1px solid rgba(0, 53, 119, 0.1);
+  background: rgba(18, 24, 38, 0.5);
 }
 
 .note-modal-header h3 {
   margin: 0;
   font-size: 20px;
   font-weight: 600;
-  color: #00394C;
+  color: #2E8FE0;
 }
 
 .note-modal-close {
@@ -562,8 +562,8 @@ input[type="color"] {
 }
 
 .note-modal-close:hover {
-  background: rgba(0, 57, 76, 0.1);
-  color: #00394C;
+  background: rgba(46, 143, 224, 0.12);
+  color: #2E8FE0;
   transform: rotate(90deg);
 }
 
@@ -578,8 +578,8 @@ input[type="color"] {
   gap: 12px;
   justify-content: space-between;
   padding: 20px 24px;
-  border-top: 1px solid rgba(0, 57, 76, 0.1);
-  background: rgba(255, 255, 255, 0.5);
+  border-top: 1px solid rgba(0, 53, 119, 0.1);
+  background: rgba(18, 24, 38, 0.5);
 }
 
 
@@ -597,25 +597,25 @@ input[type="color"] {
 }
 
 .btn-secondary {
-  background: rgba(0, 57, 76, 0.1);
-  color: #00394C;
+  background: rgba(46, 143, 224, 0.12);
+  color: #2E8FE0;
 }
 
 .btn-secondary:hover {
-  background: rgba(0, 57, 76, 0.2);
+  background: rgba(46, 143, 224, 0.2);
   transform: translateY(-1px);
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #00394C 0%, #002233 100%);
+  background: linear-gradient(135deg, #003577 0%, #002a60 100%);
   color: #FFFFFF;
-  box-shadow: 0 2px 8px rgba(0, 57, 76, 0.3);
+  box-shadow: 0 2px 8px rgba(0, 53, 119, 0.3);
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, #024c64 0%, #00394C 100%);
+  background: linear-gradient(135deg, #00428c 0%, #003577 100%);
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0, 57, 76, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 53, 119, 0.4);
 }
 
 .btn-danger {
@@ -658,14 +658,14 @@ input[type="color"] {
 /* Улучшенное контекстное меню для преобразования */
 .convert-menu-header {
   padding: 16px 16px 12px;
-  border-bottom: 1px solid rgba(0, 57, 76, 0.1);
+  border-bottom: 1px solid rgba(0, 53, 119, 0.1);
 }
 
 .convert-menu-header h4 {
   margin: 0;
   font-size: 16px;
   font-weight: 600;
-  color: #00394C;
+  color: #2E8FE0;
 }
 
 .convert-menu-body {
@@ -689,7 +689,7 @@ input[type="color"] {
 }
 
 .convert-menu-item:hover {
-  background: rgba(0, 57, 76, 0.05);
+  background: rgba(46, 143, 224, 0.12);
 }
 
 .sphere-color-indicator {
@@ -701,7 +701,7 @@ input[type="color"] {
 
 .sphere-name {
   font-size: 14px;
-  color: #0f172a;
+  color: #EAF1FB;
 }
 
 .convert-menu-error {
@@ -764,7 +764,7 @@ input[type="color"] {
     left: 5%;
     width: 90%;
     height: 48px;
-    background: linear-gradient(135deg, #00394c, #005b78);
+    background: linear-gradient(135deg, #003577, #004f9a);
     color: white;
     border: none;
     border-radius: 8px;
@@ -778,7 +778,7 @@ input[type="color"] {
     font-family: 'Segoe UI', sans-serif;
     font-weight: 500;
     font-size: 15px;
-    box-shadow: 0 2px 8px rgba(0, 57, 76, 0.2);
+    box-shadow: 0 2px 8px rgba(0, 53, 119, 0.2);
     overflow: hidden;
     }
     .note-empty .note-add-btn {

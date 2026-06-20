@@ -1,16 +1,16 @@
 :root {
-    --primary-color: #1a73e8;
-    --primary-hover: #1765cc;
-    --primary-light: #e8f0fe;
-    --today-color: #1a73e8;
-    --border-color: #dadce0;
-    --text-primary: #3c4043;
-    --text-secondary: #5f6368;
-    --text-disabled: #80868b;
-    --hover-bg: #f1f3f4;
-    --event-hover: rgba(0, 0, 0, 0.05);
-    --surface-bg: #ffffff;
-    --other-month-bg: #f5f5f5;
+    --primary-color: #2E8FE0;
+    --primary-hover: #006BBD;
+    --primary-light: rgba(46, 143, 224, 0.18);
+    --today-color: #2E8FE0;
+    --border-color: rgba(255, 255, 255, 0.10);
+    --text-primary: #EAF1FB;
+    --text-secondary: #8A99B5;
+    --text-disabled: #5C6680;
+    --hover-bg: #1A2236;
+    --event-hover: rgba(255, 255, 255, 0.06);
+    --surface-bg: #121826;
+    --other-month-bg: #0F1422;
     --scroll-position: 0%;
     --scroll-width: 30%;
     --hour-slot-height: 60px;
@@ -132,7 +132,6 @@
     margin-left: auto;
     padding: 8px 24px;
     background-color: var(--primary-color);
-    color: white;
     border: none;
     border-radius: 24px;
     cursor: pointer;
@@ -451,11 +450,11 @@
 
 .mini-day.current-month, .year-day.current-month {
     color: var(--text-primary);
-    background-color: #f9f9f9;
+    background-color: #121826;
 }
 
 .mini-day.current-month:hover {
-    background-color: #efefef;
+    background-color: #121826;
 }
 
 .mini-day.other-month, .year-day.other-month {
@@ -499,7 +498,7 @@
 
 .mini-day.today.has-events::after,
 .mini-day.selected.has-events::after {
-    background-color: white;
+    background-color: #121826;
 }
 
 /* Year View */
@@ -605,7 +604,7 @@
 }
 
 .year-day.current-month:hover {
-    background-color: #f0f0f0;
+    background-color: #121826;
 }
 
 .year-day.other-month {
@@ -627,14 +626,14 @@
 }
 
 .year-day.has-events {
-    background: #e3f2fd;
+    background: #121826;
     border: 1px solid #90caf9;
-    color: #1565d8;
+    color: #2E8FE0;
     font-weight: 600;
 }
 
 .year-day.has-events:hover {
-    background: #bbdefb;
+    background: rgba(46, 143, 224, 0.16);
     border-color: #64b5f6;
 }
 
@@ -772,8 +771,8 @@
     width: 18px;
     height: 18px;
     border-radius: 5px;
-    border: 2px solid rgba(255,255,255,0.75);
-    background: rgba(255,255,255,0.06);
+    border: 2px solid rgba(255, 255, 255, 0.10);
+    background: rgba(18, 24, 38, 0.06);
     display: inline-block;
     cursor: pointer;
     transition: transform .12s ease, box-shadow .12s ease, background-color .12s ease, border-color .12s ease;
@@ -788,12 +787,12 @@
 
 .calendar-event .event-complete-checkbox:focus {
     outline: none;
-    box-shadow: 0 0 0 4px rgba(47,209,197,0.12);
+    box-shadow: 0 0 0 4px rgba(46, 143, 224,0.12);
 }
 
 .calendar-event .event-complete-checkbox:checked {
-    background-color: rgba(255,255,255,0.12);
-    border-color: rgba(255,255,255,0.95);
+    background-color: rgba(18, 24, 38, 0.12);
+    border-color: rgba(255, 255, 255, 0.10);
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>");
     background-repeat: no-repeat;
     background-position: center;
@@ -825,7 +824,7 @@
 /* Drag and Drop */
 .day-cell.drag-selected,
 .hour-slot.drag-selected {
-    background-color: rgba(26, 115, 232, 0.1);
+    background-color: rgba(46, 143, 224, 0.12);
     border: 1px dashed rgba(26, 115, 232, 0.5);
 }
 
@@ -845,7 +844,7 @@
 }
 
 .calendar-event-modal__content {
-    background: #fff;
+    background: #121826;
     width: 420px;
     max-height: 70vh;
     overflow-y: auto;
@@ -879,7 +878,7 @@
 .calendar-event-modal__list li {
     padding: 8px 10px;
     border-radius: 6px;
-    background: #f6f7f9;
+    background: #121826;
     margin-bottom: 8px;
     cursor: pointer;
 }
@@ -923,12 +922,12 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #dadce0;
+    background: #121826;
     border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #bdc1c6;
+    background: #1A2236;
 }
 
 /* Desktop optimizations */
@@ -1044,7 +1043,7 @@
     align-items: center;
     justify-content: center;
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-    background: linear-gradient(135deg, #00394C, #006a8b);
+    background: linear-gradient(135deg, #003577, #006a8b);
     color: #fff;
     font-size: 0;
     z-index: 1000;
