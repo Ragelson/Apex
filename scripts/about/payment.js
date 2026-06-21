@@ -293,15 +293,15 @@ function injectPaymentModalStyles() {
         }
 
         .payment-modal-content {
-            background: linear-gradient(135deg, #ffffff 0%, #F5FBFF 100%);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0)), #121826;
             margin: 2% auto;
             padding: 2.5rem;
-            border-radius: 12px;
+            border-radius: 16px;
             width: 100%;
             max-width: 500px;
-            box-shadow: 0 10px 40px rgba(0, 57, 76, 0.15);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
             position: relative;
-            border: 1px solid rgba(0, 57, 76, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             animation: modalSlideIn 0.3s ease-out;
         }
 
@@ -320,7 +320,7 @@ function injectPaymentModalStyles() {
             text-align: center;
             font-size: 1.8rem;
             font-weight: 700;
-            color: #00394C;
+            color: #EAF1FB;
             margin: 0 0 2rem 0;
             position: relative;
             padding-bottom: 1rem;
@@ -334,7 +334,7 @@ function injectPaymentModalStyles() {
             transform: translateX(-50%);
             width: 60px;
             height: 3px;
-            background: linear-gradient(135deg, #0a4a6c 0%, #083751 100%);
+            background: linear-gradient(135deg, #003577 0%, #006BBD 100%);
             border-radius: 2px;
         }
 
@@ -344,23 +344,23 @@ function injectPaymentModalStyles() {
             right: 1rem;
             width: 36px;
             height: 36px;
-            background: white;
+            background: #1A2236;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
             font-size: 1.5rem;
-            color: #212529;
-            border: 2px solid rgba(0, 57, 76, 0.1);
+            color: #EAF1FB;
+            border: 1px solid rgba(255, 255, 255, 0.16);
             transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
             z-index: 10;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         }
 
         .close-payment-modal:hover {
-            background: #00394C;
-            color: white;
+            background: #006BBD;
+            color: #fff;
             transform: rotate(90deg);
         }
 
@@ -372,8 +372,8 @@ function injectPaymentModalStyles() {
         }
 
         .payment-plan {
-            background: white;
-            border: 2px solid #e9ecef;
+            background: #1A2236;
+            border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 12px;
             padding: 1.5rem;
             cursor: pointer;
@@ -383,34 +383,34 @@ function injectPaymentModalStyles() {
         }
 
         .payment-plan:hover {
-            border-color: #e0f2ff;
+            border-color: #2E8FE0;
             transform: translateY(-2px);
-            box-shadow: 0 4px 20px rgba(0, 57, 76, 0.12);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
         }
 
         .payment-plan.active {
-            border-color: #0a4a6c;
-            background: linear-gradient(135deg, rgba(10, 74, 108, 0.03) 0%, rgba(10, 74, 108, 0.08) 100%);
-            box-shadow: 0 4px 20px rgba(0, 57, 76, 0.12);
+            border-color: #2E8FE0;
+            background: linear-gradient(135deg, rgba(0, 107, 189, 0.12) 0%, rgba(0, 53, 119, 0.18) 100%);
+            box-shadow: 0 0 0 1px rgba(46, 143, 224, 0.18), 0 8px 24px rgba(0, 67, 140, 0.25);
         }
 
         .payment-plan.current-plan {
-            border-color: #ff6b35;
-            background: linear-gradient(135deg, rgba(255, 107, 53, 0.05) 0%, rgba(255, 140, 66, 0.1) 100%);
+            border-color: #2E8FE0;
+            background: linear-gradient(135deg, rgba(0, 107, 189, 0.10) 0%, rgba(46, 143, 224, 0.12) 100%);
             cursor: default;
         }
 
         .payment-plan h3 {
             font-size: 1.2rem;
             font-weight: 600;
-            color: #212529;
+            color: #EAF1FB;
             margin: 0 0 0.5rem 0;
         }
 
         .payment-plan .price {
             font-size: 1.8rem;
             font-weight: 700;
-            color: #0a4a6c;
+            color: #2E8FE0;
             margin: 0 0 0.5rem 0;
             display: inline;
             align-items: baseline;
@@ -420,12 +420,12 @@ function injectPaymentModalStyles() {
             content: '₽';
             font-size: 1rem;
             margin-right: 2px;
-            color: #6c757d;
+            color: #8A99B5;
         }
 
         .payment-plan p {
             font-size: 0.9rem;
-            color: #6c757d;
+            color: #8A99B5;
             margin: 0;
             line-height: 1.4;
         }
@@ -434,22 +434,22 @@ function injectPaymentModalStyles() {
             position: absolute;
             top: 10px;
             right: 10px;
-            background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
-            color: white;
+            background: linear-gradient(135deg, #003577 0%, #006BBD 100%);
+            color: #fff;
             padding: 0.25rem 0.75rem;
             border-radius: 20px;
             font-size: 0.75rem;
             font-weight: 500;
-            box-shadow: 0 2px 8px rgba(0, 57, 76, 0.08);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
         }
 
         .payment-footer {
-            background: linear-gradient(135deg, rgba(10, 74, 108, 0.05) 0%, rgba(10, 74, 108, 0.02) 100%);
+            background: linear-gradient(135deg, rgba(0, 107, 189, 0.08) 0%, rgba(0, 53, 119, 0.04) 100%);
             padding: 1.5rem;
             border-radius: 12px;
             text-align: center;
             margin-top: 2rem;
-            border-top: 1px solid rgba(0, 57, 76, 0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .payment-total {
@@ -458,18 +458,18 @@ function injectPaymentModalStyles() {
             align-items: center;
             margin-bottom: 1.5rem;
             padding-bottom: 1rem;
-            border-bottom: 1px dashed rgba(0, 57, 76, 0.2);
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.16);
         }
 
         .payment-total span {
             font-size: 0.9rem;
-            color: #6c757d;
+            color: #8A99B5;
         }
 
         .payment-total .total-amount {
             font-size: 1.5rem;
             font-weight: 700;
-            color: #0a4a6c;
+            color: #2E8FE0;
         }
 
         #confirmPayment {
@@ -477,20 +477,20 @@ function injectPaymentModalStyles() {
             padding: 1rem;
             font-size: 1.1rem;
             font-weight: 600;
-            background: linear-gradient(135deg, #0a4a6c 0%, #083751 100%);
-            color: white;
+            background: linear-gradient(135deg, #003577 0%, #006BBD 100%);
+            color: #fff;
             border: none;
             border-radius: 8px;
             cursor: pointer;
             transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
             position: relative;
             overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0, 57, 76, 0.12);
+            box-shadow: 0 0 0 1px rgba(46, 143, 224, 0.18), 0 8px 24px rgba(0, 67, 140, 0.25);
         }
 
         #confirmPayment:hover:not(:disabled) {
             transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(0, 57, 76, 0.15);
+            box-shadow: 0 0 0 1px rgba(46, 143, 224, 0.3), 0 12px 32px rgba(0, 67, 140, 0.35);
         }
 
         #confirmPayment:disabled {
@@ -499,7 +499,7 @@ function injectPaymentModalStyles() {
         }
 
         #confirmPayment.trial-action {
-            background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+            background: linear-gradient(135deg, #006BBD 0%, #2E8FE0 100%);
         }
 
         #confirmPayment::after {
@@ -519,7 +519,7 @@ function injectPaymentModalStyles() {
 
         .payment-info {
             font-size: 0.8rem;
-            color: #6c757d;
+            color: #8A99B5;
             margin-top: 1rem;
             line-height: 1.4;
         }
@@ -570,12 +570,13 @@ function injectPaymentModalStyles() {
         }
 
         .subscription-modal {
-            background: white;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0)), #121826;
             padding: 2rem;
-            border-radius: 12px;
+            border-radius: 16px;
             width: 100%;
             max-width: 400px;
-            box-shadow: 0 10px 40px rgba(0, 57, 76, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
             text-align: center;
             position: relative;
             animation: modalFadeIn 0.3s ease-out;
@@ -594,7 +595,7 @@ function injectPaymentModalStyles() {
 
         .subscription-modal p {
             font-size: 1rem;
-            color: #212529;
+            color: #B5C2D8;
             margin-bottom: 1.5rem;
             line-height: 1.5;
         }
@@ -617,25 +618,25 @@ function injectPaymentModalStyles() {
         }
 
         .subscription-modal-buttons button:first-child {
-            background: #e9ecef;
-            color: #212529;
-            border-color: #e9ecef;
+            background: #1A2236;
+            color: #EAF1FB;
+            border-color: rgba(255, 255, 255, 0.16);
         }
 
         .subscription-modal-buttons button:first-child:hover {
-            background: #6c757d;
-            color: white;
+            background: #232C42;
+            color: #fff;
         }
 
         .subscription-modal-buttons button:last-child {
-            background: linear-gradient(135deg, #0a4a6c 0%, #083751 100%);
-            color: white;
-            box-shadow: 0 4px 20px rgba(0, 57, 76, 0.12);
+            background: linear-gradient(135deg, #003577 0%, #006BBD 100%);
+            color: #fff;
+            box-shadow: 0 0 0 1px rgba(46, 143, 224, 0.18), 0 8px 24px rgba(0, 67, 140, 0.25);
         }
 
         .subscription-modal-buttons button:last-child:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(0, 57, 76, 0.15);
+            box-shadow: 0 0 0 1px rgba(46, 143, 224, 0.3), 0 12px 32px rgba(0, 67, 140, 0.35);
         }
 
         body.modal-open {
@@ -745,7 +746,7 @@ class SubscriptionModal {
         // Текст
         const message = document.createElement('p');
         message.textContent = this.getTextForStatus(this.status);
-        message.style.cssText = 'font-size: 16px; color: #333; margin-bottom: 25px;';
+        message.style.cssText = 'font-size: 16px; color: #B5C2D8; margin-bottom: 25px;';
 
         // Кнопка закрытия
         const closeBtn = document.createElement('button');

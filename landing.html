@@ -12,7 +12,7 @@
   <!-- Open Graph / соцсети -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Apex — пространство для совместной работы над проектами">
-  <meta property="og:description" content="Задачи, доска, календарь и заметки для всей команды в одном окне. Учебный проект УУНиТ.">
+  <meta property="og:description" content="Задачи, доска, календарь и заметки для всей команды в одном окне.">
   <meta property="og:site_name" content="Apex">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:image" content="assets/landing/logo-main.png">
@@ -22,21 +22,21 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
   <!-- preload критических ресурсов: лого + основной CSS -->
-  <link rel="preload" href="assets/landing/logo-main.png?v=20260524" as="image">
-  <link rel="preload" href="styles/landing/styles.css?v=20260524" as="style">
+  <link rel="preload" href="assets/landing/logo-main.png?v=20260621" as="image">
+  <link rel="preload" href="styles/landing/styles.css?v=20260621" as="style">
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="styles/landing/styles.css?v=20260524">
-  <link rel="stylesheet" href="styles/about/styles.css?v=20260524">
-  <link rel="stylesheet" href="styles/landing/auth.css?v=20260524">
-  <link rel="stylesheet" href="styles/planer/info.css?v=20260524">
-  <link rel="stylesheet" href="styles/chat-poput.css?v=20260524">
+  <link rel="stylesheet" href="styles/landing/styles.css?v=20260621">
+  <link rel="stylesheet" href="styles/about/styles.css?v=20260621">
+  <link rel="stylesheet" href="styles/landing/auth.css?v=20260621">
+  <link rel="stylesheet" href="styles/planer/info.css?v=20260621">
+  <link rel="stylesheet" href="styles/chat-poput.css?v=20260621">
   <!-- TODO[apex-favicon]: заменить файл на финальную иконку Apex и переименовать в assets/planer/apex-mini-light.png -->
-  <link rel="icon" href="assets/planer/Vinc-mini-light.png?v=20260524" type="image/png">
-  <link rel="apple-touch-icon" href="assets/planer/Vinc-mini-light.png?v=20260524">
-  <link rel="shortcut icon" href="assets/planer/Vinc-mini-light.png?v=20260524">
+  <link rel="icon" href="assets/planer/Vinc-mini-light.png?v=20260621" type="image/png">
+  <link rel="apple-touch-icon" href="assets/planer/Vinc-mini-light.png?v=20260621">
+  <link rel="shortcut icon" href="assets/planer/Vinc-mini-light.png?v=20260621">
   <!-- Yandex.Metrika counter -->
   <script type="text/javascript">
     (function (m, e, t, r, i, k, a) {
@@ -64,22 +64,22 @@
   <!-- Модальное окно входа -->
   <div id="loginModal" class="modal">
     <div class="auth-content">
-      <h2>Войдите в аккаунт</h2>
+      <h2 data-i18n="login_title">Войдите в аккаунт</h2>
       <form id="loginForm">
         <div class="auth-group">
-          <label for="loginEmail">Введите почту:</label>
-          <input type="email" id="loginEmail" required placeholder="Введите свою почту">
+          <label for="loginEmail" data-i18n="login_email_label">Введите почту:</label>
+          <input type="email" id="loginEmail" required placeholder="Введите свою почту" data-i18n-placeholder="login_email_placeholder">
         </div>
         <div class="auth-group">
-          <label for="loginPassword">Введите пароль:</label>
-          <input type="password" id="loginPassword" required placeholder="Введите пароль">
+          <label for="loginPassword" data-i18n="login_pass_label">Введите пароль:</label>
+          <input type="password" id="loginPassword" required placeholder="Введите пароль" data-i18n-placeholder="login_pass_placeholder">
           <div class="forgot-password-link">
-            <a href="#" class="switch-to-forgot">Забыли пароль?</a>
+            <a href="#" class="switch-to-forgot" data-i18n="login_forgot">Забыли пароль?</a>
           </div>
         </div>
-        <button type="submit" class="btn-in">Войти</button>
+        <button type="submit" class="btn-in" data-i18n="login_btn">Войти</button>
         <div class="auth-footer">
-          Нет аккаунта? <a href="#" class="switch-to-register">Зарегистрироваться</a>
+          <span data-i18n="login_no_acc">Нет аккаунта?</span> <a href="#" class="switch-to-register" data-i18n="login_register_link">Зарегистрироваться</a>
         </div>
       </form>
     </div>
@@ -88,15 +88,15 @@
   <!-- Модальное окно восстановления пароля -->
   <div id="forgotPasswordModal" class="modal">
     <div class="auth-content">
-      <h2>Восстановление пароля</h2>
+      <h2 data-i18n="forgot_title">Восстановление пароля</h2>
       <form id="forgotPasswordForm">
         <div class="auth-group">
-          <label for="forgotEmail">Введите вашу почту:</label>
-          <input type="email" id="forgotEmail" required placeholder="Введите почту для восстановления">
+          <label for="forgotEmail" data-i18n="forgot_email_label">Введите вашу почту:</label>
+          <input type="email" id="forgotEmail" required placeholder="Введите почту для восстановления" data-i18n-placeholder="forgot_email_placeholder">
         </div>
-        <button type="submit" class="btn-in">Восстановить пароль</button>
+        <button type="submit" class="btn-in" data-i18n="forgot_btn">Восстановить пароль</button>
         <div class="auth-footer">
-          <a href="#" class="switch-to-login">Вернуться ко входу</a>
+          <a href="#" class="switch-to-login" data-i18n="forgot_back">Вернуться ко входу</a>
         </div>
       </form>
     </div>
@@ -105,45 +105,43 @@
   <!-- Модальное окно регистрации -->
   <div id="registerModal" class="modal">
     <div class="auth-content">
-      <h2>Регистрация</h2>
+      <h2 data-i18n="reg_title">Регистрация</h2>
       <form id="registerForm">
         <div class="auth-group">
-          <label for="registerName">Имя:</label>
-          <input type="text" id="registerName" required placeholder="Введите имя">
+          <label for="registerName" data-i18n="reg_name_label">Имя:</label>
+          <input type="text" id="registerName" required placeholder="Введите имя" data-i18n-placeholder="reg_name_placeholder">
         </div>
         <div class="auth-group">
-          <label for="registerEmail">E-mail:</label>
-          <input type="email" id="registerEmail" required placeholder="Введите почту">
+          <label for="registerEmail" data-i18n="reg_email_label">E-mail:</label>
+          <input type="email" id="registerEmail" required placeholder="Введите почту" data-i18n-placeholder="reg_email_placeholder">
         </div>
         <div class="auth-group">
-          <label for="registerPassword">Пароль:</label>
-          <input type="password" id="registerPassword" required placeholder="Введите пароль">
+          <label for="registerPassword" data-i18n="reg_pass_label">Пароль:</label>
+          <input type="password" id="registerPassword" required placeholder="Введите пароль" data-i18n-placeholder="reg_pass_placeholder">
         </div>
         <div class="auth-group">
-          <label for="registerConfirmPassword">Подтверждение пароля</label>
-          <input type="password" id="registerConfirmPassword" required placeholder="Повторите пароль">
+          <label for="registerConfirmPassword" data-i18n="reg_confirm_label">Подтверждение пароля</label>
+          <input type="password" id="registerConfirmPassword" required placeholder="Повторите пароль" data-i18n-placeholder="reg_confirm_placeholder">
         </div>
 
         <div class="auth-agreements">
           <div class="auth-agreement">
             <input type="checkbox" id="agreeLicense" name="agreeLicense" required>
             <label for="agreeLicense">
-              Я согласен(а) с <a href="license.html" class="open-agreement-modal" data-modal="agreement">Лицензионным
-                соглашением</a>
+              <span data-i18n="reg_agree_pre">Я согласен(а) с</span> <a href="license.html" class="open-agreement-modal" data-modal="agreement" data-i18n="reg_agree_license_link">Лицензионным соглашением</a>
             </label>
           </div>
           <div class="auth-agreement">
             <input type="checkbox" id="agreePrivacy" name="agreePrivacy" required>
             <label for="agreePrivacy">
-              Я прочитал(а) и согласен(а) с <a href="privacy.html" class="open-agreement-modal"
-                data-modal="privacy">Политикой конфиденциальности</a>
+              <span data-i18n="reg_agree_privacy_pre">Я прочитал(а) и согласен(а) с</span> <a href="privacy.html" class="open-agreement-modal" data-modal="privacy" data-i18n="reg_agree_privacy_link">Политикой конфиденциальности</a>
             </label>
           </div>
         </div>
 
-        <button type="submit" class="btn-in">Создать аккаунт</button>
+        <button type="submit" class="btn-in" data-i18n="reg_btn">Создать аккаунт</button>
         <div class="auth-footer">
-          Уже есть аккаунт? <a href="#" class="switch-to-login">Войти</a>
+          <span data-i18n="reg_have_acc">Уже есть аккаунт?</span> <a href="#" class="switch-to-login" data-i18n="reg_login_link">Войти</a>
         </div>
       </form>
     </div>
@@ -153,16 +151,15 @@
   <div id="paymentModal" class="payment-modal">
     <div class="payment-modal-content">
       <span class="close-payment-modal" id="close-payment-modal-button">&times;</span>
-      <h2>Оформление подписки</h2>
+      <h2 data-i18n="payment_title">Оформление подписки</h2>
 
       <div class="payment-plans">
         <!-- Контент будет сгенерирован динамически -->
       </div>
 
       <div class="payment-footer">
-        <p class="payment-terms">Нажимая кнопку, вы соглашаетесь с <a href="license.html" class="modal-link"
-            data-modal="agreement">условиями подписки</a></p>
-        <button id="confirmPayment" class="btn-payment">Оплатить</button>
+        <p class="payment-terms"><span data-i18n="payment_terms_pre">Нажимая кнопку, вы соглашаетесь с</span> <a href="license.html" class="modal-link" data-modal="agreement" data-i18n="payment_terms_link">условиями подписки</a></p>
+        <button id="confirmPayment" class="btn-payment" data-i18n="payment_btn">Оплатить</button>
       </div>
     </div>
   </div>
@@ -170,21 +167,20 @@
   <header class="header">
     <nav class="container nav">
       <a href="landing.html" class="logo-link" aria-label="Apex — на главную">
-        <img class="logo" src="assets/landing/logo-main.png?v=20260524" alt="Apex">
+        <img class="logo" src="assets/landing/logo-main.png?v=20260621" alt="Apex">
       </a>
       <div class="header-actions">
-        <a class="btn btn--header light-btn go-to-planer-btn">Открыть Apex</a>
-
+        <a class="btn btn--header light-btn go-to-planer-btn" data-i18n="header_open_app">Открыть Apex</a>
         <div class="auth-dropdown">
           <button class="auth-btn" aria-label="Меню аккаунта">
-            <div class="profile-avatar">Вход</div>
+            <div class="profile-avatar" data-i18n="header_auth_entry">Вход</div>
           </button>
           <div class="auth-dropdown-content">
             <div class="auth-dropdown-header">
               <div class="dropdown-avatar">Г</div>
               <div class="dropdown-user-info">
-                <div class="dropdown-username">Гость</div>
-                <div class="dropdown-email">Не авторизован</div>
+                <div class="dropdown-username" data-i18n="header_dropdown_guest">Гость</div>
+                <div class="dropdown-email" data-i18n="header_dropdown_not_auth">Не авторизован</div>
               </div>
             </div>
             <div class="auth-dropdown-divider"></div>
@@ -194,7 +190,7 @@
                 <polyline points="10 17 15 12 10 7"></polyline>
                 <line x1="15" y1="12" x2="3" y2="12"></line>
               </svg>
-              <span>Войти</span>
+              <span data-i18n="header_dropdown_login">Войти</span>
             </a>
             <a href="#" class="auth-dropdown-item register-btn">
               <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
@@ -203,7 +199,7 @@
                 <line x1="20" y1="8" x2="20" y2="14"></line>
                 <line x1="23" y1="11" x2="17" y2="11"></line>
               </svg>
-              <span>Регистрация</span>
+              <span data-i18n="header_dropdown_register">Регистрация</span>
             </a>
             <a href="#" class="auth-dropdown-item logout-btn" style="display: none;">
               <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
@@ -211,7 +207,7 @@
                 <polyline points="16 17 21 12 16 7"></polyline>
                 <line x1="21" y1="12" x2="9" y2="12"></line>
               </svg>
-              <span>Выйти</span>
+              <span data-i18n="header_dropdown_logout">Выйти</span>
             </a>
           </div>
         </div>
@@ -221,26 +217,27 @@
 
   <main>
 
+    <!-- ── Hero ── -->
     <section class="hero-container container">
       <div class="hero-content">
         <div class="hero-text">
           <span class="hero-eyebrow">
             <span class="hero-eyebrow__dot" aria-hidden="true"></span>
-            Учебный проект УУНиТ
+            <span data-i18n="hero_eyebrow">Совместная работа над проектами</span>
           </span>
-          <h1>Пространство, где проект <span class="hero-accent">собирается&nbsp;в&nbsp;одном&nbsp;месте</span></h1>
-          <p class="hero-subtitle">
+          <h1 data-i18n-html="hero_h1_html">Пространство, где проект <span class="hero-accent">собирается&nbsp;в&nbsp;одном&nbsp;месте</span></h1>
+          <p class="hero-subtitle" data-i18n="hero_subtitle">
             Задачи, доска, календарь и заметки для всей команды в одном окне. Общий доступ,
             прозрачный прогресс и фокус на результат — без переключений между инструментами.
           </p>
           <div class="cta-buttons">
-            <a class="btn btn--primary btn--large go-to-planer-btn">Начать бесплатно</a>
-            <a href="#detailed-features" class="btn btn--secondary btn--large">Посмотреть, как устроено</a>
+            <a class="btn btn--primary btn--large go-to-planer-btn" data-i18n="hero_start_btn">Начать бесплатно</a>
+            <a href="#detailed-features" class="btn btn--secondary btn--large" data-i18n="hero_how_btn">Посмотреть, как устроено</a>
           </div>
           <ul class="hero-bullets">
-            <li><i class="fas fa-check"></i> Веб и мобильное приложение</li>
-            <li><i class="fas fa-check"></i> Совместная работа в реальном времени</li>
-            <li><i class="fas fa-check"></i> Без рекламы и трекеров</li>
+            <li><i class="fas fa-check"></i> <span data-i18n="hero_bullet_web">Веб приложение</span></li>
+            <li><i class="fas fa-check"></i> <span data-i18n="hero_bullet_sync">Совместная работа в реальном времени</span></li>
+            <li><i class="fas fa-check"></i> <span data-i18n="hero_bullet_clean">Без рекламы и трекеров</span></li>
           </ul>
         </div>
 
@@ -399,462 +396,421 @@
       </div>
     </section>
 
+    <!-- ── Быстрые преимущества ── -->
     <section id="features" class="features container">
       <div class="features__header">
-        <h2 class="section-title">Что есть в Apex</h2>
-        <p class="section-subtitle">Всё, чтобы команда вела проекты в одном пространстве — без переключений</p>
+        <h2 class="section-title" data-i18n="features_title">Что есть в Apex</h2>
+        <p class="section-subtitle" data-i18n="features_subtitle">Всё, чтобы команда вела проекты в одном пространстве — без переключений</p>
       </div>
       <div class="features__grid">
         <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-layer-group"></i>
-          </div>
-          <h3>Проекты и направления</h3>
-          <p>Разделяйте работу команды по проектам и направлениям, настраивайте цвета и иконки</p>
+          <div class="feature-icon"><i class="fas fa-layer-group"></i></div>
+          <h3 data-i18n="feat1_title">Проекты и направления</h3>
+          <p data-i18n="feat1_body">Разделяйте работу команды по проектам и направлениям, настраивайте цвета и иконки</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-calendar-alt"></i>
-          </div>
-          <h3>Общий календарь</h3>
-          <p>Дедлайны, встречи и спринты команды в едином календаре — без двойного учёта</p>
+          <div class="feature-icon"><i class="fas fa-calendar-alt"></i></div>
+          <h3 data-i18n="feat2_title">Общий календарь</h3>
+          <p data-i18n="feat2_body">Дедлайны, встречи и спринты команды в едином календаре — без двойного учёта</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-tasks"></i>
-          </div>
-          <h3>Задачи и доска</h3>
-          <p>Канбан-доска и лента задач на сегодня с чек-листами, комментариями и вложениями</p>
+          <div class="feature-icon"><i class="fas fa-tasks"></i></div>
+          <h3 data-i18n="feat3_title">Задачи и доска</h3>
+          <p data-i18n="feat3_body">Канбан-доска и лента задач на сегодня с чек-листами, комментариями и вложениями</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-trophy"></i>
-          </div>
-          <h3>Прогресс команды</h3>
-          <p>Фиксируйте релизы, спринты и ключевые результаты — видно, что и кем сделано</p>
+          <div class="feature-icon"><i class="fas fa-trophy"></i></div>
+          <h3 data-i18n="feat4_title">Прогресс команды</h3>
+          <p data-i18n="feat4_body">Фиксируйте релизы, спринты и ключевые результаты — видно, что и кем сделано</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-sliders-h"></i>
-          </div>
-          <h3>Гибкие настройки</h3>
-          <p>Роли, уведомления, темы и интеграции — подстраивайте под процессы вашей команды</p>
+          <div class="feature-icon"><i class="fas fa-sliders-h"></i></div>
+          <h3 data-i18n="feat5_title">Гибкие настройки</h3>
+          <p data-i18n="feat5_body">Роли, уведомления, темы и интеграции — подстраивайте под процессы вашей команды</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-sticky-note"></i>
-          </div>
-          <h3>Быстрые заметки</h3>
-          <p>Идеи, решения встреч и наброски — одним кликом, с переносом в задачи</p>
+          <div class="feature-icon"><i class="fas fa-sticky-note"></i></div>
+          <h3 data-i18n="feat6_title">Быстрые заметки</h3>
+          <p data-i18n="feat6_body">Идеи, решения встреч и наброски — одним кликом, с переносом в задачи</p>
         </div>
       </div>
     </section>
 
+    <!-- ── Подробные возможности — bento ── -->
     <section id="detailed-features" class="detailed-features container">
       <div class="features__header">
-        <h2 class="section-title">Как устроен Apex</h2>
-        <p class="section-subtitle">Прозрачный контроль над проектами, временем и людьми</p>
+        <h2 class="section-title" data-i18n="df_title">Как устроен Apex</h2>
+        <p class="section-subtitle" data-i18n="df_subtitle">Прозрачный контроль над проектами, временем и людьми</p>
       </div>
 
-      <div class="feature-detail">
-        <div class="feature-detail__content">
-          <h3>Навигационный тулбар</h3>
-          <ul>
-            <li>Логотип Apex и быстрый возврат к домашнему пространству</li>
-            <li>Доступ к Проектам, Календарю, Прогрессу, Заметкам и Чату в один клик</li>
-            <li>Внизу — Профиль и Справка</li>
-          </ul>
-        </div>
-        <div class="feature-detail__mock" aria-hidden="true">
-          <div class="app-mock">
-            <div class="app-mock__body app-mock__body--toolbar">
-              <nav class="mock-toolbar">
-                <div class="mock-toolbar__logo"><img src="assets/landing/favicon.png" alt="Apex" style="width: 100%; height: 100%; object-fit: contain;"></div>
-                <div class="mock-toolbar__group">
-                  <button class="mock-toolbar__icon is-active" title="Проекты"><i class="fas fa-layer-group"></i></button>
-                  <button class="mock-toolbar__icon" title="Календарь"><i class="fas fa-calendar-alt"></i></button>
-                  <button class="mock-toolbar__icon" title="Задачи"><i class="fas fa-tasks"></i></button>
-                  <button class="mock-toolbar__icon" title="Прогресс"><i class="fas fa-trophy"></i></button>
-                  <button class="mock-toolbar__icon" title="Заметки"><i class="fas fa-sticky-note"></i></button>
-                  <button class="mock-toolbar__icon" title="Чат"><i class="fas fa-comments"></i></button>
-                </div>
-                <div class="mock-toolbar__group mock-toolbar__group--bottom">
-                  <button class="mock-toolbar__icon" title="Профиль"><i class="fas fa-user-cog"></i></button>
-                  <button class="mock-toolbar__icon" title="Справка"><i class="fas fa-circle-info"></i></button>
-                </div>
-              </nav>
-              <div class="mock-pane">
-                <div class="mock-pane__header">
-                  <div class="mock-crumb">Проекты <span>›</span> Релиз 2.0</div>
-                  <div class="mock-avatar">М</div>
-                </div>
-                <div class="mock-pane__body">
-                  <div class="mock-skeleton mock-skeleton--lg"></div>
-                  <div class="mock-skeleton"></div>
-                  <div class="mock-skeleton mock-skeleton--sm"></div>
-                </div>
-              </div>
-            </div>
+      <div class="details-bento">
+
+        <!-- 1. Тулбар -->
+        <div class="detail-tile detail-tile--mid">
+          <span class="detail-tile__num">01</span>
+          <div class="detail-tile__head">
+            <span class="detail-tile__tag"><i class="fas fa-bars"></i> <span data-i18n="tile01_tag">Навигация</span></span>
+            <h3 data-i18n="tile01_title">Навигационный тулбар</h3>
+            <ul>
+              <li data-i18n="tile01_li1">Логотип Apex и быстрый возврат к домашнему пространству</li>
+              <li data-i18n="tile01_li2">Доступ к Проектам, Календарю, Прогрессу, Заметкам в один клик</li>
+              <li data-i18n="tile01_li3">Внизу — Профиль и Справка</li>
+            </ul>
           </div>
-        </div>
-      </div>
-
-      <div class="feature-detail reverse">
-        <div class="feature-detail__content">
-          <h3>Проекты команды</h3>
-          <ul>
-            <li>Список проектов и направлений в боковом меню</li>
-            <li>Группировка задач и событий по проектам с общим доступом</li>
-            <li>Персонализация цветов и иконок для каждого проекта</li>
-          </ul>
-        </div>
-        <div class="feature-detail__mock" aria-hidden="true">
-          <div class="app-mock">
-            <div class="app-mock__body">
-              <aside class="mock-side">
-                <div class="mock-side__title">Проекты</div>
-                <ul class="mock-side__list">
-                  <li class="is-active"><span class="dot" style="background:#2E8FE0"></span>Релиз 2.0<span class="count">12</span></li>
-                  <li><span class="dot" style="background:#00BFA5"></span>Маркетинг Q3<span class="count">7</span></li>
-                  <li><span class="dot" style="background:#FFB74D"></span>Дизайн-система<span class="count">4</span></li>
-                  <li><span class="dot" style="background:#E573D7"></span>Исследования<span class="count">3</span></li>
-                  <li><span class="dot" style="background:#7E89F5"></span>Onboarding<span class="count">5</span></li>
-                </ul>
-                <button class="mock-side__add"><i class="fas fa-plus"></i> Новый проект</button>
-              </aside>
-              <div class="mock-pane">
-                <div class="mock-pane__header">
-                  <div class="mock-crumb">Релиз 2.0</div>
-                  <div class="mock-people">
-                    <span class="mock-avatar">М</span>
-                    <span class="mock-avatar">A</span>
-                    <span class="mock-avatar">К</span>
-                    <span class="mock-avatar mock-avatar--more">+2</span>
+          <div class="detail-tile__mock" aria-hidden="true">
+            <div class="app-mock">
+              <div class="app-mock__body app-mock__body--toolbar">
+                <nav class="mock-toolbar">
+                  <div class="mock-toolbar__logo"><img src="assets/landing/favicon.png" alt="Apex" style="width: 100%; height: 100%; object-fit: contain;"></div>
+                  <div class="mock-toolbar__group">
+                    <button class="mock-toolbar__icon is-active" title="Проекты"><i class="fas fa-layer-group"></i></button>
+                    <button class="mock-toolbar__icon" title="Календарь"><i class="fas fa-calendar-alt"></i></button>
+                    <button class="mock-toolbar__icon" title="Задачи"><i class="fas fa-tasks"></i></button>
+                    <button class="mock-toolbar__icon" title="Прогресс"><i class="fas fa-trophy"></i></button>
+                    <button class="mock-toolbar__icon" title="Заметки"><i class="fas fa-sticky-note"></i></button>
+                    <button class="mock-toolbar__icon" title="Чат"><i class="fas fa-comments"></i></button>
                   </div>
-                </div>
-                <div class="mock-pane__body">
-                  <div class="mock-skeleton mock-skeleton--lg"></div>
-                  <div class="mock-skeleton"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="feature-detail">
-        <div class="feature-detail__content">
-          <h3>Календарь</h3>
-          <ul>
-            <li>Мини-календарь в правом сайд-баре</li>
-            <li>Полноэкранный календарь со всеми событиями команды</li>
-          </ul>
-        </div>
-        <div class="feature-detail__mock" aria-hidden="true">
-          <div class="app-mock">
-            <div class="app-mock__body app-mock__body--pad">
-              <div class="mock-cal">
-                <div class="mock-cal__header">
-                  <button class="mock-icon-btn"><i class="fas fa-chevron-left"></i></button>
-                  <div class="mock-cal__title">Май 2026</div>
-                  <button class="mock-icon-btn"><i class="fas fa-chevron-right"></i></button>
-                </div>
-                <div class="mock-cal__week">
-                  <span>Пн</span><span>Вт</span><span>Ср</span><span>Чт</span><span>Пт</span><span class="mock-cal__off">Сб</span><span class="mock-cal__off">Вс</span>
-                </div>
-                <div class="mock-cal__grid">
-                  <span class="dim">28</span><span class="dim">29</span><span class="dim">30</span><span>1</span><span>2</span><span class="off">3</span><span class="off">4</span>
-                  <span>5</span><span class="has-evt">6</span><span>7</span><span>8</span><span class="has-evt">9</span><span class="off">10</span><span class="off">11</span>
-                  <span>12</span><span>13</span><span class="has-evt today">14</span><span>15</span><span>16</span><span class="off">17</span><span class="off">18</span>
-                  <span>19</span><span class="has-evt">20</span><span>21</span><span>22</span><span class="has-evt">23</span><span class="off">24</span><span class="off">25</span>
-                  <span>26</span><span>27</span><span>28</span><span>29</span><span>30</span><span class="off">31</span><span class="dim off">1</span>
-                </div>
-                <div class="mock-cal__events">
-                  <div class="mock-event"><span class="mock-event__dot" style="background:#2E8FE0"></span>10:00 · Стендап команды</div>
-                  <div class="mock-event"><span class="mock-event__dot" style="background:#FFB74D"></span>14:30 · Ревью дизайн-системы</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="feature-detail reverse">
-        <div class="feature-detail__content">
-          <h3>Задачи и доска</h3>
-          <ul>
-            <li>Лента задач на сегодня (таймлайн)</li>
-            <li>Полноэкранное окно для создания и обсуждения задачи</li>
-            <li>Чек-листы, комментарии с эмодзи и вложениями</li>
-            <li>Статусы и «Фокус-режим» с таймером</li>
-          </ul>
-        </div>
-        <div class="feature-detail__mock" aria-hidden="true">
-          <div class="app-mock">
-            <div class="app-mock__body app-mock__body--pad">
-              <div class="mock-board">
-                <div class="mock-col">
-                  <div class="mock-col__title">К выполнению <span>3</span></div>
-                  <div class="mock-card">
-                    <div class="mock-card__tag" style="background:rgba(46,143,224,.18); color:#7CC0F0">Релиз 2.0</div>
-                    <div class="mock-card__title">Подключить SSO</div>
-                    <div class="mock-card__meta"><i class="far fa-comment"></i> 4 · <i class="far fa-check-square"></i> 2/5</div>
+                  <div class="mock-toolbar__group mock-toolbar__group--bottom">
+                    <button class="mock-toolbar__icon" title="Профиль"><i class="fas fa-user-cog"></i></button>
+                    <button class="mock-toolbar__icon" title="Справка"><i class="fas fa-circle-info"></i></button>
                   </div>
-                  <div class="mock-card">
-                    <div class="mock-card__tag" style="background:rgba(255,183,77,.18); color:#FFC97A">Дизайн</div>
-                    <div class="mock-card__title">Гайдлайн иконок</div>
-                    <div class="mock-card__meta"><i class="far fa-clock"></i> 23 мая</div>
+                </nav>
+                <div class="mock-pane">
+                  <div class="mock-pane__header">
+                    <div class="mock-crumb">Проекты <span>›</span> Релиз 2.0</div>
+                    <div class="mock-avatar">М</div>
                   </div>
-                </div>
-                <div class="mock-col">
-                  <div class="mock-col__title">В работе <span>2</span></div>
-                  <div class="mock-card is-progress">
-                    <div class="mock-card__tag" style="background:rgba(0,191,165,.18); color:#5FE0CB">Маркетинг</div>
-                    <div class="mock-card__title">Подготовить лендинг</div>
-                    <div class="mock-card__progress"><span style="width:62%"></span></div>
-                  </div>
-                </div>
-                <div class="mock-col">
-                  <div class="mock-col__title">Готово <span>5</span></div>
-                  <div class="mock-card mock-card--done">
-                    <div class="mock-card__tag" style="background:rgba(126,137,245,.18); color:#A7B2F9">Бэк</div>
-                    <div class="mock-card__title">API авторизации</div>
-                    <div class="mock-card__meta"><i class="fas fa-check"></i> Закрыто</div>
+                  <div class="mock-pane__body">
+                    <div class="mock-skeleton mock-skeleton--lg"></div>
+                    <div class="mock-skeleton"></div>
+                    <div class="mock-skeleton mock-skeleton--sm"></div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-
-
-      <div class="feature-detail reverse">
-        <div class="feature-detail__content">
-          <h3>Прогресс и достижения</h3>
-          <ul>
-            <li>Фиксация результатов и побед команды</li>
-            <li>Карточки релизов и ключевых результатов</li>
-            <li>Статистика и аналитика прогресса по проектам</li>
-          </ul>
-        </div>
-        <div class="feature-detail__mock" aria-hidden="true">
-          <div class="app-mock">
-            <div class="app-mock__body app-mock__body--pad">
-              <div class="mock-stats">
-                <div class="mock-stat">
-                  <div class="mock-stat__num">42</div>
-                  <div class="mock-stat__label">задач закрыто</div>
-                </div>
-                <div class="mock-stat">
-                  <div class="mock-stat__num">7</div>
-                  <div class="mock-stat__label">релизов в месяц</div>
-                </div>
-                <div class="mock-stat">
-                  <div class="mock-stat__num">94%</div>
-                  <div class="mock-stat__label">в срок</div>
-                </div>
-              </div>
-              <div class="mock-wins">
-                <div class="mock-win">
-                  <div class="mock-win__icon"><i class="fas fa-trophy"></i></div>
-                  <div>
-                    <div class="mock-win__title">Релиз 1.8 в проде</div>
-                    <div class="mock-win__sub">21 мая · 5 участников</div>
-                  </div>
-                </div>
-                <div class="mock-win">
-                  <div class="mock-win__icon" style="background:rgba(255,183,77,.16); color:#FFC97A"><i class="fas fa-medal"></i></div>
-                  <div>
-                    <div class="mock-win__title">Закрыт первый клиентский контракт</div>
-                    <div class="mock-win__sub">17 мая · Маркетинг</div>
-                  </div>
-                </div>
-                <div class="mock-win">
-                  <div class="mock-win__icon" style="background:rgba(0,191,165,.16); color:#5FE0CB"><i class="fas fa-flag-checkered"></i></div>
-                  <div>
-                    <div class="mock-win__title">Onboarding 2.0 запущен</div>
-                    <div class="mock-win__sub">12 мая · Команда продукта</div>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <!-- 2. Проекты -->
+        <div class="detail-tile detail-tile--wide">
+          <span class="detail-tile__num">02</span>
+          <div class="detail-tile__head">
+            <span class="detail-tile__tag"><i class="fas fa-layer-group"></i> <span data-i18n="tile02_tag">Организация</span></span>
+            <h3 data-i18n="tile02_title">Проекты команды</h3>
+            <ul>
+              <li data-i18n="tile02_li1">Список проектов и направлений в боковом меню</li>
+              <li data-i18n="tile02_li2">Группировка задач и событий по проектам с общим доступом</li>
+              <li data-i18n="tile02_li3">Персонализация цветов и иконок для каждого проекта</li>
+            </ul>
           </div>
-        </div>
-      </div>
-
-      <div class="feature-detail">
-        <div class="feature-detail__content">
-          <h3>Профиль и настройки</h3>
-          <ul>
-            <li>Управление аватаром, именем и email</li>
-            <li>Уведомления, темы и прочие опции</li>
-          </ul>
-        </div>
-        <div class="feature-detail__mock" aria-hidden="true">
-          <div class="app-mock">
-            <div class="app-mock__body app-mock__body--pad">
-              <div class="mock-profile">
-                <div class="mock-profile__head">
-                  <div class="mock-profile__avatar">М</div>
-                  <div>
-                    <div class="mock-profile__name">Мария Иванова</div>
-                    <div class="mock-profile__role">Product · Команда Apex</div>
-                  </div>
-                  <button class="mock-btn">Изменить</button>
-                </div>
-                <div class="mock-form">
-                  <label>Имя
-                    <div class="mock-input">Мария Иванова</div>
-                  </label>
-                  <label>E-mail
-                    <div class="mock-input">maria@example.com</div>
-                  </label>
-                </div>
-                <div class="mock-toggles">
-                  <div class="mock-toggle">
-                    <span>Уведомления в Telegram</span>
-                    <span class="mock-switch is-on"><i></i></span>
-                  </div>
-                  <div class="mock-toggle">
-                    <span>Тёмная тема</span>
-                    <span class="mock-switch is-on"><i></i></span>
-                  </div>
-                  <div class="mock-toggle">
-                    <span>Дайджест по понедельникам</span>
-                    <span class="mock-switch"><i></i></span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="feature-detail reverse">
-        <div class="feature-detail__content">
-          <h3>Быстрые заметки</h3>
-          <ul>
-            <li>Быстро зафиксировать мысль и потом перенести её в задачу</li>
-            <li>Отдельные закладки для разных типов заметок</li>
-          </ul>
-        </div>
-        <div class="feature-detail__mock" aria-hidden="true">
-          <div class="app-mock">
-            <div class="app-mock__body app-mock__body--pad">
-              <div class="mock-notes">
-                <div class="mock-note" style="--c:#2E8FE0">
-                  <div class="mock-note__tag">Идея</div>
-                  <div class="mock-note__title">Сделать публичный roadmap</div>
-                  <div class="mock-note__body">Чтобы клиенты видели, что мы релизим в этом квартале.</div>
-                  <button class="mock-note__action"><i class="fas fa-arrow-right"></i> в задачу</button>
-                </div>
-                <div class="mock-note" style="--c:#FFB74D">
-                  <div class="mock-note__tag">Встреча</div>
-                  <div class="mock-note__title">Стендап 14 мая</div>
-                  <div class="mock-note__body">Маша блокирует на ревью. Костя берёт миграцию.</div>
-                </div>
-                <div class="mock-note" style="--c:#00BFA5">
-                  <div class="mock-note__tag">Чек-лист</div>
-                  <div class="mock-note__title">Перед релизом</div>
-                  <ul class="mock-note__check">
-                    <li class="done">Тесты</li>
-                    <li class="done">Документация</li>
-                    <li>Уведомить клиентов</li>
+          <div class="detail-tile__mock" aria-hidden="true">
+            <div class="app-mock">
+              <div class="app-mock__body">
+                <aside class="mock-side">
+                  <div class="mock-side__title">Проекты</div>
+                  <ul class="mock-side__list">
+                    <li class="is-active"><span class="dot" style="background:#2E8FE0"></span>Релиз 2.0<span class="count">12</span></li>
+                    <li><span class="dot" style="background:#00BFA5"></span>Маркетинг Q3<span class="count">7</span></li>
+                    <li><span class="dot" style="background:#FFB74D"></span>Дизайн-система<span class="count">4</span></li>
+                    <li><span class="dot" style="background:#E573D7"></span>Исследования<span class="count">3</span></li>
+                    <li><span class="dot" style="background:#7E89F5"></span>Onboarding<span class="count">5</span></li>
                   </ul>
-                </div>
-                <div class="mock-note" style="--c:#7E89F5">
-                  <div class="mock-note__tag">Ссылка</div>
-                  <div class="mock-note__title">Reference про onboarding</div>
-                  <div class="mock-note__body">notion.so/apex-onboarding</div>
+                  <button class="mock-side__add"><i class="fas fa-plus"></i> Новый проект</button>
+                </aside>
+                <div class="mock-pane">
+                  <div class="mock-pane__header">
+                    <div class="mock-crumb">Релиз 2.0</div>
+                    <div class="mock-people">
+                      <span class="mock-avatar">М</span>
+                      <span class="mock-avatar">A</span>
+                      <span class="mock-avatar">К</span>
+                      <span class="mock-avatar mock-avatar--more">+2</span>
+                    </div>
+                  </div>
+                  <div class="mock-pane__body">
+                    <div class="mock-skeleton mock-skeleton--lg"></div>
+                    <div class="mock-skeleton"></div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+
+        <!-- 3. Календарь -->
+        <div class="detail-tile detail-tile--wide">
+          <span class="detail-tile__num">03</span>
+          <div class="detail-tile__head">
+            <span class="detail-tile__tag"><i class="fas fa-calendar-alt"></i> <span data-i18n="tile03_tag">Планирование</span></span>
+            <h3 data-i18n="tile03_title">Календарь</h3>
+            <ul>
+              <li data-i18n="tile03_li1">Мини-календарь в правом сайд-баре</li>
+              <li data-i18n="tile03_li2">Полноэкранный календарь со всеми событиями команды</li>
+            </ul>
+          </div>
+          <div class="detail-tile__mock" aria-hidden="true">
+            <div class="app-mock">
+              <div class="app-mock__body app-mock__body--pad">
+                <div class="mock-cal">
+                  <div class="mock-cal__header">
+                    <button class="mock-icon-btn"><i class="fas fa-chevron-left"></i></button>
+                    <div class="mock-cal__title">Май 2026</div>
+                    <button class="mock-icon-btn"><i class="fas fa-chevron-right"></i></button>
+                  </div>
+                  <div class="mock-cal__week">
+                    <span>Пн</span><span>Вт</span><span>Ср</span><span>Чт</span><span>Пт</span><span class="mock-cal__off">Сб</span><span class="mock-cal__off">Вс</span>
+                  </div>
+                  <div class="mock-cal__grid">
+                    <span class="dim">28</span><span class="dim">29</span><span class="dim">30</span><span>1</span><span>2</span><span class="off">3</span><span class="off">4</span>
+                    <span>5</span><span class="has-evt">6</span><span>7</span><span>8</span><span class="has-evt">9</span><span class="off">10</span><span class="off">11</span>
+                    <span>12</span><span>13</span><span class="has-evt today">14</span><span>15</span><span>16</span><span class="off">17</span><span class="off">18</span>
+                    <span>19</span><span class="has-evt">20</span><span>21</span><span>22</span><span class="has-evt">23</span><span class="off">24</span><span class="off">25</span>
+                    <span>26</span><span>27</span><span>28</span><span>29</span><span>30</span><span class="off">31</span><span class="dim off">1</span>
+                  </div>
+                  <div class="mock-cal__events">
+                    <div class="mock-event"><span class="mock-event__dot" style="background:#2E8FE0"></span>10:00 · Стендап команды</div>
+                    <div class="mock-event"><span class="mock-event__dot" style="background:#FFB74D"></span>14:30 · Ревью дизайн-системы</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Задачи и доска -->
+        <div class="detail-tile detail-tile--mid">
+          <span class="detail-tile__num">04</span>
+          <div class="detail-tile__head">
+            <span class="detail-tile__tag"><i class="fas fa-tasks"></i> <span data-i18n="tile04_tag">Задачи</span></span>
+            <h3 data-i18n="tile04_title">Задачи и доска</h3>
+            <ul>
+              <li data-i18n="tile04_li1">Лента задач на сегодня (таймлайн)</li>
+              <li data-i18n="tile04_li2">Полноэкранное окно для создания и обсуждения задачи</li>
+              <li data-i18n="tile04_li3">Чек-листы, комментарии с эмодзи и вложениями</li>
+              <li data-i18n="tile04_li4">Статусы и «Фокус-режим» с таймером</li>
+            </ul>
+          </div>
+          <div class="detail-tile__mock" aria-hidden="true">
+            <div class="app-mock">
+              <div class="app-mock__body app-mock__body--pad">
+                <div class="mock-board">
+                  <div class="mock-col">
+                    <div class="mock-col__title">Задачи <span>3</span></div>
+                    <div class="mock-card">
+                      <div class="mock-card__tag" style="background:rgba(46,143,224,.18); color:#7CC0F0">Релиз 2.0</div>
+                      <div class="mock-card__title">Подключить SSO</div>
+                      <div class="mock-card__meta"><i class="far fa-comment"></i> 4 · <i class="far fa-check-square"></i> 2/5</div>
+                    </div>
+                    <div class="mock-card">
+                      <div class="mock-card__tag" style="background:rgba(255,183,77,.18); color:#FFC97A">Дизайн</div>
+                      <div class="mock-card__title">Гайдлайн иконок</div>
+                      <div class="mock-card__meta"><i class="far fa-clock"></i> 23 мая</div>
+                    </div>
+                  </div>
+                  <div class="mock-col">
+                    <div class="mock-col__title">В работе <span>2</span></div>
+                    <div class="mock-card is-progress">
+                      <div class="mock-card__tag" style="background:rgba(0,191,165,.18); color:#5FE0CB">Маркетинг</div>
+                      <div class="mock-card__title">Подготовить лендинг</div>
+                      <div class="mock-card__progress"><span style="width:62%"></span></div>
+                    </div>
+                  </div>
+                  <div class="mock-col">
+                    <div class="mock-col__title">Готово <span>5</span></div>
+                    <div class="mock-card mock-card--done">
+                      <div class="mock-card__tag" style="background:rgba(126,137,245,.18); color:#A7B2F9">Бэк</div>
+                      <div class="mock-card__title">API авторизации</div>
+                      <div class="mock-card__meta"><i class="fas fa-check"></i> Закрыто</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Прогресс -->
+        <div class="detail-tile detail-tile--third">
+          <span class="detail-tile__num">05</span>
+          <div class="detail-tile__head">
+            <span class="detail-tile__tag"><i class="fas fa-trophy"></i> <span data-i18n="tile05_tag">Достижения</span></span>
+            <h3 data-i18n="tile05_title">Прогресс и достижения</h3>
+            <ul>
+              <li data-i18n="tile05_li1">Фиксация результатов и побед команды</li>
+              <li data-i18n="tile05_li2">Карточки релизов и ключевых результатов</li>
+              <li data-i18n="tile05_li3">Статистика и аналитика прогресса по проектам</li>
+            </ul>
+          </div>
+          <div class="detail-tile__mock" aria-hidden="true">
+            <div class="app-mock">
+              <div class="app-mock__body app-mock__body--pad">
+                <div class="mock-stats">
+                  <div class="mock-stat">
+                    <div class="mock-stat__num">42</div>
+                    <div class="mock-stat__label">задач закрыто</div>
+                  </div>
+                  <div class="mock-stat">
+                    <div class="mock-stat__num">7</div>
+                    <div class="mock-stat__label">релизов в месяц</div>
+                  </div>
+                  <div class="mock-stat">
+                    <div class="mock-stat__num">94%</div>
+                    <div class="mock-stat__label">в срок</div>
+                  </div>
+                </div>
+                <div class="mock-wins">
+                  <div class="mock-win">
+                    <div class="mock-win__icon"><i class="fas fa-trophy"></i></div>
+                    <div>
+                      <div class="mock-win__title">Релиз 1.8 в проде</div>
+                      <div class="mock-win__sub">21 мая · 5 участников</div>
+                    </div>
+                  </div>
+                  <div class="mock-win">
+                    <div class="mock-win__icon" style="background:rgba(255,183,77,.16); color:#FFC97A"><i class="fas fa-medal"></i></div>
+                    <div>
+                      <div class="mock-win__title">Закрыт первый клиентский контракт</div>
+                      <div class="mock-win__sub">17 мая · Маркетинг</div>
+                    </div>
+                  </div>
+                  <div class="mock-win">
+                    <div class="mock-win__icon" style="background:rgba(0,191,165,.16); color:#5FE0CB"><i class="fas fa-flag-checkered"></i></div>
+                    <div>
+                      <div class="mock-win__title">Onboarding 2.0 запущен</div>
+                      <div class="mock-win__sub">12 мая · Команда продукта</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Профиль -->
+        <div class="detail-tile detail-tile--third">
+          <span class="detail-tile__num">06</span>
+          <div class="detail-tile__head">
+            <span class="detail-tile__tag"><i class="fas fa-user-cog"></i> <span data-i18n="tile06_tag">Профиль</span></span>
+            <h3 data-i18n="tile06_title">Профиль и настройки</h3>
+            <ul>
+              <li data-i18n="tile06_li1">Управление аватаром, именем и email</li>
+              <li data-i18n="tile06_li2">Уведомления, темы и прочие опции</li>
+            </ul>
+          </div>
+          <div class="detail-tile__mock" aria-hidden="true">
+            <div class="app-mock">
+              <div class="app-mock__body app-mock__body--pad">
+                <div class="mock-profile">
+                  <div class="mock-profile__head">
+                    <div class="mock-profile__avatar">М</div>
+                    <div>
+                      <div class="mock-profile__name">Мария Иванова</div>
+                      <div class="mock-profile__role">Product · Команда Apex</div>
+                    </div>
+                    <button class="mock-btn">Изменить</button>
+                  </div>
+                  <div class="mock-form">
+                    <label>Имя
+                      <div class="mock-input">Мария Иванова</div>
+                    </label>
+                    <label>E-mail
+                      <div class="mock-input">maria@example.com</div>
+                    </label>
+                  </div>
+                  <div class="mock-toggles">
+                    <div class="mock-toggle">
+                      <span>Уведомления в Telegram</span>
+                      <span class="mock-switch is-on"><i></i></span>
+                    </div>
+                    <div class="mock-toggle">
+                      <span>Тёмная тема</span>
+                      <span class="mock-switch is-on"><i></i></span>
+                    </div>
+                    <div class="mock-toggle">
+                      <span>Дайджест по понедельникам</span>
+                      <span class="mock-switch"><i></i></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. Заметки -->
+        <div class="detail-tile detail-tile--third">
+          <span class="detail-tile__num">07</span>
+          <div class="detail-tile__head">
+            <span class="detail-tile__tag"><i class="fas fa-sticky-note"></i> <span data-i18n="tile07_tag">Заметки</span></span>
+            <h3 data-i18n="tile07_title">Быстрые заметки</h3>
+            <ul>
+              <li data-i18n="tile07_li1">Быстро зафиксировать мысль и потом перенести её в задачу</li>
+              <li data-i18n="tile07_li2">Отдельные закладки для разных типов заметок</li>
+            </ul>
+          </div>
+          <div class="detail-tile__mock" aria-hidden="true">
+            <div class="app-mock">
+              <div class="app-mock__body app-mock__body--pad">
+                <div class="mock-notes">
+                  <div class="mock-note" style="--c:#2E8FE0">
+                    <div class="mock-note__tag">Идея</div>
+                    <div class="mock-note__title">Сделать публичный roadmap</div>
+                    <div class="mock-note__body">Чтобы клиенты видели, что мы релизим в этом квартале.</div>
+                    <button class="mock-note__action"><i class="fas fa-arrow-right"></i> в задачу</button>
+                  </div>
+                  <div class="mock-note" style="--c:#FFB74D">
+                    <div class="mock-note__tag">Встреча</div>
+                    <div class="mock-note__title">Стендап 14 мая</div>
+                    <div class="mock-note__body">Маша блокирует на ревью. Костя берёт миграцию.</div>
+                  </div>
+                  <div class="mock-note" style="--c:#00BFA5">
+                    <div class="mock-note__tag">Чек-лист</div>
+                    <div class="mock-note__title">Перед релизом</div>
+                    <ul class="mock-note__check">
+                      <li class="done">Тесты</li>
+                      <li class="done">Документация</li>
+                      <li>Уведомить клиентов</li>
+                    </ul>
+                  </div>
+                  <div class="mock-note" style="--c:#7E89F5">
+                    <div class="mock-note__tag">Ссылка</div>
+                    <div class="mock-note__title">Reference про onboarding</div>
+                    <div class="mock-note__body">notion.so/apex-onboarding</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /.details-bento -->
     </section>
 
 
-    <section id="how-it-works" class="steps container">
-      <h2 class="section-title">Как начать работу</h2>
-      <ol class="steps__list">
-        <li>
-          <h3>Зарегистрируйтесь</h3>
-          <p>Создайте аккаунт или войдите в существующий</p>
-        </li>
-        <li>
-          <h3>Создайте проект</h3>
-          <p>Опишите направление работы и пригласите участников</p>
-        </li>
-        <li>
-          <h3>Добавьте задачи</h3>
-          <p>Соберите задачи с чек-листами, ответственными и сроками</p>
-        </li>
-        <li>
-          <h3>Запланируйте события</h3>
-          <p>Добавляйте встречи и дедлайны в общий календарь</p>
-        </li>
-        <li>
-          <h3>Пригласите команду</h3>
-          <p>Обсуждайте задачи в чате и работайте над проектами вместе</p>
-        </li>
-        <li>
-          <h3>Фиксируйте результат</h3>
-          <p>Отмечайте достижения и отслеживайте прогресс команды</p>
-        </li>
-        <li>
-          <h3>Быстрые заметки</h3>
-          <p>Записывайте идеи и решения встреч в любое время</p>
-        </li>
-        <li>
-          <h3>Появились вопросы? Напишите в чат поддержки.</h3>
-          <p>Мы всегда готовы помочь вам с любыми вопросами</p>
-        </li>
-      </ol>
-    </section>
 
-    <!-- Блок стоимости подписки -->
+    <!-- ── Подписки ── -->
     <section class="subscription-pricing container">
-      <h2 class="section-title">Выберите подписку</h2>
-      <p class="section-subtitle">Доступ ко всем функциям Apex</p>
+      <h2 class="section-title" data-i18n="sub_title">Выберите подписку</h2>
+      <p class="section-subtitle" data-i18n="sub_subtitle">Доступ ко всем функциям Apex</p>
 
       <div class="pricing-cards" id="pricingCards"></div>
     </section>
   </main>
 
   <footer class="footer footer--edu">
-    <div class="container footer__edu">
-      <div class="footer__edu-brand">
-<div class="footer__edu-logo" aria-hidden="true">
-  <img src="assets/landing/favicon.png" alt="Apex" style="width: 100%; height: 100%; object-fit: contain;">
-</div>        <div>
-          <div class="footer__edu-title">Apex</div>
-          <div class="footer__edu-sub">Пространство для совместной работы над проектами</div>
-        </div>
+    <div class="footer__edu-brand">
+      <div class="footer__edu-logo" aria-hidden="true">
+        <img src="assets/landing/favicon.png" alt="Apex" style="width: 100%; height: 100%; object-fit: contain;">
       </div>
-
-      <div class="footer__edu-note">
-        <span class="footer__edu-badge">Учебный проект</span>
-        <p>
-          Сайт и приложение разработаны в рамках учебной работы в
-          <strong>УУНиТ</strong> (Уфимский университет науки и технологий). <br>
-          Реальная коммерческая деятельность не ведётся, оплата не принимается.
-        </p>
-      </div>
-
-      <div class="footer__edu-meta">
-        <div>© 2026 Apex · учебный демо-проект</div>
-        <ul class="footer__edu-links">
-          <li><a href="privacy.html" target="_blank" rel="noopener">Конфиденциальность</a></li>
-          <li><a href="license.html" target="_blank" rel="noopener">Соглашение</a></li>
-          <li><a href="offert.html" target="_blank" rel="noopener">Оферта</a></li>
-        </ul>
+      <div>
+        <div class="footer__edu-title">Apex</div>
+        <div class="footer__edu-sub">Пространство для совместной работы над проектами</div>
       </div>
     </div>
   </footer>
-  <!-- Плавный скролл к якорям внутри страницы (например, "Посмотреть, как устроено") -->
+
+
+  <!-- Плавный скролл к якорям внутри страницы -->
   <script>
     document.addEventListener('click', (e) => {
       const link = e.target.closest('a[href^="#"]');
@@ -869,15 +825,15 @@
     }, { passive: false });
   </script>
 
-  <script src="scripts/planer/DTO/User.js?v=20260524"></script>
-  <script src="scripts/planer/info.js?v=20260524"></script>
-  <script src="scripts/auth.js?v=20260524"></script>
-  <script src="scripts/paymentService.js?v=20260524"></script>
-  <script src="scripts/about/payment.js?v=20260524"></script>
-  <script src="scripts/landing/auth.js?v=20260524"></script>
-  <script src="scripts/landing/gradientBackground.js?v=20260524"></script>
-  <script src="scripts/landing/main.js?v=20260524"></script>
-  <script src="scripts/apiService.js?v=20260524"></script>
+  <script src="scripts/planer/DTO/User.js?v=20260621"></script>
+  <script src="scripts/planer/info.js?v=20260621"></script>
+  <script src="scripts/auth.js?v=20260621"></script>
+  <script src="scripts/paymentService.js?v=20260621"></script>
+  <script src="scripts/about/payment.js?v=20260621"></script>
+  <script src="scripts/landing/auth.js?v=20260621"></script>
+  <script src="scripts/landing/gradientBackground.js?v=20260621"></script>
+  <script src="scripts/landing/main.js?v=20260621"></script>
+  <script src="scripts/apiService.js?v=20260621"></script>
 
 </body>
 

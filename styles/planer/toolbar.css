@@ -120,8 +120,7 @@
 }
 
 .logo, .logo-dark {
-  width: 28px;
-  height: 20px;
+  height: 28px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -192,8 +191,7 @@ body.dark-theme .mobile-menu-toggle:focus-visible {
   width: 100%;
 }
 .main-logo {
-  width: 256px;
-  height: 76px;
+  height: 120px;
   margin-bottom: 30px;
 }
 
